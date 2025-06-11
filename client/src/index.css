@@ -1,0 +1,579 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+<<<<<<< HEAD
+  /* Cursor.com inspired minimal dark theme - single consistent background */
+  --background: hsl(215, 14%, 9%);
+  --foreground: hsl(210, 11%, 85%);
+  --muted: hsl(215, 14%, 12%);
+  --muted-foreground: hsl(210, 9%, 55%);
+  --popover: hsl(215, 14%, 11%);
+  --popover-foreground: hsl(210, 11%, 85%);
+  --card: hsl(215, 14%, 11%);
+  --card-foreground: hsl(210, 11%, 85%);
+  --border: hsl(215, 14%, 16%);
+  --input: hsl(215, 14%, 12%);
+  --primary: hsl(210, 100%, 56%);
+  --primary-foreground: hsl(210, 40%, 98%);
+  --secondary: hsl(215, 14%, 12%);
+  --secondary-foreground: hsl(210, 11%, 85%);
+  --accent: hsl(215, 14%, 14%);
+  --accent-foreground: hsl(210, 11%, 85%);
+  --destructive: hsl(0, 62%, 52%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --ring: hsl(210, 100%, 56%);
+  --radius: 0.5rem;
+  
+  /* Simplified color palette - minimal like cursor.com */
+  --surface: hsl(215, 14%, 11%);
+  --surface-hover: hsl(215, 14%, 14%);
+  --text-primary: hsl(210, 11%, 85%);
+  --text-secondary: hsl(210, 9%, 55%);
+  --text-muted: hsl(210, 9%, 40%);
+  --accent-blue: hsl(210, 100%, 56%);
+}
+
+/* Light theme fallback */
+.light {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(222.2, 84%, 4.9%);
+  --muted: hsl(210, 40%, 96%);
+  --muted-foreground: hsl(215.4, 16.3%, 46.9%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(222.2, 84%, 4.9%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(222.2, 84%, 4.9%);
+  --border: hsl(214.3, 31.8%, 91.4%);
+  --input: hsl(214.3, 31.8%, 91.4%);
+  --primary: hsl(210, 100%, 50%);
+  --primary-foreground: hsl(210, 40%, 98%);
+  --secondary: hsl(210, 40%, 96%);
+  --secondary-foreground: hsl(222.2, 84%, 4.9%);
+  --accent: hsl(210, 40%, 96%);
+  --accent-foreground: hsl(222.2, 84%, 4.9%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --ring: hsl(210, 100%, 50%);
+=======
+  /* Cursor.com inspired dark theme */
+  --background: hsl(220, 13%, 9%);
+  --foreground: hsl(220, 9%, 90%);
+  --muted: hsl(220, 13%, 15%);
+  --muted-foreground: hsl(220, 9%, 55%);
+  --popover: hsl(220, 13%, 11%);
+  --popover-foreground: hsl(220, 9%, 90%);
+  --card: hsl(220, 13%, 11%);
+  --card-foreground: hsl(220, 9%, 90%);
+  --border: hsl(220, 13%, 18%);
+  --input: hsl(220, 13%, 15%);
+  --primary: hsl(221, 83%, 53%);
+  --primary-foreground: hsl(210, 40%, 98%);
+  --secondary: hsl(220, 13%, 15%);
+  --secondary-foreground: hsl(220, 9%, 90%);
+  --accent: hsl(220, 13%, 15%);
+  --accent-foreground: hsl(220, 9%, 90%);
+  --destructive: hsl(0, 62%, 50%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --ring: hsl(221, 83%, 53%);
+  --radius: 0.5rem;
+  
+  /* ChatLure specific colors - cursor.com inspired */
+  --whatsapp: hsl(142, 71%, 45%);
+  --whatsapp-dark: hsl(142, 71%, 35%);
+  --chat-incoming: hsl(220, 13%, 15%);
+  --chat-outgoing: hsl(221, 83%, 53%);
+  --dramatic: hsl(0, 84%, 60%);
+  --highlight: hsl(48, 96%, 53%);
+  --dark-bg: hsl(220, 13%, 9%);
+  --card-bg: hsl(220, 13%, 11%);
+  --surface: hsl(220, 13%, 13%);
+  --surface-hover: hsl(220, 13%, 16%);
+  --text-primary: hsl(220, 9%, 90%);
+  --text-secondary: hsl(220, 9%, 65%);
+  --text-muted: hsl(220, 9%, 45%);
+  --accent-blue: hsl(221, 83%, 53%);
+  --accent-purple: hsl(262, 83%, 58%);
+  --accent-green: hsl(142, 71%, 45%);
+>>>>>>> origin/main
+}
+
+/* Phone Frame Styles */
+.phone-frame {
+  width: 375px;
+  height: 812px;
+<<<<<<< HEAD
+  background: var(--card);
+  border-radius: 40px;
+  padding: 8px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px var(--border);
+=======
+  background: #000;
+  border-radius: 40px;
+  padding: 8px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+>>>>>>> origin/main
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.phone-frame::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 6px;
+<<<<<<< HEAD
+  background: var(--muted);
+=======
+  background: #333;
+>>>>>>> origin/main
+  border-radius: 3px;
+  z-index: 10;
+}
+
+.status-bar {
+<<<<<<< HEAD
+  background: var(--background);
+  color: var(--text-primary);
+=======
+  background: #000;
+  color: white;
+>>>>>>> origin/main
+  padding: 8px 20px 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  padding-top: 20px;
+<<<<<<< HEAD
+  border-bottom: 1px solid var(--border);
+}
+
+.chat-header {
+  background: hsl(142, 71%, 45%);
+  padding: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+=======
+}
+
+.chat-header {
+  background: linear-gradient(135deg, #075e54 0%, #128c7e 100%);
+  padding: 0;
+>>>>>>> origin/main
+}
+
+.chat-area {
+  flex: 1;
+<<<<<<< HEAD
+  background: var(--background);
+  position: relative;
+}
+
+.chat-background {
+  background: var(--background);
+}
+
+.whatsapp-input {
+  background: var(--surface);
+=======
+  background: #e5ddd5;
+  position: relative;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%);
+}
+
+.chat-background {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.whatsapp-input {
+  background: #f0f0f0;
+>>>>>>> origin/main
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+<<<<<<< HEAD
+  border-top: 1px solid var(--border);
+=======
+>>>>>>> origin/main
+}
+
+.typing-dot {
+  animation: typing 1.4s infinite ease-in-out;
+<<<<<<< HEAD
+  background: var(--accent-blue);
+=======
+>>>>>>> origin/main
+}
+
+.typing-dot:nth-child(1) { animation-delay: -0.32s; }
+.typing-dot:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes typing {
+  0%, 80%, 100% { transform: scale(0.8); opacity: 0.5; }
+  40% { transform: scale(1); opacity: 1; }
+}
+
+<<<<<<< HEAD
+=======
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+>>>>>>> origin/main
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased;
+<<<<<<< HEAD
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    background: var(--background);
+    color: var(--foreground);
+    overflow-x: hidden;
+  }
+
+  /* Clean scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--surface);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--muted);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--surface-hover);
+  }
+}
+
+/* Clean animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(20px);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.slide-in {
+  animation: slideIn 0.4s ease-out;
+}
+
+.zoom-in {
+  animation: zoomIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.modal-fade-in {
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+/* Clean message bubbles */
+.message-incoming {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem 1rem 1rem 0.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.message-outgoing {
+  background: var(--primary);
+  border-radius: 1rem 1rem 0.25rem 1rem;
+  color: var(--primary-foreground);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Simplified hover transitions */
+.hover-scale {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-scale:hover {
+  transform: scale(1.01);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Clean button styles */
+.btn-primary {
+  background: var(--primary);
+  border: 1px solid var(--primary);
+  color: var(--primary-foreground);
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: hsl(210, 100%, 52%);
+  box-shadow: 0 2px 8px hsla(210, 100%, 56%, 0.3);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--foreground);
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--surface-hover);
+  border-color: var(--border);
+  transform: translateY(-1px);
+}
+
+/* Clean card styles */
+.card-enhanced {
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.card-enhanced:hover {
+  border-color: var(--surface-hover);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+}
+
+/* Simple glass effect */
+.glass-effect {
+  background: var(--surface);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+}
+
+/* Clean text selection */
+::selection {
+  background: hsla(210, 100%, 56%, 0.3);
+  color: var(--foreground);
+}
+
+::-moz-selection {
+  background: hsla(210, 100%, 56%, 0.3);
+  color: var(--foreground);
+}
+
+/* Loading skeleton */
+.skeleton {
+  background: var(--muted);
+  animation: skeleton-loading 1.5s infinite;
+}
+
+@keyframes skeleton-loading {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+/* Focus states */
+.focus-ring:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Clean form inputs */
+.input-enhanced {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--foreground);
+  transition: all 0.2s ease;
+}
+
+.input-enhanced:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px hsla(210, 100%, 56%, 0.1);
+  background: var(--surface-hover);
+}
+
+.input-enhanced::placeholder {
+  color: var(--text-muted);
+}
+
+/* Phone modal specific styles */
+.phone-modal-overlay {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+.phone-modal-content {
+  animation: zoomIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Tailwind animate-in utilities */
+.animate-in {
+  animation-fill-mode: both;
+}
+
+.slide-in-from-bottom-8 {
+  animation-name: slideInFromBottom;
+}
+
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+=======
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+}
+
+/* Custom animations */
+@keyframes typing-bounce {
+  0%, 60%, 100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-10px);
+  }
+}
+
+.typing-dot {
+  animation: typing-bounce 1.4s infinite ease-in-out both;
+}
+
+.typing-dot:nth-child(1) { animation-delay: -0.32s; }
+.typing-dot:nth-child(2) { animation-delay: -0.16s; }
+
+/* WhatsApp-style message bubbles */
+.message-incoming {
+  background-color: white;
+  border-radius: 1rem 1rem 1rem 0.25rem;
+}
+
+.message-outgoing {
+  background-color: hsl(88, 58%, 89%);
+  border-radius: 1rem 1rem 0.25rem 1rem;
+}
+
+/* Gradient backgrounds for categories */
+.category-heartbreak {
+  background: linear-gradient(135deg, hsl(0, 76%, 69%, 0.2), hsl(0, 60%, 30%, 0.4));
+}
+
+.category-drama {
+  background: linear-gradient(135deg, hsl(25, 100%, 50%, 0.2), hsl(25, 80%, 30%, 0.4));
+}
+
+.category-comedy {
+  background: linear-gradient(135deg, hsl(270, 100%, 60%, 0.2), hsl(270, 80%, 30%, 0.4));
+}
+
+.category-romance {
+  background: linear-gradient(135deg, hsl(330, 100%, 70%, 0.2), hsl(330, 80%, 30%, 0.4));
+}
+
+.category-friendship {
+  background: linear-gradient(135deg, hsl(154, 77%, 44%, 0.2), hsl(147, 86%, 25%, 0.4));
+}
+
+.category-family {
+  background: linear-gradient(135deg, hsl(207, 90%, 54%, 0.2), hsl(207, 80%, 30%, 0.4));
+}
+
+/* Chat background pattern */
+.chat-background {
+  background-color: #e5ddd5;
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0);
+  background-size: 20px 20px;
+}
+
+/* Smooth hover transitions */
+.hover-scale {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+>>>>>>> origin/main
+}
