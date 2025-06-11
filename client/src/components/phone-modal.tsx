@@ -3,7 +3,7 @@ import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogDescription } 
 import { Button } from "@/components/ui/button";
 import { Smartphone, Play } from "lucide-react";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
-import ChatSimulator from "./chat-simulator";
+import SimpleChatSimulator from "./simple-chat-simulator";
 
 interface PhoneModalProps {
   storyId?: number;
@@ -63,7 +63,7 @@ export default function PhoneModal({
             
             {/* Phone component */}
             <div className="relative z-10 animate-in fade-in zoom-in duration-300">
-              <ChatSimulator storyId={storyId} />
+              <SimpleChatSimulator storyId={storyId} />
             </div>
             
             {/* Close instruction */}
