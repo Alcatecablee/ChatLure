@@ -556,7 +556,7 @@ export default function ChatSimulator({ storyId = 1 }: ChatSimulatorProps) {
           </Button>
           
           {showDeviceSelector && (
-            <div className="device-selector rounded-lg p-2 space-y-1">
+            <div className="device-selector rounded-lg p-2 space-y-1 bg-black/80 backdrop-blur-md border border-white/20">
               {Object.entries(deviceConfigs).map(([key, config]) => (
                 <Button
                   key={key}
@@ -567,13 +567,14 @@ export default function ChatSimulator({ storyId = 1 }: ChatSimulatorProps) {
                   variant="ghost"
                   size="sm"
                   className={cn(
-                    "w-full justify-start text-white hover:bg-white/20",
+                    "w-full justify-start text-white hover:bg-white/20 h-auto p-3",
                     deviceFormat === key && "bg-white/30"
                   )}
                 >
-                  <config.icon className="h-4 w-4 mr-2" />
+                  <config.icon className="h-4 w-4 mr-3 flex-shrink-0" />
                   <div className="text-left">
                     <div className="font-medium">{config.name}</div>
+                    <div className="text-xs text-gray-300 opacity-80">{config.description}</div>
                   </div>
                 </Button>
               ))}

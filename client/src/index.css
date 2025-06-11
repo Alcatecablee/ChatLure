@@ -170,6 +170,58 @@
   }
 }
 
+/* Device format transition animations */
+.device-container {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.device-format-changing {
+  transform: scale(0.95);
+  opacity: 0.7;
+}
+
+.device-phone {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Device-specific styles */
+.device-tablet {
+  max-width: none !important;
+}
+
+.device-tablet .device-phone {
+  width: 100% !important;
+  max-width: 450px !important;
+}
+
+/* Enhanced device selector */
+.device-selector-trigger {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.2s ease;
+}
+
+.device-selector-trigger:hover {
+  background: rgba(0, 0, 0, 0.8);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.device-selector {
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .phone-frame::before {
   content: '';
   position: absolute;
