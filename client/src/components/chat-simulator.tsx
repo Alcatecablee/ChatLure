@@ -52,34 +52,34 @@ const deviceConfigs = {
     name: 'iPhone',
     icon: Smartphone,
     containerClass: 'max-w-sm',
-    phoneClass: 'rounded-[2.5rem]',
+    phoneClass: 'rounded-[2.5rem] w-80',
     screenClass: 'rounded-[2rem]',
-    chatHeight: 'h-96',
+    chatHeight: 'h-[500px]',
     description: 'Compact mobile view'
   },
   android: {
     name: 'Android',
     icon: Smartphone,
     containerClass: 'max-w-sm',
-    phoneClass: 'rounded-[1.5rem]',
+    phoneClass: 'rounded-[1.5rem] w-80',
     screenClass: 'rounded-[1rem]',
-    chatHeight: 'h-96',
+    chatHeight: 'h-[500px]',
     description: 'Android phone style'
   },
   tablet: {
     name: 'Tablet',
     icon: Tablet,
-    containerClass: '',
-    phoneClass: 'rounded-[2rem]',
+    containerClass: 'max-w-md',
+    phoneClass: 'rounded-[2rem] w-96',
     screenClass: 'rounded-[1.5rem]',
     chatHeight: 'h-[700px]',
-    description: 'Larger tablet view'
+    description: 'Larger tablet view - recommended'
   },
   desktop: {
     name: 'Desktop',
     icon: Monitor,
     containerClass: 'max-w-lg',
-    phoneClass: 'rounded-[1rem]',
+    phoneClass: 'rounded-[1rem] w-[500px]',
     screenClass: 'rounded-[0.5rem]',
     chatHeight: 'h-[600px]',
     description: 'Full desktop experience'
@@ -353,10 +353,11 @@ export default function ChatSimulator({ storyId = 1 }: ChatSimulatorProps) {
             onClick={() => cycleDeviceFormat('prev')}
             variant="ghost"
             size="lg"
-            className="bg-red-500 hover:bg-red-600 text-white rounded-full p-4 shadow-2xl"
-            style={{ width: '60px', height: '60px' }}
+            className="bg-black/60 hover:bg-black/80 text-white rounded-full p-3 shadow-2xl backdrop-blur-sm border border-white/20 transition-all duration-200 hover:scale-110"
+            style={{ width: '50px', height: '50px' }}
+            title="Previous device format"
           >
-            <ChevronLeft className="h-8 w-8" />
+            <ChevronLeft className="h-6 w-6" />
           </Button>
         </div>
         
@@ -365,10 +366,11 @@ export default function ChatSimulator({ storyId = 1 }: ChatSimulatorProps) {
             onClick={() => cycleDeviceFormat('next')}
             variant="ghost"
             size="lg"
-            className="bg-blue-500 hover:bg-blue-600 text-white rounded-full p-4 shadow-2xl"
-            style={{ width: '60px', height: '60px' }}
+            className="bg-black/60 hover:bg-black/80 text-white rounded-full p-3 shadow-2xl backdrop-blur-sm border border-white/20 transition-all duration-200 hover:scale-110"
+            style={{ width: '50px', height: '50px' }}
+            title="Next device format"
           >
-            <ChevronRight className="h-8 w-8" />
+            <ChevronRight className="h-6 w-6" />
           </Button>
         </div>
 
@@ -519,10 +521,11 @@ export default function ChatSimulator({ storyId = 1 }: ChatSimulatorProps) {
           onClick={() => cycleDeviceFormat('prev')}
           variant="ghost"
           size="lg"
-          className="bg-red-500 hover:bg-red-600 text-white rounded-full p-4 shadow-2xl"
-          style={{ width: '60px', height: '60px' }}
+          className="bg-black/60 hover:bg-black/80 text-white rounded-full p-3 shadow-2xl backdrop-blur-sm border border-white/20 transition-all duration-200 hover:scale-110"
+          style={{ width: '50px', height: '50px' }}
+          title="Previous device format"
         >
-          <ChevronLeft className="h-8 w-8" />
+          <ChevronLeft className="h-6 w-6" />
         </Button>
       </div>
       
@@ -531,10 +534,11 @@ export default function ChatSimulator({ storyId = 1 }: ChatSimulatorProps) {
           onClick={() => cycleDeviceFormat('next')}
           variant="ghost"
           size="lg"
-          className="bg-blue-500 hover:bg-blue-600 text-white rounded-full p-4 shadow-2xl"
-          style={{ width: '60px', height: '60px' }}
+          className="bg-black/60 hover:bg-black/80 text-white rounded-full p-3 shadow-2xl backdrop-blur-sm border border-white/20 transition-all duration-200 hover:scale-110"
+          style={{ width: '50px', height: '50px' }}
+          title="Next device format"
         >
-          <ChevronRight className="h-8 w-8" />
+          <ChevronRight className="h-6 w-6" />
         </Button>
       </div>
 
