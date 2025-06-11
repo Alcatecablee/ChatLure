@@ -1,9 +1,5 @@
 import { pgTable, text, serial, integer, boolean, timestamp, decimal } from "drizzle-orm/pg-core";
-<<<<<<< HEAD
-import { createInsertSchema, createSelectSchema } from "drizzle-zod";
-=======
 import { createInsertSchema } from "drizzle-zod";
->>>>>>> origin/main
 import { z } from "zod";
 
 export const stories = pgTable("stories", {
@@ -70,19 +66,9 @@ export type InsertCategory = z.infer<typeof insertCategorySchema>;
 
 export const users = pgTable("users", {
   id: serial("id").primaryKey(),
-<<<<<<< HEAD
-  
-  // Clerk Integration
-  clerkId: text("clerk_id").unique().notNull(),
-  
-  // Basic Profile Info (from Clerk)
-  username: text("username").notNull().unique(),
-  email: text("email").unique(),
-=======
   username: text("username").notNull().unique(),
   email: text("email").unique(),
   password: text("password").notNull(),
->>>>>>> origin/main
   firstName: text("first_name"),
   lastName: text("last_name"),
   profileImageUrl: text("profile_image_url"),
@@ -228,12 +214,6 @@ export const adminActions = pgTable("admin_actions", {
 });
 
 // Insert Schemas
-<<<<<<< HEAD
-export const insertUserSchema = createInsertSchema(users);
-export const selectUserSchema = createSelectSchema(users);
-export type User = typeof users.$inferSelect;
-export type NewUser = typeof users.$inferInsert;
-=======
 export const insertUserSchema = createInsertSchema(users).omit({
   id: true,
   isAdmin: true,
@@ -249,7 +229,6 @@ export const insertUserSchema = createInsertSchema(users).omit({
   createdAt: true,
   updatedAt: true,
 });
->>>>>>> origin/main
 
 export const insertSubscriptionPlanSchema = createInsertSchema(subscriptionPlans).omit({
   id: true,
@@ -294,11 +273,8 @@ export const insertAdminActionSchema = createInsertSchema(adminActions).omit({
 
 // Type Exports
 export type InsertUser = z.infer<typeof insertUserSchema>;
-<<<<<<< HEAD
-=======
 export type User = typeof users.$inferSelect;
 
->>>>>>> origin/main
 export type SubscriptionPlan = typeof subscriptionPlans.$inferSelect;
 export type InsertSubscriptionPlan = z.infer<typeof insertSubscriptionPlanSchema>;
 

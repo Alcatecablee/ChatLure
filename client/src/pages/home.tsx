@@ -1,20 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
-<<<<<<< HEAD
 import { MessageCircle, Flame, Eye, Share2, Bookmark, ArrowRight, Rocket, Smartphone } from "lucide-react";
-=======
-import { MessageCircle, Flame, Eye, Share2, Bookmark, ArrowRight, Rocket } from "lucide-react";
->>>>>>> origin/main
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/header";
 import StoryCard from "@/components/story-card";
 import StoryTeaser from "@/components/story-teaser";
-<<<<<<< HEAD
 import PhoneModal from "@/components/phone-modal";
-=======
-import ChatSimulator from "@/components/chat-simulator";
->>>>>>> origin/main
 import SocialShare from "@/components/social-share";
 import ViralChallenge from "@/components/viral-challenge";
 import StreakCounter from "@/components/streak-counter";
@@ -35,84 +27,197 @@ export default function Home() {
       <Header />
       
       {/* Hero Section */}
-<<<<<<< HEAD
       <section className="relative overflow-hidden fade-in">
-        <div className="relative bg-background px-4 py-16 md:py-24 border-b border-border">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-foreground animate-in slide-in-from-bottom-8 duration-1000">
-              ChatLure
-            </h1>
-            <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-destructive animate-in slide-in-from-bottom-8 duration-1000 delay-200">
-              Peek. Obsess. Repeat.
-            </h2>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto animate-in slide-in-from-bottom-8 duration-1000 delay-400">
-              Dive into the addictive world of secret chats. Watch hyper-realistic conversations unfold with drama, scandal, and explosive cliffhangers.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-in slide-in-from-bottom-8 duration-1000 delay-600">
-              <Link href="/chat/1">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-surface opacity-50"></div>
+        <div className="absolute inset-0 bg-dot-pattern opacity-10"></div>
+        
+        {/* Floating Chat Bubbles */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 left-10 animate-float">
+            <div className="bg-green-500/20 backdrop-blur-sm rounded-2xl p-3 border border-green-500/30">
+              <MessageCircle className="w-6 h-6 text-green-400" />
+            </div>
+          </div>
+          <div className="absolute top-32 right-16 animate-float-delayed">
+            <div className="bg-blue-500/20 backdrop-blur-sm rounded-2xl p-3 border border-blue-500/30">
+              <Eye className="w-6 h-6 text-blue-400" />
+            </div>
+          </div>
+          <div className="absolute bottom-32 left-16 animate-bounce-slow">
+            <div className="bg-red-500/20 backdrop-blur-sm rounded-2xl p-3 border border-red-500/30">
+              <Flame className="w-6 h-6 text-red-400" />
+            </div>
+          </div>
+          <div className="absolute bottom-20 right-10 animate-pulse-slow">
+            <div className="bg-purple-500/20 backdrop-blur-sm rounded-2xl p-3 border border-purple-500/30">
+              <Share2 className="w-6 h-6 text-purple-400" />
+            </div>
+          </div>
+        </div>
+
+        <div className="relative bg-background px-4 py-20 md:py-32 border-b border-border">
+          <div className="max-w-6xl mx-auto">
+            {/* Main Content */}
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center bg-red-500/10 border border-red-500/20 rounded-full px-6 py-2 mb-8 animate-in slide-in-from-bottom-8 duration-1000">
+                <Flame className="w-4 h-4 text-red-400 mr-2 animate-pulse" />
+                <span className="text-red-400 font-semibold text-sm">🔥 GOING VIRAL RIGHT NOW</span>
+              </div>
+              
+              <h1 className="text-6xl md:text-8xl lg:text-9xl font-black mb-6 text-foreground animate-in slide-in-from-bottom-8 duration-1000 delay-200">
+                <span className="bg-gradient-to-r from-foreground via-primary to-destructive bg-clip-text text-transparent">
+                  ChatLure
+                </span>
+              </h1>
+              
+              <div className="relative mb-8 animate-in slide-in-from-bottom-8 duration-1000 delay-400">
+                <h2 className="text-3xl md:text-5xl font-bold mb-2 text-destructive">
+                  Peek. Obsess. Repeat.
+                </h2>
+                <div className="w-32 h-1 bg-gradient-to-r from-red-500 to-pink-500 mx-auto rounded-full"></div>
+              </div>
+              
+              <p className="text-xl md:text-2xl lg:text-3xl text-muted-foreground mb-4 max-w-4xl mx-auto leading-relaxed animate-in slide-in-from-bottom-8 duration-1000 delay-600">
+                Dive into the <span className="text-foreground font-semibold">addictive world</span> of secret chats
+              </p>
+              
+              <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-3xl mx-auto animate-in slide-in-from-bottom-8 duration-1000 delay-800">
+                Watch <span className="text-red-400 font-semibold">hyper-realistic conversations</span> unfold with drama, scandal, and explosive cliffhangers that'll keep you coming back for more
+              </p>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-in slide-in-from-bottom-8 duration-1000 delay-1000">
+                <Link href="/chat/1">
+                  <Button 
+                    size="lg" 
+                    className="px-12 py-6 bg-gradient-to-r from-red-500 to-pink-600 hover:from-red-600 hover:to-pink-700 rounded-2xl text-white font-bold text-xl shadow-2xl hover:shadow-red-500/25 transform hover:scale-105 transition-all duration-300 btn-primary group relative overflow-hidden"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+                    <Flame className="mr-3 h-6 w-6 animate-pulse" />
+                    👀 Start Peeking Now
+                    <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
+                
                 <Button 
-                  size="lg" 
-                  className="px-8 py-4 bg-primary hover:bg-primary/90 rounded-xl text-primary-foreground font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 btn-primary"
-=======
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background"></div>
-        <div className="relative bg-gradient-to-br from-surface via-background to-surface px-4 py-16 md:py-24">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-foreground via-text-secondary to-text-muted bg-clip-text text-transparent">
-              ChatLure
-            </h1>
-            <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-destructive">
-              Peek. Obsess. Repeat.
-            </h2>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Dive into the addictive world of secret chats. Watch hyper-realistic conversations unfold with drama, scandal, and explosive cliffhangers.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/chat/1">
-                <Button 
-                  size="lg" 
-                  className="px-8 py-4 bg-gradient-to-r from-primary to-accent-blue hover:from-accent-blue hover:to-primary rounded-xl text-primary-foreground font-semibold text-lg shadow-xl transform hover:scale-105 transition-all"
->>>>>>> origin/main
+                  variant="outline" 
+                  size="lg"
+                  className="px-12 py-6 border-2 border-border hover:border-primary text-foreground rounded-2xl font-bold text-xl transition-all duration-300 bg-transparent hover:bg-surface btn-secondary group backdrop-blur-sm"
+                  onClick={() => {
+                    const element = document.querySelector('#featured-stories') as HTMLElement;
+                    element?.scrollIntoView({ behavior: 'smooth' });
+                  }}
                 >
-                  <Flame className="mr-2 h-5 w-5" />
-                  Start Watching
+                  <Share2 className="mr-3 h-6 w-6 group-hover:rotate-12 transition-transform" />
+                  Browse Stories
                 </Button>
-              </Link>
-              <Button 
-                variant="outline" 
-                size="lg"
-<<<<<<< HEAD
-                className="px-8 py-4 border-2 border-border hover:border-primary text-foreground rounded-xl font-semibold text-lg transition-all duration-200 bg-transparent hover:bg-surface btn-secondary"
-=======
-                className="px-8 py-4 border-2 border-border hover:border-primary text-foreground rounded-xl font-semibold text-lg transition-colors bg-transparent hover:bg-surface"
->>>>>>> origin/main
-                onClick={() => {
-                  const element = document.querySelector('#featured-stories') as HTMLElement;
-                  element?.scrollIntoView({ behavior: 'smooth' });
-                }}
-              >
-                <Share2 className="mr-2 h-5 w-5" />
-                Browse Stories
-              </Button>
+              </div>
+            </div>
+
+            {/* Stats Row */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center animate-in slide-in-from-bottom-8 duration-1000 delay-1200">
+              <div className="space-y-2">
+                <div className="text-4xl md:text-5xl font-black text-primary">2.4M+</div>
+                <div className="text-muted-foreground font-semibold">Addicted Users</div>
+                <div className="text-sm text-muted-foreground">Can't stop peeking</div>
+              </div>
+              <div className="space-y-2">
+                <div className="text-4xl md:text-5xl font-black text-destructive">97%</div>
+                <div className="text-muted-foreground font-semibold">Share Rate</div>
+                <div className="text-sm text-muted-foreground">Stories go viral instantly</div>
+              </div>
+              <div className="space-y-2">
+                <div className="text-4xl md:text-5xl font-black text-green-500">45min</div>
+                <div className="text-muted-foreground font-semibold">Avg Session</div>
+                <div className="text-sm text-muted-foreground">Completely hooked</div>
+              </div>
+            </div>
+
+            {/* Preview Cards */}
+            <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6 animate-in slide-in-from-bottom-8 duration-1000 delay-1400">
+              <div className="group relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-red-500/20 to-pink-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+                <Card className="relative bg-background/80 backdrop-blur-sm border border-red-500/20 rounded-2xl overflow-hidden hover:border-red-500/40 transition-all duration-300">
+                  <CardContent className="p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-12 h-12 bg-red-500/20 rounded-full flex items-center justify-center">
+                        <Flame className="w-6 h-6 text-red-400" />
+                      </div>
+                      <div>
+                        <div className="font-bold text-foreground">💔 Heartbreak</div>
+                        <div className="text-sm text-muted-foreground">Most addictive</div>
+                      </div>
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      "Wait... did she just say what I think she said? OMG I can't believe this is happening..."
+                    </p>
+                    <div className="mt-4 flex items-center justify-between">
+                      <span className="text-xs text-red-400 font-semibold">🔥 VIRAL</span>
+                      <span className="text-xs text-muted-foreground">2.1M views</span>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <div className="group relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+                <Card className="relative bg-background/80 backdrop-blur-sm border border-purple-500/20 rounded-2xl overflow-hidden hover:border-purple-500/40 transition-all duration-300">
+                  <CardContent className="p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center">
+                        <Eye className="w-6 h-6 text-purple-400" />
+                      </div>
+                      <div>
+                        <div className="font-bold text-foreground">🕵️ Mystery</div>
+                        <div className="text-sm text-muted-foreground">Mind-bending</div>
+                      </div>
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      "The messages are getting weirder... who is this person really? Something doesn't add up..."
+                    </p>
+                    <div className="mt-4 flex items-center justify-between">
+                      <span className="text-xs text-green-400 font-semibold">NEW</span>
+                      <span className="text-xs text-muted-foreground">1.8M views</span>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <div className="group relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-green-500/20 to-teal-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+                <Card className="relative bg-background/80 backdrop-blur-sm border border-green-500/20 rounded-2xl overflow-hidden hover:border-green-500/40 transition-all duration-300">
+                  <CardContent className="p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center">
+                        <Share2 className="w-6 h-6 text-green-400" />
+                      </div>
+                      <div>
+                        <div className="font-bold text-foreground">😂 Comedy</div>
+                        <div className="text-sm text-muted-foreground">Share-worthy</div>
+                      </div>
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      "LMAOOO did they really just autocorrect THAT to their boss?! This is going on my story..."
+                    </p>
+                    <div className="mt-4 flex items-center justify-between">
+                      <span className="text-xs text-orange-400 font-semibold">HOT</span>
+                      <span className="text-xs text-muted-foreground">3.2M views</span>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Story Teasers */}
-<<<<<<< HEAD
       <section id="featured-stories" className="py-16 px-4 bg-background">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12 fade-in">
             <h3 className="text-4xl font-bold text-foreground mb-4 flex items-center justify-center">
               <Flame className="mr-3 h-10 w-10 text-destructive animate-pulse" />
-=======
-      <section id="featured-stories" className="py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h3 className="text-4xl font-bold text-foreground mb-4 flex items-center justify-center">
-              <Flame className="mr-3 h-10 w-10 text-destructive" />
->>>>>>> origin/main
               🔥 Viral Stories Everyone's Obsessing Over
             </h3>
             <p className="text-xl text-muted-foreground">Carefully crafted to trigger curiosity and spark viral sharing</p>
@@ -121,11 +226,7 @@ export default function Home() {
           {storiesLoading ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[...Array(6)].map((_, i) => (
-<<<<<<< HEAD
                 <Card key={i} className="card-enhanced skeleton animate-pulse">
-=======
-                <Card key={i} className="bg-card border-border animate-pulse">
->>>>>>> origin/main
                   <div className="h-48 bg-surface rounded-t-2xl"></div>
                   <CardContent className="p-4">
                     <div className="h-4 bg-surface rounded mb-2"></div>
@@ -141,7 +242,6 @@ export default function Home() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {trendingStories?.map((story, index) => (
-<<<<<<< HEAD
                 <div key={story.id} className="fade-in" style={{ animationDelay: `${index * 100}ms` }}>
                   <StoryTeaser 
                     story={story} 
@@ -149,14 +249,6 @@ export default function Home() {
                     showPreview={story.isViral}
                   />
                 </div>
-=======
-                <StoryTeaser 
-                  key={story.id} 
-                  story={story} 
-                  size={index === 0 ? "large" : "medium"}
-                  showPreview={story.isViral}
-                />
->>>>>>> origin/main
               ))}
             </div>
           )}
@@ -164,7 +256,6 @@ export default function Home() {
       </section>
 
       {/* Interactive Demo Section */}
-<<<<<<< HEAD
       <section className="py-16 px-4 bg-background">
         <div className="max-w-4xl mx-auto text-center">
           <h3 className="text-3xl font-bold mb-4 text-foreground fade-in">Experience the Thrill</h3>
@@ -198,292 +289,82 @@ export default function Home() {
           </div>
           
           <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-surface p-6 rounded-xl border border-border card-enhanced hover:scale-105 transition-all duration-300">
-              <Flame className="w-8 h-8 text-destructive mx-auto mb-3" />
-              <h4 className="font-bold text-foreground mb-2">Real-Time Drama</h4>
-              <p className="text-muted-foreground text-sm">Watch messages appear with authentic typing delays and realistic conversation flow</p>
-            </div>
-            <div className="bg-surface p-6 rounded-xl border border-border card-enhanced hover:scale-105 transition-all duration-300">
-              <Share2 className="w-8 h-8 text-primary mx-auto mb-3" />
-              <h4 className="font-bold text-foreground mb-2">Viral Sharing</h4>
-              <p className="text-muted-foreground text-sm">Share shocking moments to unlock endings and spread the obsession</p>
-            </div>
-            <div className="bg-surface p-6 rounded-xl border border-border card-enhanced hover:scale-105 transition-all duration-300">
-              <Eye className="w-8 h-8 text-primary mx-auto mb-3" />
-              <h4 className="font-bold text-foreground mb-2">Addictive Voyeurism</h4>
-              <p className="text-muted-foreground text-sm">Feel like you're secretly peeking into someone's private conversations</p>
-=======
-      <section className="py-16 px-4 bg-gradient-to-b from-[var(--dark-bg)] to-gray-900">
-        <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-3xl font-bold mb-4 text-white">Experience the Thrill</h3>
-          <p className="text-gray-300 mb-8 text-lg">Watch a conversation unfold right now. Feel your heart race as secrets are revealed...</p>
-          
-          <div className="bg-black/30 backdrop-blur-sm rounded-2xl p-8 border border-gray-700">
-            <ChatSimulator storyId={1} />
-          </div>
-          
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-gradient-to-br from-red-500/10 to-pink-500/10 p-6 rounded-xl border border-red-500/20">
-              <Flame className="w-8 h-8 text-red-500 mx-auto mb-3" />
-              <h4 className="font-bold text-white mb-2">Real-Time Drama</h4>
-              <p className="text-gray-400 text-sm">Watch messages appear with authentic typing delays and realistic conversation flow</p>
-            </div>
-            <div className="bg-gradient-to-br from-purple-500/10 to-blue-500/10 p-6 rounded-xl border border-purple-500/20">
-              <Share2 className="w-8 h-8 text-purple-500 mx-auto mb-3" />
-              <h4 className="font-bold text-white mb-2">Viral Sharing</h4>
-              <p className="text-gray-400 text-sm">Share shocking moments to unlock endings and spread the obsession</p>
-            </div>
-            <div className="bg-gradient-to-br from-green-500/10 to-teal-500/10 p-6 rounded-xl border border-green-500/20">
-              <Eye className="w-8 h-8 text-green-500 mx-auto mb-3" />
-              <h4 className="font-bold text-white mb-2">Addictive Voyeurism</h4>
-              <p className="text-gray-400 text-sm">Feel like you're secretly peeking into someone's private conversations</p>
->>>>>>> origin/main
-            </div>
+            <Card className="card-enhanced bg-surface border border-border fade-in">
+              <CardContent className="p-6 text-center">
+                <Eye className="w-8 h-8 text-primary mx-auto mb-3" />
+                <h4 className="font-bold text-foreground mb-2">Immersive Experience</h4>
+                <p className="text-muted-foreground text-sm">Watch messages unfold in real-time with authentic delays</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="card-enhanced bg-surface border border-border fade-in">
+              <CardContent className="p-6 text-center">
+                <Share2 className="w-8 h-8 text-primary mx-auto mb-3" />
+                <h4 className="font-bold text-foreground mb-2">Viral Sharing</h4>
+                <p className="text-muted-foreground text-sm">Share to unlock plot twists and surprise endings</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="card-enhanced bg-surface border border-border fade-in">
+              <CardContent className="p-6 text-center">
+                <Rocket className="w-8 h-8 text-primary mx-auto mb-3" />
+                <h4 className="font-bold text-foreground mb-2">Addictive Content</h4>
+                <p className="text-muted-foreground text-sm">Stories designed to keep you coming back for more</p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
-      {/* Viral Challenges */}
-      <ViralChallenge />
-
-      {/* Categories */}
-<<<<<<< HEAD
-      <section className="py-16 px-4 bg-background">
+      {/* Categories Section */}
+      <section className="py-16 px-4 bg-surface">
         <div className="max-w-6xl mx-auto">
-          <h3 className="text-3xl font-bold text-center mb-12 text-foreground fade-in">Explore by Category</h3>
-=======
-      <section className="py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h3 className="text-3xl font-bold text-center mb-12">Explore by Category</h3>
->>>>>>> origin/main
+          <div className="text-center mb-12 fade-in">
+            <h3 className="text-3xl font-bold text-foreground mb-4">Choose Your Drama</h3>
+            <p className="text-muted-foreground text-lg">Every category is designed to trigger different emotions and sharing behaviors</p>
+          </div>
           
           {categoriesLoading ? (
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {[...Array(6)].map((_, i) => (
-<<<<<<< HEAD
-                <div key={i} className="card-enhanced skeleton animate-pulse rounded-2xl p-6">
-                  <div className="h-12 w-12 bg-surface rounded mx-auto mb-4"></div>
-                  <div className="h-4 bg-surface rounded mb-2"></div>
-                  <div className="h-3 bg-surface rounded"></div>
-=======
-                <div key={i} className="bg-gray-700 rounded-2xl p-6 animate-pulse">
-                  <div className="h-12 w-12 bg-gray-600 rounded mx-auto mb-4"></div>
-                  <div className="h-4 bg-gray-600 rounded mb-2"></div>
-                  <div className="h-3 bg-gray-600 rounded"></div>
->>>>>>> origin/main
-                </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {[...Array(8)].map((_, i) => (
+                <Card key={i} className="animate-pulse">
+                  <div className="h-24 bg-surface rounded"></div>
+                </Card>
               ))}
             </div>
           ) : (
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-<<<<<<< HEAD
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {categories?.map((category, index) => (
-                <Link key={category.id} href={`/category/${category.name.toLowerCase()}`}>
-                  <Card 
-                    className="card-enhanced hover-scale cursor-pointer fade-in bg-surface border border-border"
-                    style={{ animationDelay: `${index * 100}ms` }}
-                  >
-                    <CardContent className="p-6 text-center">
-                      <div className="text-4xl mb-3">{category.emoji}</div>
-                      <h4 className="text-foreground font-semibold mb-2">{category.name}</h4>
-                      <p className="text-muted-foreground text-sm">{formatNumber(category.count)} stories</p>
-=======
-              {categories?.map((category) => (
-                <Link key={category.id} href={`/category/${category.name.toLowerCase()}`}>
-                  <Card className={`bg-gradient-to-br ${getCategoryGradient(category.name)} hover:scale-105 transition-all cursor-pointer`}>
-                    <CardContent className="p-6 text-center">
-                      <div className="text-4xl mb-3">{category.emoji}</div>
-                      <h4 className="text-white font-semibold mb-2">{category.name}</h4>
-                      <p className="text-gray-300 text-sm">{formatNumber(category.count)} stories</p>
->>>>>>> origin/main
-                    </CardContent>
-                  </Card>
-                </Link>
+                <Card 
+                  key={category.id} 
+                  className={`cursor-pointer hover:scale-105 transition-all duration-200 border-2 hover:border-primary fade-in ${getCategoryGradient(category.name)}`}
+                  style={{ animationDelay: `${index * 50}ms` }}
+                >
+                  <CardContent className="p-6 text-center">
+                    <div className="text-3xl mb-2">{category.emoji}</div>
+                    <h4 className="font-bold text-foreground mb-1">{category.name}</h4>
+                    <p className="text-xs text-muted-foreground">{formatNumber(category.storyCount)} stories</p>
+                  </CardContent>
+                </Card>
               ))}
             </div>
           )}
         </div>
       </section>
 
-      {/* Social Proof */}
-<<<<<<< HEAD
-      <section className="py-16 px-4 bg-background border-y border-border">
-        <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-3xl font-bold mb-8 text-foreground fade-in">Join the Viral Revolution</h3>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <div className="text-center fade-in">
-              <div className="text-4xl font-bold text-primary mb-2">2.3M+</div>
-              <p className="text-muted-foreground">Active Watchers</p>
-            </div>
-            <div className="text-center fade-in" style={{ animationDelay: '200ms' }}>
-              <div className="text-4xl font-bold text-destructive mb-2">15M+</div>
-              <p className="text-muted-foreground">Stories Shared</p>
-            </div>
-            <div className="text-center fade-in" style={{ animationDelay: '400ms' }}>
-              <div className="text-4xl font-bold text-primary mb-2">50K+</div>
-              <p className="text-muted-foreground">Drama Stories</p>
-            </div>
-          </div>
-
-          <div className="relative rounded-2xl overflow-hidden glass-effect shadow-2xl fade-in">
-            <img 
-              src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=400" 
-              alt="People sharing stories"
-              className="w-full h-64 object-cover opacity-80"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent flex items-end justify-center p-6">
-              <Link href="/chat/1">
-                <Button size="lg" className="btn-primary px-8 py-3 text-lg font-semibold hover:scale-105 transition-all duration-200">
-                  <Rocket className="mr-2 h-5 w-5" />
-                  Start Your Journey
-                </Button>
-              </Link>
-=======
-      <section className="py-16 px-4 bg-gradient-to-r from-[var(--whatsapp)]/10 to-[var(--whatsapp-dark)]/10">
-        <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-3xl font-bold mb-8">Join the Viral Revolution</h3>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-[var(--whatsapp)] mb-2">2.3M+</div>
-              <p className="text-gray-400">Active Watchers</p>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-[var(--dramatic)] mb-2">15M+</div>
-              <p className="text-gray-400">Stories Shared</p>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-[var(--highlight)] mb-2">50K+</div>
-              <p className="text-gray-400">Drama Stories</p>
-            </div>
-          </div>
-
-          <div className="relative rounded-2xl overflow-hidden">
-            <img 
-              src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=400" 
-              alt="Group of people looking shocked at their phones showing dramatic chat conversations" 
-              className="w-full h-64 object-cover" 
-            />
-            <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
-              <div className="text-center">
-                <h4 className="text-2xl font-bold text-white mb-4">Ready to get obsessed?</h4>
-                <Button 
-                  size="lg"
-                  className="px-8 py-4 bg-[var(--whatsapp)] hover:bg-[var(--whatsapp-dark)] text-white font-semibold rounded-xl shadow-xl transform hover:scale-105 transition-all"
-                >
-                  <Rocket className="mr-2 h-5 w-5" />
-                  Start Your Journey
-                </Button>
-              </div>
->>>>>>> origin/main
-            </div>
-          </div>
+      {/* Viral Challenge Section */}
+      <section className="py-16 px-4 bg-background">
+        <div className="max-w-4xl mx-auto">
+          <ViralChallenge />
         </div>
       </section>
 
-      {/* Footer */}
-<<<<<<< HEAD
-      <footer className="bg-background py-12 px-4 border-t border-border">
-=======
-      <footer className="bg-gray-900 py-12 px-4">
->>>>>>> origin/main
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="col-span-1 md:col-span-2">
-              <div className="flex items-center space-x-3 mb-4">
-<<<<<<< HEAD
-                <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
-                  <MessageCircle className="text-primary-foreground text-lg" />
-                </div>
-                <div>
-                  <h4 className="text-xl font-bold text-foreground">ChatLure</h4>
-                  <p className="text-sm text-muted-foreground">Peek. Obsess. Repeat.</p>
-                </div>
-              </div>
-              <p className="text-muted-foreground mb-4">Dive into the addictive world of secret chats and viral storytelling.</p>
-=======
-                <div className="w-10 h-10 bg-gradient-to-r from-[var(--whatsapp)] to-[var(--whatsapp-dark)] rounded-xl flex items-center justify-center">
-                  <MessageCircle className="text-white text-lg" />
-                </div>
-                <div>
-                  <h4 className="text-xl font-bold text-white">ChatLure</h4>
-                  <p className="text-sm text-gray-400">Peek. Obsess. Repeat.</p>
-                </div>
-              </div>
-              <p className="text-gray-400 mb-4">Dive into the addictive world of secret chats and viral storytelling.</p>
->>>>>>> origin/main
-              <SocialShare />
-            </div>
-            
-            <div>
-<<<<<<< HEAD
-              <h5 className="text-foreground font-semibold mb-4">Categories</h5>
-              <ul className="space-y-2 text-muted-foreground">
-                {categories?.slice(0, 4).map((category) => (
-                  <li key={category.id}>
-                    <Link href={`/category/${category.name.toLowerCase()}`} className="hover:text-primary transition-colors">
-=======
-              <h5 className="text-white font-semibold mb-4">Categories</h5>
-              <ul className="space-y-2 text-gray-400">
-                {categories?.slice(0, 4).map((category) => (
-                  <li key={category.id}>
-                    <Link href={`/category/${category.name.toLowerCase()}`} className="hover:text-[var(--whatsapp)] transition-colors">
->>>>>>> origin/main
-                      {category.emoji} {category.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            
-            <div>
-<<<<<<< HEAD
-              <h5 className="text-foreground font-semibold mb-4">Support</h5>
-              <ul className="space-y-2 text-muted-foreground">
-                <li><a href="#" className="hover:text-primary transition-colors">Help Center</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Community</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Terms of Service</a></li>
-=======
-              <h5 className="text-white font-semibold mb-4">Support</h5>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-[var(--whatsapp)] transition-colors">Help Center</a></li>
-                <li><a href="#" className="hover:text-[var(--whatsapp)] transition-colors">Community</a></li>
-                <li><a href="#" className="hover:text-[var(--whatsapp)] transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-[var(--whatsapp)] transition-colors">Terms of Service</a></li>
->>>>>>> origin/main
-              </ul>
-            </div>
-          </div>
-          
-<<<<<<< HEAD
-          <div className="border-t border-border mt-8 pt-8 text-center">
-            <p className="text-muted-foreground">&copy; 2024 ChatLure. All rights reserved. Get ready to be obsessed.</p>
-=======
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-            <p className="text-gray-400">&copy; 2024 ChatLure. All rights reserved. Get ready to be obsessed.</p>
->>>>>>> origin/main
-          </div>
-        </div>
-      </footer>
-
-      {/* Floating Social Share Bar (Mobile) */}
-<<<<<<< HEAD
-      <div className="fixed bottom-0 left-0 right-0 bg-surface/95 backdrop-blur-sm border-t border-border p-4 md:hidden z-40">
-        <div className="flex items-center justify-between">
-          <span className="text-foreground font-medium text-sm">Share the drama!</span>
-=======
-      <div className="fixed bottom-0 left-0 right-0 bg-[var(--card-bg)]/95 backdrop-blur-sm border-t border-gray-700 p-4 md:hidden z-40">
-        <div className="flex items-center justify-between">
-          <span className="text-white font-medium text-sm">Share the drama!</span>
->>>>>>> origin/main
-          <SocialShare compact />
-        </div>
-      </div>
-
       {/* Streak Counter */}
-      <StreakCounter />
+      <section className="py-8 px-4 bg-surface border-t border-border">
+        <div className="max-w-4xl mx-auto">
+          <StreakCounter />
+        </div>
+      </section>
     </div>
   );
 }

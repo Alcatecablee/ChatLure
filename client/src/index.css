@@ -3,36 +3,45 @@
 @tailwind utilities;
 
 :root {
-<<<<<<< HEAD
-  /* Cursor.com inspired minimal dark theme - single consistent background */
-  --background: hsl(215, 14%, 9%);
-  --foreground: hsl(210, 11%, 85%);
-  --muted: hsl(215, 14%, 12%);
-  --muted-foreground: hsl(210, 9%, 55%);
-  --popover: hsl(215, 14%, 11%);
-  --popover-foreground: hsl(210, 11%, 85%);
-  --card: hsl(215, 14%, 11%);
-  --card-foreground: hsl(210, 11%, 85%);
-  --border: hsl(215, 14%, 16%);
-  --input: hsl(215, 14%, 12%);
-  --primary: hsl(210, 100%, 56%);
+  /* Cursor.com inspired dark theme with ChatLure specifics */
+  --background: hsl(220, 13%, 9%);
+  --foreground: hsl(220, 9%, 90%);
+  --muted: hsl(220, 13%, 15%);
+  --muted-foreground: hsl(220, 9%, 55%);
+  --popover: hsl(220, 13%, 11%);
+  --popover-foreground: hsl(220, 9%, 90%);
+  --card: hsl(220, 13%, 11%);
+  --card-foreground: hsl(220, 9%, 90%);
+  --border: hsl(220, 13%, 18%);
+  --input: hsl(220, 13%, 15%);
+  --primary: hsl(221, 83%, 53%);
   --primary-foreground: hsl(210, 40%, 98%);
-  --secondary: hsl(215, 14%, 12%);
-  --secondary-foreground: hsl(210, 11%, 85%);
-  --accent: hsl(215, 14%, 14%);
-  --accent-foreground: hsl(210, 11%, 85%);
-  --destructive: hsl(0, 62%, 52%);
+  --secondary: hsl(220, 13%, 15%);
+  --secondary-foreground: hsl(220, 9%, 90%);
+  --accent: hsl(220, 13%, 15%);
+  --accent-foreground: hsl(220, 9%, 90%);
+  --destructive: hsl(0, 62%, 50%);
   --destructive-foreground: hsl(210, 40%, 98%);
-  --ring: hsl(210, 100%, 56%);
+  --ring: hsl(221, 83%, 53%);
   --radius: 0.5rem;
   
-  /* Simplified color palette - minimal like cursor.com */
-  --surface: hsl(215, 14%, 11%);
-  --surface-hover: hsl(215, 14%, 14%);
-  --text-primary: hsl(210, 11%, 85%);
-  --text-secondary: hsl(210, 9%, 55%);
-  --text-muted: hsl(210, 9%, 40%);
-  --accent-blue: hsl(210, 100%, 56%);
+  /* ChatLure specific colors */
+  --whatsapp: hsl(142, 71%, 45%);
+  --whatsapp-dark: hsl(142, 71%, 35%);
+  --chat-incoming: hsl(220, 13%, 15%);
+  --chat-outgoing: hsl(221, 83%, 53%);
+  --dramatic: hsl(0, 84%, 60%);
+  --highlight: hsl(48, 96%, 53%);
+  --dark-bg: hsl(220, 13%, 9%);
+  --card-bg: hsl(220, 13%, 11%);
+  --surface: hsl(220, 13%, 13%);
+  --surface-hover: hsl(220, 13%, 16%);
+  --text-primary: hsl(220, 9%, 90%);
+  --text-secondary: hsl(220, 9%, 65%);
+  --text-muted: hsl(220, 9%, 45%);
+  --accent-blue: hsl(221, 83%, 53%);
+  --accent-purple: hsl(262, 83%, 58%);
+  --accent-green: hsl(142, 71%, 45%);
 }
 
 /* Light theme fallback */
@@ -56,68 +65,109 @@
   --destructive: hsl(0, 84.2%, 60.2%);
   --destructive-foreground: hsl(210, 40%, 98%);
   --ring: hsl(210, 100%, 50%);
-=======
-  /* Cursor.com inspired dark theme */
-  --background: hsl(220, 13%, 9%);
-  --foreground: hsl(220, 9%, 90%);
-  --muted: hsl(220, 13%, 15%);
-  --muted-foreground: hsl(220, 9%, 55%);
-  --popover: hsl(220, 13%, 11%);
-  --popover-foreground: hsl(220, 9%, 90%);
-  --card: hsl(220, 13%, 11%);
-  --card-foreground: hsl(220, 9%, 90%);
-  --border: hsl(220, 13%, 18%);
-  --input: hsl(220, 13%, 15%);
-  --primary: hsl(221, 83%, 53%);
-  --primary-foreground: hsl(210, 40%, 98%);
-  --secondary: hsl(220, 13%, 15%);
-  --secondary-foreground: hsl(220, 9%, 90%);
-  --accent: hsl(220, 13%, 15%);
-  --accent-foreground: hsl(220, 9%, 90%);
-  --destructive: hsl(0, 62%, 50%);
-  --destructive-foreground: hsl(210, 40%, 98%);
-  --ring: hsl(221, 83%, 53%);
-  --radius: 0.5rem;
-  
-  /* ChatLure specific colors - cursor.com inspired */
-  --whatsapp: hsl(142, 71%, 45%);
-  --whatsapp-dark: hsl(142, 71%, 35%);
-  --chat-incoming: hsl(220, 13%, 15%);
-  --chat-outgoing: hsl(221, 83%, 53%);
-  --dramatic: hsl(0, 84%, 60%);
-  --highlight: hsl(48, 96%, 53%);
-  --dark-bg: hsl(220, 13%, 9%);
-  --card-bg: hsl(220, 13%, 11%);
-  --surface: hsl(220, 13%, 13%);
-  --surface-hover: hsl(220, 13%, 16%);
-  --text-primary: hsl(220, 9%, 90%);
-  --text-secondary: hsl(220, 9%, 65%);
-  --text-muted: hsl(220, 9%, 45%);
-  --accent-blue: hsl(221, 83%, 53%);
-  --accent-purple: hsl(262, 83%, 58%);
-  --accent-green: hsl(142, 71%, 45%);
->>>>>>> origin/main
 }
 
 /* Phone Frame Styles */
 .phone-frame {
   width: 375px;
   height: 812px;
-<<<<<<< HEAD
   background: var(--card);
   border-radius: 40px;
   padding: 8px;
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px var(--border);
-=======
-  background: #000;
-  border-radius: 40px;
-  padding: 8px;
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
->>>>>>> origin/main
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+}
+
+/* Responsive phone frame - scale down if viewport is too small */
+.phone-frame-responsive {
+  width: 375px;
+  height: 812px;
+  max-height: 90vh;
+  max-width: 90vw;
+  background: var(--card);
+  border-radius: 40px;
+  padding: 8px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px var(--border);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  /* Scale down proportionally if needed */
+  transform-origin: center;
+  /* Smooth transitions for zoom changes */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Scale down phone if viewport height is too small */
+@media (max-height: 900px) {
+  .phone-frame-responsive {
+    transform: scale(0.85);
+  }
+}
+
+@media (max-height: 800px) {
+  .phone-frame-responsive {
+    transform: scale(0.75);
+  }
+}
+
+@media (max-height: 700px) {
+  .phone-frame-responsive {
+    transform: scale(0.65);
+  }
+}
+
+@media (max-height: 600px) {
+  .phone-frame-responsive {
+    transform: scale(0.55);
+  }
+}
+
+@media (max-height: 500px) {
+  .phone-frame-responsive {
+    transform: scale(0.45);
+  }
+}
+
+@media (max-height: 400px) {
+  .phone-frame-responsive {
+    transform: scale(0.35);
+  }
+}
+
+/* Also scale for very narrow viewports */
+@media (max-width: 450px) {
+  .phone-frame-responsive {
+    transform: scale(0.8);
+  }
+}
+
+@media (max-width: 400px) {
+  .phone-frame-responsive {
+    transform: scale(0.7);
+  }
+}
+
+@media (max-width: 350px) {
+  .phone-frame-responsive {
+    transform: scale(0.6);
+  }
+}
+
+/* Handle combined small width AND height constraints */
+@media (max-height: 700px) and (max-width: 450px) {
+  .phone-frame-responsive {
+    transform: scale(0.5);
+  }
+}
+
+@media (max-height: 600px) and (max-width: 400px) {
+  .phone-frame-responsive {
+    transform: scale(0.4);
+  }
 }
 
 .phone-frame::before {
@@ -128,23 +178,14 @@
   transform: translateX(-50%);
   width: 150px;
   height: 6px;
-<<<<<<< HEAD
   background: var(--muted);
-=======
-  background: #333;
->>>>>>> origin/main
   border-radius: 3px;
   z-index: 10;
 }
 
 .status-bar {
-<<<<<<< HEAD
   background: var(--background);
   color: var(--text-primary);
-=======
-  background: #000;
-  color: white;
->>>>>>> origin/main
   padding: 8px 20px 4px;
   display: flex;
   justify-content: space-between;
@@ -152,7 +193,6 @@
   font-size: 14px;
   font-weight: 600;
   padding-top: 20px;
-<<<<<<< HEAD
   border-bottom: 1px solid var(--border);
 }
 
@@ -160,18 +200,10 @@
   background: hsl(142, 71%, 45%);
   padding: 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-=======
-}
-
-.chat-header {
-  background: linear-gradient(135deg, #075e54 0%, #128c7e 100%);
-  padding: 0;
->>>>>>> origin/main
 }
 
 .chat-area {
   flex: 1;
-<<<<<<< HEAD
   background: var(--background);
   position: relative;
 }
@@ -182,38 +214,16 @@
 
 .whatsapp-input {
   background: var(--surface);
-=======
-  background: #e5ddd5;
-  position: relative;
-  background-image: 
-    radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 40% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%);
-}
-
-.chat-background {
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-}
-
-.whatsapp-input {
-  background: #f0f0f0;
->>>>>>> origin/main
   padding: 12px 16px;
   display: flex;
   align-items: center;
   gap: 12px;
-<<<<<<< HEAD
   border-top: 1px solid var(--border);
-=======
->>>>>>> origin/main
 }
 
 .typing-dot {
   animation: typing 1.4s infinite ease-in-out;
-<<<<<<< HEAD
   background: var(--accent-blue);
-=======
->>>>>>> origin/main
 }
 
 .typing-dot:nth-child(1) { animation-delay: -0.32s; }
@@ -224,8 +234,6 @@
   40% { transform: scale(1); opacity: 1; }
 }
 
-<<<<<<< HEAD
-=======
 .dark {
   --background: hsl(240, 10%, 3.9%);
   --foreground: hsl(0, 0%, 98%);
@@ -249,47 +257,47 @@
   --radius: 0.5rem;
 }
 
->>>>>>> origin/main
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply font-sans antialiased;
-<<<<<<< HEAD
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-    background: var(--background);
-    color: var(--foreground);
-    overflow-x: hidden;
-  }
-
-  /* Clean scrollbar styling */
-  ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: var(--surface);
-    border-radius: 4px;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: var(--muted);
-    border-radius: 4px;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: var(--surface-hover);
-  }
+* {
+  border-color: hsl(var(--border));
 }
 
-/* Clean animations */
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--muted);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Dot Pattern Background */
+.bg-dot-pattern {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -311,22 +319,22 @@
 @keyframes zoomIn {
   from {
     opacity: 0;
-    transform: scale(0.8) translateY(20px);
+    transform: scale(0.95);
   }
   to {
     opacity: 1;
-    transform: scale(1) translateY(0);
+    transform: scale(1);
   }
 }
 
 @keyframes modalFadeIn {
   from {
     opacity: 0;
-    backdrop-filter: blur(0px);
+    transform: scale(0.9);
   }
   to {
     opacity: 1;
-    backdrop-filter: blur(20px);
+    transform: scale(1);
   }
 }
 
@@ -339,121 +347,121 @@
 }
 
 .zoom-in {
-  animation: zoomIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: zoomIn 0.3s ease-out;
 }
 
 .modal-fade-in {
-  animation: modalFadeIn 0.3s ease-out;
+  animation: modalFadeIn 0.2s ease-out;
 }
 
-/* Clean message bubbles */
+/* Message Styles */
 .message-incoming {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 1rem 1rem 1rem 0.25rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  background: var(--chat-incoming);
+  color: var(--text-primary);
+  border-radius: 18px 18px 18px 4px;
+  max-width: 85%;
 }
 
 .message-outgoing {
-  background: var(--primary);
-  border-radius: 1rem 1rem 0.25rem 1rem;
-  color: var(--primary-foreground);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  background: var(--chat-outgoing);
+  color: white;
+  border-radius: 18px 18px 4px 18px;
+  max-width: 85%;
+  margin-left: auto;
 }
 
-/* Simplified hover transitions */
+/* Interactive Elements */
 .hover-scale {
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.2s ease-in-out;
 }
 
 .hover-scale:hover {
-  transform: scale(1.01);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
 }
 
-/* Clean button styles */
+/* Button Styles */
 .btn-primary {
   background: var(--primary);
-  border: 1px solid var(--primary);
   color: var(--primary-foreground);
-  transition: all 0.2s ease;
+  border: none;
+  transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-  background: hsl(210, 100%, 52%);
-  box-shadow: 0 2px 8px hsla(210, 100%, 56%, 0.3);
+  background: hsl(from var(--primary) h s calc(l - 5%));
   transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .btn-secondary {
-  background: var(--surface);
-  border: 1px solid var(--border);
+  background: transparent;
   color: var(--foreground);
-  transition: all 0.2s ease;
+  border: 2px solid var(--border);
+  transition: all 0.3s ease;
 }
 
 .btn-secondary:hover {
-  background: var(--surface-hover);
-  border-color: var(--border);
+  background: var(--surface);
+  border-color: var(--primary);
   transform: translateY(-1px);
 }
 
-/* Clean card styles */
+/* Card Enhancements */
 .card-enhanced {
-  background: var(--card);
+  transition: all 0.3s ease;
   border: 1px solid var(--border);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  transition: all 0.2s ease;
+  background: var(--card);
 }
 
 .card-enhanced:hover {
-  border-color: var(--surface-hover);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: var(--primary);
 }
 
-/* Simple glass effect */
+/* Glass Effect */
 .glass-effect {
-  background: var(--surface);
+  background: rgba(var(--card), 0.8);
   backdrop-filter: blur(10px);
-  border: 1px solid var(--border);
+  border: 1px solid rgba(var(--border), 0.2);
 }
 
-/* Clean text selection */
+/* Text Selection */
 ::selection {
-  background: hsla(210, 100%, 56%, 0.3);
-  color: var(--foreground);
+  background: var(--primary);
+  color: var(--primary-foreground);
 }
 
 ::-moz-selection {
-  background: hsla(210, 100%, 56%, 0.3);
-  color: var(--foreground);
+  background: var(--primary);
+  color: var(--primary-foreground);
 }
 
-/* Loading skeleton */
+/* Loading States */
 .skeleton {
-  background: var(--muted);
+  background: linear-gradient(90deg, var(--muted) 25%, var(--surface) 50%, var(--muted) 75%);
+  background-size: 200% 100%;
   animation: skeleton-loading 1.5s infinite;
 }
 
 @keyframes skeleton-loading {
-  0%, 100% {
-    opacity: 1;
+  0% {
+    background-position: 200% 0;
   }
-  50% {
-    opacity: 0.4;
+  100% {
+    background-position: -200% 0;
   }
 }
 
-/* Focus states */
+/* Focus States */
 .focus-ring:focus {
   outline: 2px solid var(--primary);
   outline-offset: 2px;
 }
 
-/* Clean form inputs */
+/* Enhanced Inputs */
 .input-enhanced {
-  background: var(--surface);
+  background: var(--input);
   border: 1px solid var(--border);
   color: var(--foreground);
   transition: all 0.2s ease;
@@ -461,52 +469,72 @@
 
 .input-enhanced:focus {
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px hsla(210, 100%, 56%, 0.1);
-  background: var(--surface-hover);
+  box-shadow: 0 0 0 3px rgba(var(--primary), 0.1);
 }
 
 .input-enhanced::placeholder {
-  color: var(--text-muted);
+  color: var(--muted-foreground);
 }
 
-/* Phone modal specific styles */
+/* Phone Modal Overlay */
 .phone-modal-overlay {
   background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  animation: modalFadeIn 0.3s ease-out;
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
 
 .phone-modal-content {
-  animation: zoomIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: modalFadeIn 0.3s ease-out;
+  max-height: 100vh;
+  max-width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Tailwind animate-in utilities */
+/* Viewport-aware phone container */
+.phone-modal-container {
+  max-height: 95vh;
+  max-width: 95vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Animation Classes */
 .animate-in {
   animation-fill-mode: both;
 }
 
 .slide-in-from-bottom-8 {
-  animation-name: slideInFromBottom;
+  --tw-enter-translate-y: 2rem;
 }
 
-@keyframes slideInFromBottom {
+@keyframes enter {
   from {
     opacity: 0;
-    transform: translateY(2rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-=======
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: var(--background);
-    color: var(--foreground);
+    transform: translate3d(0, var(--tw-enter-translate-y, 0), 0) scale3d(var(--tw-enter-scale, 1), var(--tw-enter-scale, 1), var(--tw-enter-scale, 1));
   }
 }
 
-/* Custom animations */
+.animate-in {
+  animation-name: enter;
+  animation-duration: 150ms;
+  --tw-enter-opacity: initial;
+  --tw-enter-scale: initial;
+  --tw-enter-rotate: initial;
+  --tw-enter-translate-x: initial;
+  --tw-enter-translate-y: initial;
+}
+
 @keyframes typing-bounce {
   0%, 60%, 100% {
     transform: translateY(0);
@@ -517,63 +545,270 @@
 }
 
 .typing-dot {
-  animation: typing-bounce 1.4s infinite ease-in-out both;
+  animation: typing-bounce 1.4s infinite ease-in-out;
 }
 
 .typing-dot:nth-child(1) { animation-delay: -0.32s; }
 .typing-dot:nth-child(2) { animation-delay: -0.16s; }
 
-/* WhatsApp-style message bubbles */
+/* Message bubbles */
 .message-incoming {
-  background-color: white;
-  border-radius: 1rem 1rem 1rem 0.25rem;
+  background: var(--surface);
+  color: var(--text-primary);
 }
 
 .message-outgoing {
-  background-color: hsl(88, 58%, 89%);
-  border-radius: 1rem 1rem 0.25rem 1rem;
+  background: var(--accent-blue);
+  color: white;
 }
 
-/* Gradient backgrounds for categories */
+/* Category specific styles */
 .category-heartbreak {
-  background: linear-gradient(135deg, hsl(0, 76%, 69%, 0.2), hsl(0, 60%, 30%, 0.4));
+  background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
 }
 
 .category-drama {
-  background: linear-gradient(135deg, hsl(25, 100%, 50%, 0.2), hsl(25, 80%, 30%, 0.4));
+  background: linear-gradient(135deg, #845ec2, #b967db);
 }
 
 .category-comedy {
-  background: linear-gradient(135deg, hsl(270, 100%, 60%, 0.2), hsl(270, 80%, 30%, 0.4));
+  background: linear-gradient(135deg, #ffd93d, #ff9500);
 }
 
 .category-romance {
-  background: linear-gradient(135deg, hsl(330, 100%, 70%, 0.2), hsl(330, 80%, 30%, 0.4));
+  background: linear-gradient(135deg, #ff9a9e, #fecfef);
 }
 
 .category-friendship {
-  background: linear-gradient(135deg, hsl(154, 77%, 44%, 0.2), hsl(147, 86%, 25%, 0.4));
+  background: linear-gradient(135deg, #a8edea, #fed6e3);
 }
 
 .category-family {
-  background: linear-gradient(135deg, hsl(207, 90%, 54%, 0.2), hsl(207, 80%, 30%, 0.4));
+  background: linear-gradient(135deg, #96c93d, #00b09b);
 }
 
 /* Chat background pattern */
 .chat-background {
-  background-color: #e5ddd5;
-  background-image: 
-    radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0);
-  background-size: 20px 20px;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
-/* Smooth hover transitions */
-.hover-scale {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
+/* Hover effects */
 .hover-scale:hover {
   transform: scale(1.05);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
->>>>>>> origin/main
+}
+
+/* Custom Hero Animations */
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% { 
+    transform: translateY(-20px) rotate(3deg);
+  }
+}
+
+@keyframes float-delayed {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% { 
+    transform: translateY(-15px) rotate(-2deg);
+  }
+}
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 8s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 4s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+/* Device Format Transitions */
+.device-container {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, max-width;
+}
+
+.device-phone {
+  transform-origin: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.device-navigation-arrow {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  color: #000;
+  width: 48px;
+  height: 48px;
+}
+
+.device-navigation-arrow:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: scale(1.15);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.device-selector {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: deviceSelectorFadeIn 0.2s ease-out;
+}
+
+.device-selector-trigger {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.device-selector-trigger:hover {
+  background: rgba(0, 0, 0, 0.8);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes deviceSelectorFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Device Format Specific Styles - Simplified and Direct */
+.device-container.device-iphone {
+  max-width: 384px !important;
+}
+
+.device-container.device-android {
+  max-width: 384px !important;
+}
+
+.device-container.device-tablet {
+  max-width: 1280px !important;
+}
+
+.device-container.device-desktop {
+  max-width: 768px !important;
+}
+
+/* Override responsive scaling for tablet */
+.device-tablet .phone-frame-responsive {
+  max-width: 1200px !important;
+  width: 1200px !important;
+  transform: none !important;
+}
+
+/* Ensure tablet doesn't get scaled down by media queries */
+@media (max-height: 900px) {
+  .device-tablet .phone-frame-responsive {
+    transform: none !important;
+  }
+}
+
+@media (max-height: 800px) {
+  .device-tablet .phone-frame-responsive {
+    transform: none !important;
+  }
+}
+
+@media (max-height: 700px) {
+  .device-tablet .phone-frame-responsive {
+    transform: none !important;
+  }
+}
+
+@media (max-width: 450px) {
+  .device-tablet .phone-frame-responsive {
+    transform: none !important;
+  }
+}
+
+/* Chat area responsiveness for different device formats */
+.device-iphone .chat-messages {
+  height: 384px; /* h-96 */
+}
+
+.device-android .chat-messages {
+  height: 384px; /* h-96 */
+}
+
+.device-tablet .chat-messages {
+  height: 700px; /* h-[700px] */
+}
+
+.device-desktop .chat-messages {
+  height: 600px; /* h-[600px] */
+}
+
+/* Keyboard navigation focus states */
+.device-navigation-arrow:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.device-selector-trigger:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Animation for device format changes */
+@keyframes deviceFormatChange {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.device-format-changing {
+  animation: deviceFormatChange 0.3s ease-out;
 }

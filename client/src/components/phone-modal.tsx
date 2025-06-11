@@ -33,7 +33,7 @@ export default function PhoneModal({
         {trigger || defaultTrigger}
       </DialogTrigger>
       <DialogContent 
-        className="max-w-fit p-0 border-0 bg-transparent shadow-none"
+        className="max-w-fit max-h-[100vh] p-0 border-0 bg-transparent shadow-none overflow-hidden"
         style={{
           background: 'rgba(0, 0, 0, 0.8)',
           backdropFilter: 'blur(20px)',
@@ -47,7 +47,7 @@ export default function PhoneModal({
           </DialogDescription>
         </VisuallyHidden>
         
-        <div className="flex items-center justify-center min-h-[90vh] p-4">
+        <div className="phone-modal-container">
           <div className="relative">
             {/* Glassy background effect */}
             <div 
@@ -67,7 +67,7 @@ export default function PhoneModal({
             </div>
             
             {/* Close instruction */}
-            <div className="absolute -bottom-16 left-1/2 transform -translate-x-1/2 text-center">
+            <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 text-center z-20">
               <p className="text-white/70 text-sm">
                 Click outside to close
               </p>

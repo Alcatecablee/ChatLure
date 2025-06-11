@@ -1,76 +1,3 @@
-<<<<<<< HEAD
-import express from "express";
-import { createServer } from "http";
-import { WebSocketServer } from "ws";
-import cors from "cors";
-import { fileURLToPath } from "url";
-import { dirname, join } from "path";
-import { clerkMiddleware } from '@clerk/express';
-import { registerRoutes } from "./routes.js";
-import dotenv from "dotenv";
-
-// Load environment variables
-dotenv.config({ path: '.env.local' });
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const app = express();
-
-// Middleware
-app.use(cors({
-  origin: process.env.NODE_ENV === 'production' 
-    ? ['https://your-domain.com'] 
-    : ['http://localhost:5173'],
-  credentials: true
-}));
-
-app.use(express.json());
-app.use(express.static(join(__dirname, "../client/dist")));
-
-// Clerk middleware
-app.use(clerkMiddleware({
-  publishableKey: process.env.CLERK_PUBLISHABLE_KEY
-}));
-
-// Setup API routes
-const server = await registerRoutes(app);
-
-// Serve React app for all other routes
-app.get("*", (req, res) => {
-  res.sendFile(join(__dirname, "../client/dist/index.html"));
-});
-
-// WebSocket handling for real-time chat
-const wss = new WebSocketServer({ server });
-
-wss.on("connection", (ws, req) => {
-  console.log("New WebSocket connection");
-  
-  ws.on("message", async (message) => {
-    try {
-      const data = JSON.parse(message.toString());
-      // Handle WebSocket messages here
-      console.log("Received:", data);
-    } catch (error) {
-      console.error("WebSocket error:", error);
-    }
-  });
-  
-  ws.on("close", () => {
-    console.log("WebSocket connection closed");
-  });
-});
-
-const PORT = process.env.PORT || 3000;
-
-server.listen(PORT, () => {
-  console.log(`ChatLure server running on port ${PORT}`);
-  console.log(`Database: Connected to ${process.env.DATABASE_URL ? 'Neon PostgreSQL' : 'Memory Storage'}`);
-  console.log(`Environment: ${process.env.NODE_ENV || 'Development'}`);
-  console.log(`Clerk Authentication: ${process.env.CLERK_SECRET_KEY ? 'Enabled' : 'Not configured'}`);
-});
-=======
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
@@ -129,16 +56,10 @@ app.use((req, res, next) => {
     serveStatic(app);
   }
 
-  // ALWAYS serve the app on port 5000
+  // ALWAYS serve the app on port 3000
   // this serves both the API and the client.
-  // It is the only port that is not firewalled.
-  const port = 5000;
-  server.listen({
-    port,
-    host: "0.0.0.0",
-    reusePort: true,
-  }, () => {
+  const port = 3000;
+  server.listen(port, "localhost", () => {
     log(`serving on port ${port}`);
   });
 })();
->>>>>>> origin/main

@@ -4,24 +4,6 @@ import {
   type UserShare, type InsertUserShare, type UserAchievement, type InsertUserAchievement,
   type AdminAction, type InsertAdminAction, type JuicePackage, type InsertJuicePackage,
   type JuiceTransaction, type InsertJuiceTransaction, type Payment, type InsertPayment,
-<<<<<<< HEAD
-  type ReadingSession, type InsertReadingSession,
-  users, stories, messages, categories, subscriptionPlans, userShares, userAchievements,
-  adminActions, juicePackages, juiceTransactions, payments, readingSessions
-} from "@shared/schema";
-
-import { db } from "./db";
-import { eq, desc, and, or, gte, lte, sql } from "drizzle-orm";
-
-export interface IStorage {
-  // Users
-  getUser(id: number): Promise<User | undefined>;
-  getUserById(id: number): Promise<User | undefined>;
-  getUserByUsername(username: string): Promise<User | undefined>;
-  getUserByClerkId(clerkId: string): Promise<User | undefined>;
-  getAllUsers(): Promise<User[]>;
-  getUsers(): Promise<User[]>;
-=======
   type ReadingSession, type InsertReadingSession
 } from "@shared/schema";
 
@@ -30,27 +12,18 @@ export interface IStorage {
   getUser(id: number): Promise<User | undefined>;
   getUserByUsername(username: string): Promise<User | undefined>;
   getAllUsers(): Promise<User[]>;
->>>>>>> origin/main
   createUser(user: InsertUser): Promise<User>;
   updateUser(id: number, updates: Partial<User>): Promise<User>;
   deleteUser(id: number): Promise<void>;
   
   // Stories
   getAllStories(): Promise<Story[]>;
-<<<<<<< HEAD
-  getStories(): Promise<Story[]>;
-=======
->>>>>>> origin/main
   getStoryById(id: number): Promise<Story | undefined>;
   getStoriesByCategory(category: string): Promise<Story[]>;
   getTrendingStories(): Promise<Story[]>;
   createStory(story: InsertStory): Promise<Story>;
   updateStory(id: number, updates: Partial<Story>): Promise<Story>;
-<<<<<<< HEAD
-  deleteStory(id: number): Promise<boolean>;
-=======
   deleteStory(id: number): Promise<void>;
->>>>>>> origin/main
   incrementStoryViews(id: number): Promise<void>;
   incrementStoryShares(id: number): Promise<void>;
   incrementStoryLikes(id: number): Promise<void>;
@@ -70,17 +43,9 @@ export interface IStorage {
   
   // Subscription Plans
   getAllSubscriptionPlans(): Promise<SubscriptionPlan[]>;
-<<<<<<< HEAD
-  getSubscriptionPlans(): Promise<SubscriptionPlan[]>;
   getSubscriptionPlan(id: number): Promise<SubscriptionPlan | undefined>;
   createSubscriptionPlan(plan: InsertSubscriptionPlan): Promise<SubscriptionPlan>;
   updateSubscriptionPlan(id: number, updates: Partial<SubscriptionPlan>): Promise<SubscriptionPlan>;
-  deleteSubscriptionPlan(id: number): Promise<boolean>;
-=======
-  getSubscriptionPlan(id: number): Promise<SubscriptionPlan | undefined>;
-  createSubscriptionPlan(plan: InsertSubscriptionPlan): Promise<SubscriptionPlan>;
-  updateSubscriptionPlan(id: number, updates: Partial<SubscriptionPlan>): Promise<SubscriptionPlan>;
->>>>>>> origin/main
   
   // User Shares
   getUserShares(userId: number): Promise<UserShare[]>;
@@ -114,7 +79,6 @@ export interface IStorage {
   createReadingSession(session: InsertReadingSession): Promise<ReadingSession>;
   updateReadingSession(id: number, updates: Partial<ReadingSession>): Promise<ReadingSession>;
   getUserReadingSessions(userId: number): Promise<ReadingSession[]>;
-<<<<<<< HEAD
   
   // Enhanced Payment Management
   getAllPayments(): Promise<Payment[]>;
@@ -150,16 +114,9 @@ export interface IStorage {
   checkDatabaseHealth(): Promise<boolean>;
   createDatabaseBackup(): Promise<string>;
   getRecentActivities(limit: number): Promise<any[]>;
-  
-  // Analytics
-  getAnalytics(): Promise<any>;
-}
-
-=======
 }
 
 // In-memory storage for migration compatibility
->>>>>>> origin/main
 export class MemoryStorage implements IStorage {
   private users: User[] = [];
   private stories: Story[] = [];
@@ -180,10 +137,6 @@ export class MemoryStorage implements IStorage {
   }
 
   private seedData() {
-<<<<<<< HEAD
-    // Seed data initialization
-    // ... existing code ...
-=======
     // Seed some initial data for the app to work
     this.categories = [
       { id: 1, name: "Mystery", emoji: "🔍", count: 15, color: "#8B5CF6" },
@@ -326,46 +279,123 @@ export class MemoryStorage implements IStorage {
         timestamp: new Date().toISOString(),
         hasReadReceipt: true,
         order: 10
+      },
+      // Messages for Story 2: "Love at First Text"
+      {
+        id: 11,
+        storyId: 2,
+        content: "Hi! I think I got your number from my friend Emma? She said you might be interested in tutoring for organic chemistry? I'm really struggling with my upcoming exam 😅",
+        isIncoming: true,
+        timestamp: new Date().toISOString(),
+        hasReadReceipt: true,
+        order: 1
+      },
+      {
+        id: 12,
+        storyId: 2,
+        content: "I think there might be some confusion... I'm not a tutor and I don't know anyone named Emma. You might have the wrong number!",
+        isIncoming: false,
+        timestamp: new Date().toISOString(),
+        hasReadReceipt: true,
+        order: 2
+      },
+      {
+        id: 13,
+        storyId: 2,
+        content: "Oh no! I'm so embarrassed 🙈 Sorry for bothering you! Emma must have given me the wrong number. I guess I'll have to figure out chemistry on my own lol",
+        isIncoming: true,
+        timestamp: new Date().toISOString(),
+        hasReadReceipt: true,
+        order: 3
+      },
+      {
+        id: 14,
+        storyId: 2,
+        content: "Wait, don't worry about it! I actually did take organic chemistry a few years ago. What specific topics are you struggling with? Maybe I can help point you in the right direction!",
+        isIncoming: false,
+        timestamp: new Date().toISOString(),
+        hasReadReceipt: true,
+        order: 4
+      },
+      {
+        id: 15,
+        storyId: 2,
+        content: "Really?! You're so kind! I'm having trouble with stereochemistry and reaction mechanisms. My professor explains things so fast and I get lost 😭",
+        isIncoming: true,
+        timestamp: new Date().toISOString(),
+        hasReadReceipt: true,
+        order: 5
+      },
+      {
+        id: 16,
+        storyId: 2,
+        content: "Oh I remember those! They're tricky but once you get the hang of it, it clicks. Have you tried drawing out the molecules step by step? Visual learning really helps with stereochemistry.",
+        isIncoming: false,
+        timestamp: new Date().toISOString(),
+        hasReadReceipt: true,
+        order: 6
+      },
+      {
+        id: 17,
+        storyId: 2,
+        content: "I tried but I think I'm doing it wrong 😅 You seem to really know your stuff! Are you in grad school or something? And thank you so much for helping a random stranger!",
+        isIncoming: true,
+        timestamp: new Date().toISOString(),
+        hasReadReceipt: true,
+        order: 7
+      },
+      {
+        id: 18,
+        storyId: 2,
+        content: "I'm actually a biochemist now! And honestly, helping you is making my day better. Work was pretty stressful today. What's your major? And don't worry, we've all been there with organic chem!",
+        isIncoming: false,
+        timestamp: new Date().toISOString(),
+        hasReadReceipt: true,
+        order: 8
+      },
+      {
+        id: 19,
+        storyId: 2,
+        content: "Wow, a biochemist! That's so cool! I'm pre-med, hoping to get into medical school next year. This chemistry grade could make or break my GPA though 😰 What kind of research do you do?",
+        isIncoming: true,
+        timestamp: new Date().toISOString(),
+        hasReadReceipt: true,
+        order: 9
+      },
+      {
+        id: 20,
+        storyId: 2,
+        content: "Pre-med! That's awesome. I work on protein folding research - basically trying to understand how proteins get their shapes. And don't stress too much about one grade, med schools look at the whole picture. You seem dedicated!",
+        isIncoming: false,
+        timestamp: new Date().toISOString(),
+        hasReadReceipt: true,
+        order: 10
+      },
+      {
+        id: 21,
+        storyId: 2,
+        content: "That sounds fascinating! You're making me feel so much better about everything. I can't believe a wrong number led to meeting someone so kind and smart. Is it weird that I'm actually glad Emma gave me the wrong number? 😊",
+        isIncoming: true,
+        timestamp: new Date().toISOString(),
+        hasReadReceipt: true,
+        order: 11
+      },
+      {
+        id: 22,
+        storyId: 2,
+        content: "Not weird at all! I'm glad she did too. You seem really sweet and determined. I have an idea - would you like to meet up for coffee sometime? I could bring some of my old organic chem notes and we could go over them together?",
+        isIncoming: false,
+        timestamp: new Date().toISOString(),
+        hasReadReceipt: true,
+        order: 12
       }
     ];
 
     this.nextId = 100;
->>>>>>> origin/main
   }
 
   // Users
   async getUser(id: number): Promise<User | undefined> {
-<<<<<<< HEAD
-    const result = await db.select().from(users).where(eq(users.id, id)).limit(1);
-    return result[0];
-  }
-
-  async getUserById(id: number): Promise<User | undefined> {
-    const result = await db.select().from(users).where(eq(users.id, id)).limit(1);
-    return result[0];
-  }
-
-  async getUserByUsername(username: string): Promise<User | undefined> {
-    const result = await db.select().from(users).where(eq(users.username, username)).limit(1);
-    return result[0];
-  }
-
-  async getUserByClerkId(clerkId: string): Promise<User | undefined> {
-    const result = await db.select().from(users).where(eq(users.clerkId, clerkId)).limit(1);
-    return result[0];
-  }
-
-  async getAllUsers(): Promise<User[]> {
-    return await db.select().from(users);
-  }
-
-  async getUsers(): Promise<User[]> {
-    return await db.select().from(users);
-  }
-
-  async createUser(insertUser: InsertUser): Promise<User> {
-    const [user] = await db.insert(users).values(insertUser).returning();
-=======
     return this.users.find(u => u.id === id);
   }
 
@@ -398,19 +428,10 @@ export class MemoryStorage implements IStorage {
       updatedAt: now
     };
     this.users.push(user);
->>>>>>> origin/main
     return user;
   }
 
   async updateUser(id: number, updates: Partial<User>): Promise<User> {
-<<<<<<< HEAD
-    const [user] = await db.update(users).set(updates).where(eq(users.id, id)).returning();
-    return user;
-  }
-
-  async deleteUser(id: number): Promise<void> {
-    await db.delete(users).where(eq(users.id, id));
-=======
     const index = this.users.findIndex(u => u.id === id);
     if (index === -1) throw new Error("User not found");
     this.users[index] = { ...this.users[index], ...updates };
@@ -420,35 +441,10 @@ export class MemoryStorage implements IStorage {
   async deleteUser(id: number): Promise<void> {
     const index = this.users.findIndex(u => u.id === id);
     if (index !== -1) this.users.splice(index, 1);
->>>>>>> origin/main
   }
 
   // Stories
   async getAllStories(): Promise<Story[]> {
-<<<<<<< HEAD
-    return await db.select().from(stories).orderBy(desc(stories.createdAt));
-  }
-
-  async getStories(): Promise<Story[]> {
-    return await db.select().from(stories).orderBy(desc(stories.createdAt));
-  }
-
-  async getStoryById(id: number): Promise<Story | undefined> {
-    const result = await db.select().from(stories).where(eq(stories.id, id)).limit(1);
-    return result[0];
-  }
-
-  async getStoriesByCategory(category: string): Promise<Story[]> {
-    return await db.select().from(stories).where(eq(stories.category, category));
-  }
-
-  async getTrendingStories(): Promise<Story[]> {
-    return await db.select().from(stories).where(or(eq(stories.isHot, true), eq(stories.isViral, true))).orderBy(desc(stories.views));
-  }
-
-  async createStory(insertStory: InsertStory): Promise<Story> {
-    const [story] = await db.insert(stories).values(insertStory).returning();
-=======
     return [...this.stories].sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
   }
 
@@ -479,32 +475,10 @@ export class MemoryStorage implements IStorage {
       updatedAt: now
     };
     this.stories.push(story);
->>>>>>> origin/main
     return story;
   }
 
   async updateStory(id: number, updates: Partial<Story>): Promise<Story> {
-<<<<<<< HEAD
-    const [story] = await db.update(stories).set(updates).where(eq(stories.id, id)).returning();
-    return story;
-  }
-
-  async deleteStory(id: number): Promise<boolean> {
-    const result = await db.delete(stories).where(eq(stories.id, id)).returning();
-    return result.length > 0;
-  }
-
-  async incrementStoryViews(id: number): Promise<void> {
-    await db.update(stories).set({ views: sql`${stories.views} + 1` }).where(eq(stories.id, id));
-  }
-
-  async incrementStoryShares(id: number): Promise<void> {
-    await db.update(stories).set({ shares: sql`${stories.shares} + 1` }).where(eq(stories.id, id));
-  }
-
-  async incrementStoryLikes(id: number): Promise<void> {
-    await db.update(stories).set({ likes: sql`${stories.likes} + 1` }).where(eq(stories.id, id));
-=======
     const index = this.stories.findIndex(s => s.id === id);
     if (index === -1) throw new Error("Story not found");
     this.stories[index] = { ...this.stories[index], ...updates };
@@ -535,18 +509,10 @@ export class MemoryStorage implements IStorage {
     if (story) {
       story.likes += 1;
     }
->>>>>>> origin/main
   }
 
   // Messages
   async getMessagesByStoryId(storyId: number): Promise<Message[]> {
-<<<<<<< HEAD
-    return await db.select().from(messages).where(eq(messages.storyId, storyId)).orderBy(messages.order);
-  }
-
-  async createMessage(insertMessage: InsertMessage): Promise<Message> {
-    const [message] = await db.insert(messages).values(insertMessage).returning();
-=======
     return this.messages.filter(m => m.storyId === storyId)
       .sort((a, b) => a.order - b.order);
   }
@@ -557,19 +523,10 @@ export class MemoryStorage implements IStorage {
       ...insertMessage
     };
     this.messages.push(message);
->>>>>>> origin/main
     return message;
   }
 
   async updateMessage(id: number, updates: Partial<Message>): Promise<Message> {
-<<<<<<< HEAD
-    const [message] = await db.update(messages).set(updates).where(eq(messages.id, id)).returning();
-    return message;
-  }
-
-  async deleteMessage(id: number): Promise<void> {
-    await db.delete(messages).where(eq(messages.id, id));
-=======
     const index = this.messages.findIndex(m => m.id === id);
     if (index === -1) throw new Error("Message not found");
     this.messages[index] = { ...this.messages[index], ...updates };
@@ -579,23 +536,10 @@ export class MemoryStorage implements IStorage {
   async deleteMessage(id: number): Promise<void> {
     const index = this.messages.findIndex(m => m.id === id);
     if (index !== -1) this.messages.splice(index, 1);
->>>>>>> origin/main
   }
 
   // Categories
   async getAllCategories(): Promise<Category[]> {
-<<<<<<< HEAD
-    return await db.select().from(categories);
-  }
-
-  async getCategoryByName(name: string): Promise<Category | undefined> {
-    const result = await db.select().from(categories).where(eq(categories.name, name)).limit(1);
-    return result[0];
-  }
-
-  async createCategory(insertCategory: InsertCategory): Promise<Category> {
-    const [category] = await db.insert(categories).values(insertCategory).returning();
-=======
     return [...this.categories];
   }
 
@@ -610,19 +554,10 @@ export class MemoryStorage implements IStorage {
       count: 0
     };
     this.categories.push(category);
->>>>>>> origin/main
     return category;
   }
 
   async updateCategory(id: number, updates: Partial<Category>): Promise<Category> {
-<<<<<<< HEAD
-    const [category] = await db.update(categories).set(updates).where(eq(categories.id, id)).returning();
-    return category;
-  }
-
-  async deleteCategory(id: number): Promise<void> {
-    await db.delete(categories).where(eq(categories.id, id));
-=======
     const index = this.categories.findIndex(c => c.id === id);
     if (index === -1) throw new Error("Category not found");
     this.categories[index] = { ...this.categories[index], ...updates };
@@ -632,27 +567,10 @@ export class MemoryStorage implements IStorage {
   async deleteCategory(id: number): Promise<void> {
     const index = this.categories.findIndex(c => c.id === id);
     if (index !== -1) this.categories.splice(index, 1);
->>>>>>> origin/main
   }
 
   // Subscription Plans
   async getAllSubscriptionPlans(): Promise<SubscriptionPlan[]> {
-<<<<<<< HEAD
-    return await db.select().from(subscriptionPlans).where(eq(subscriptionPlans.isActive, true));
-  }
-
-  async getSubscriptionPlans(): Promise<SubscriptionPlan[]> {
-    return await db.select().from(subscriptionPlans).where(eq(subscriptionPlans.isActive, true));
-  }
-
-  async getSubscriptionPlan(id: number): Promise<SubscriptionPlan | undefined> {
-    const result = await db.select().from(subscriptionPlans).where(eq(subscriptionPlans.id, id)).limit(1);
-    return result[0];
-  }
-
-  async createSubscriptionPlan(insertPlan: InsertSubscriptionPlan): Promise<SubscriptionPlan> {
-    const [plan] = await db.insert(subscriptionPlans).values(insertPlan).returning();
-=======
     return [...this.subscriptionPlans];
   }
 
@@ -666,36 +584,18 @@ export class MemoryStorage implements IStorage {
       ...insertPlan
     };
     this.subscriptionPlans.push(plan);
->>>>>>> origin/main
     return plan;
   }
 
   async updateSubscriptionPlan(id: number, updates: Partial<SubscriptionPlan>): Promise<SubscriptionPlan> {
-<<<<<<< HEAD
-    const [plan] = await db.update(subscriptionPlans).set(updates).where(eq(subscriptionPlans.id, id)).returning();
-    return plan;
-  }
-
-  async deleteSubscriptionPlan(id: number): Promise<boolean> {
-    const result = await db.update(subscriptionPlans).set({ isActive: false }).where(eq(subscriptionPlans.id, id)).returning();
-    return result.length > 0;
-=======
     const index = this.subscriptionPlans.findIndex(p => p.id === id);
     if (index === -1) throw new Error("Subscription plan not found");
     this.subscriptionPlans[index] = { ...this.subscriptionPlans[index], ...updates };
     return this.subscriptionPlans[index];
->>>>>>> origin/main
   }
 
   // User Shares
   async getUserShares(userId: number): Promise<UserShare[]> {
-<<<<<<< HEAD
-    return await db.select().from(userShares).where(eq(userShares.userId, userId));
-  }
-
-  async createUserShare(insertShare: InsertUserShare): Promise<UserShare> {
-    const [share] = await db.insert(userShares).values(insertShare).returning();
-=======
     return this.userShares.filter(s => s.userId === userId);
   }
 
@@ -707,30 +607,18 @@ export class MemoryStorage implements IStorage {
       unlocked: false
     };
     this.userShares.push(share);
->>>>>>> origin/main
     return share;
   }
 
   async markShareAsUnlocked(userId: number, storyId: number): Promise<void> {
-<<<<<<< HEAD
-    await db.update(userShares).set({ unlocked: true }).where(and(eq(userShares.userId, userId), eq(userShares.storyId, storyId)));
-=======
     const share = this.userShares.find(s => s.userId === userId && s.storyId === storyId);
     if (share) {
       share.unlocked = true;
     }
->>>>>>> origin/main
   }
 
   // Achievements
   async getUserAchievements(userId: number): Promise<UserAchievement[]> {
-<<<<<<< HEAD
-    return await db.select().from(userAchievements).where(eq(userAchievements.userId, userId));
-  }
-
-  async unlockAchievement(userId: number, achievementId: string): Promise<UserAchievement> {
-    const [achievement] = await db.insert(userAchievements).values({ userId, achievementId }).returning();
-=======
     return this.userAchievements.filter(a => a.userId === userId);
   }
 
@@ -742,133 +630,153 @@ export class MemoryStorage implements IStorage {
       unlockedAt: new Date()
     };
     this.userAchievements.push(achievement);
->>>>>>> origin/main
     return achievement;
   }
 
   // Admin Actions
   async logAdminAction(insertAction: InsertAdminAction): Promise<AdminAction> {
-<<<<<<< HEAD
-    const [action] = await db.insert(adminActions).values(insertAction).returning();
-=======
     const action: AdminAction = {
       id: this.nextId++,
       ...insertAction,
       performedAt: new Date()
     };
     this.adminActions.push(action);
->>>>>>> origin/main
     return action;
   }
 
   async getAdminActions(limit: number = 50): Promise<AdminAction[]> {
-<<<<<<< HEAD
-    return await db.select().from(adminActions).orderBy(desc(adminActions.performedAt)).limit(limit);
+    return [...this.adminActions]
+      .sort((a, b) => {
+        const aTime = a.performedAt?.getTime() || 0;
+        const bTime = b.performedAt?.getTime() || 0;
+        return bTime - aTime;
+      })
+      .slice(0, limit);
   }
 
   // PeepPower System
   async updateUserJuice(userId: number, amount: number, type: string, description?: string): Promise<JuiceTransaction> {
-    const [transaction] = await db.insert(juiceTransactions).values({
+    const transaction: JuiceTransaction = {
+      id: this.nextId++,
       userId,
+      amount,
       type,
-      amount: amount.toString(),
-      balanceAfter: "0", // Would need to calculate
-      description
-    }).returning();
+      description,
+      createdAt: new Date()
+    };
+    this.juiceTransactions.push(transaction);
     return transaction;
   }
 
   async getUserJuiceBalance(userId: number): Promise<number> {
-    const user = await this.getUser(userId);
-    return user ? parseFloat(user.juiceLevel) : 0;
+    return this.juiceTransactions.filter(t => t.userId === userId).reduce((total, t) => total + t.amount, 0);
   }
 
   async getUserJuiceTransactions(userId: number, limit?: number): Promise<JuiceTransaction[]> {
-    const query = db.select().from(juiceTransactions).where(eq(juiceTransactions.userId, userId)).orderBy(desc(juiceTransactions.createdAt));
-    if (limit) {
-      return await query.limit(limit);
-    }
-    return await query;
+    return this.juiceTransactions.filter(t => t.userId === userId).slice(0, limit || 50);
   }
 
   // Juice Packages
   async getAllJuicePackages(): Promise<JuicePackage[]> {
-    return await db.select().from(juicePackages).where(eq(juicePackages.isActive, true)).orderBy(juicePackages.sortOrder);
+    return [...this.juicePackages];
   }
 
   async getJuicePackage(id: number): Promise<JuicePackage | undefined> {
-    const result = await db.select().from(juicePackages).where(eq(juicePackages.id, id)).limit(1);
-    return result[0];
+    return this.juicePackages.find(p => p.id === id);
   }
 
   async createJuicePackage(pkg: InsertJuicePackage): Promise<JuicePackage> {
-    const [juicePackage] = await db.insert(juicePackages).values(pkg).returning();
-    return juicePackage;
+    const juicePackageObj: JuicePackage = {
+      id: this.nextId++,
+      ...pkg,
+      createdAt: new Date()
+    };
+    this.juicePackages.push(juicePackageObj);
+    return juicePackageObj;
   }
 
   // Payments
   async createPayment(payment: InsertPayment): Promise<Payment> {
-    const [result] = await db.insert(payments).values(payment).returning();
-    return result;
+    const paymentObj: Payment = {
+      id: this.nextId++,
+      ...payment,
+      createdAt: new Date()
+    };
+    this.payments.push(paymentObj);
+    return paymentObj;
   }
 
   async updatePayment(id: number, updates: Partial<Payment>): Promise<Payment> {
-    const [result] = await db.update(payments).set(updates).where(eq(payments.id, id)).returning();
-    return result;
+    const index = this.payments.findIndex(p => p.id === id);
+    if (index === -1) throw new Error("Payment not found");
+    
+    this.payments[index] = { ...this.payments[index], ...updates, updatedAt: new Date() };
+    return this.payments[index];
   }
 
   async getUserPayments(userId: number): Promise<Payment[]> {
-    return await db.select().from(payments).where(eq(payments.userId, userId)).orderBy(desc(payments.createdAt));
+    return this.payments.filter(p => p.userId === userId);
   }
 
   // Reading Sessions
   async createReadingSession(session: InsertReadingSession): Promise<ReadingSession> {
-    const [result] = await db.insert(readingSessions).values(session).returning();
-    return result;
+    const readingSession: ReadingSession = {
+      id: this.nextId++,
+      ...session,
+      createdAt: new Date()
+    };
+    this.readingSessions.push(readingSession);
+    return readingSession;
   }
 
   async updateReadingSession(id: number, updates: Partial<ReadingSession>): Promise<ReadingSession> {
-    const [result] = await db.update(readingSessions).set(updates).where(eq(readingSessions.id, id)).returning();
-    return result;
+    const index = this.readingSessions.findIndex(s => s.id === id);
+    if (index === -1) throw new Error("Reading session not found");
+    this.readingSessions[index] = { ...this.readingSessions[index], ...updates };
+    return this.readingSessions[index];
   }
 
   async getUserReadingSessions(userId: number): Promise<ReadingSession[]> {
-    return await db.select().from(readingSessions).where(eq(readingSessions.userId, userId)).orderBy(desc(readingSessions.startedAt));
+    return this.readingSessions.filter(s => s.userId === userId);
   }
 
   // Enhanced Payment Management
   async getAllPayments(): Promise<Payment[]> {
-    return await db.select().from(payments).orderBy(desc(payments.createdAt));
+    return [...this.payments];
   }
 
   async getPaymentsByUser(userId: number): Promise<Payment[]> {
-    return await this.getUserPayments(userId);
+    return this.payments.filter(payment => payment.userId === userId);
   }
 
   async getPaymentsByStatus(status: string): Promise<Payment[]> {
-    return await db.select().from(payments).where(eq(payments.status, status));
+    return this.payments.filter(payment => payment.status === status);
   }
 
   // Site Settings Management
   private siteSettings: any = {
     siteName: "ChatLure",
+    tagline: "Peek. Obsess. Repeat.",
     maintenance: false,
     registrationEnabled: true,
     maxFreeStories: 3,
     juiceRefillRate: 1.0,
-    sessionTimeout: 30,
-    analytics: {
-      google: "",
-      facebook: ""
+    moderationEnabled: true,
+    paypal: {
+      enabled: false,
+      clientId: "",
+      clientSecret: "",
+      environment: "sandbox",
+      webhookId: ""
     }
   };
 
   async getSiteSettings(): Promise<any> {
-    return this.siteSettings;
+    return { ...this.siteSettings };
   }
 
   async updateSiteSettings(settings: any): Promise<any> {
-    this.siteSettings = { ...this.siteSettings, ...settings };
+    this.siteSettings = { ...this.siteSettings, ...settings, lastUpdated: new Date() };
     return this.siteSettings;
   }
 
@@ -879,91 +787,280 @@ export class MemoryStorage implements IStorage {
 
   // PayPal Settings Management
   async getPayPalSettings(): Promise<any> {
-    return {};
+    return this.siteSettings.paypal;
   }
 
   async updatePayPalSettings(settings: any): Promise<any> {
-    return settings;
+    this.siteSettings.paypal = { ...this.siteSettings.paypal, ...settings };
+    
+    // Reinitialize PayPal service with new settings
+    const { paypalService } = await import('./paypal-service');
+    await paypalService.reinitialize();
+    
+    return this.siteSettings.paypal;
   }
 
   async testPayPalConnection(): Promise<{ success: boolean, message: string }> {
-    return { success: true, message: "Connection successful" };
+    try {
+      const { paypalService } = await import('./paypal-service');
+      return await paypalService.testConnection();
+    } catch (error) {
+      return { success: false, message: 'PayPal service not available' };
+    }
   }
 
   // Enhanced User Management
   async updateUserSubscription(userId: number, planId: number, status: string): Promise<User> {
-    return await this.updateUser(userId, { subscriptionPlanId: planId, subscriptionStatus: status });
+    const user = this.users.find(u => u.id === userId);
+    if (!user) throw new Error("User not found");
+
+    user.subscriptionPlanId = planId;
+    user.subscriptionStatus = status;
+    if (status === 'active') {
+      user.subscriptionStartedAt = new Date();
+      user.subscriptionExpiresAt = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000); // 30 days
+    }
+    user.updatedAt = new Date();
+
+    return user;
   }
 
+  private blockedUsers: Set<number> = new Set();
+
   async blockUser(userId: number, reason: string, duration?: number): Promise<void> {
-    // Implementation would need to be added
+    const user = this.users.find(u => u.id === userId);
+    if (!user) throw new Error("User not found");
+
+    this.blockedUsers.add(userId);
+    
+    // Log admin action
+    await this.logAdminAction({
+      adminId: 1, // This would be the actual admin ID in a real implementation
+      action: "block_user",
+      targetType: "user",
+      targetId: userId,
+      details: { reason, duration }
+    });
   }
 
   async unblockUser(userId: number): Promise<void> {
-    // Implementation would need to be added
+    this.blockedUsers.delete(userId);
+    
+    await this.logAdminAction({
+      adminId: 1,
+      action: "unblock_user",
+      targetType: "user",
+      targetId: userId,
+      details: {}
+    });
   }
 
   // Content Moderation
+  private moderationQueue: any[] = [];
+
   async getModerationQueue(): Promise<any[]> {
-    return [];
+    // Simulate moderation queue items
+    return [
+      {
+        id: 1,
+        type: "story",
+        contentId: 1,
+        reportReason: "inappropriate",
+        reportedBy: "user_123",
+        status: "pending",
+        createdAt: new Date(Date.now() - 2 * 60 * 60 * 1000)
+      },
+      {
+        id: 2,
+        type: "message",
+        contentId: 5,
+        reportReason: "spam",
+        reportedBy: "user_456",
+        status: "pending",
+        createdAt: new Date(Date.now() - 1 * 60 * 60 * 1000)
+      }
+    ];
   }
 
   async approveContent(id: number): Promise<void> {
-    // Implementation would need to be added
+    await this.logAdminAction({
+      adminId: 1,
+      action: "approve_content",
+      targetType: "moderation",
+      targetId: id,
+      details: {}
+    });
   }
 
   async rejectContent(id: number, reason: string): Promise<void> {
-    // Implementation would need to be added
+    await this.logAdminAction({
+      adminId: 1,
+      action: "reject_content",
+      targetType: "moderation",
+      targetId: id,
+      details: { reason }
+    });
   }
 
   // Enhanced Analytics
   async getRevenueAnalytics(period: string): Promise<any> {
-    return {};
+    const now = new Date();
+    let startDate: Date;
+
+    switch (period) {
+      case '24h':
+        startDate = new Date(now.getTime() - 24 * 60 * 60 * 1000);
+        break;
+      case '7d':
+        startDate = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+        break;
+      case '30d':
+        startDate = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
+        break;
+      case '90d':
+        startDate = new Date(now.getTime() - 90 * 24 * 60 * 60 * 1000);
+        break;
+      default:
+        startDate = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
+    }
+
+    const periodPayments = this.payments.filter(p => 
+      p.createdAt >= startDate && p.status === 'completed'
+    );
+
+    const totalRevenue = periodPayments.reduce((sum, p) => sum + p.amount, 0);
+    const transactionCount = periodPayments.length;
+    const averageOrder = transactionCount > 0 ? totalRevenue / transactionCount : 0;
+
+    return {
+      period,
+      totalRevenue: totalRevenue / 100, // Convert to dollars
+      transactionCount,
+      averageOrderValue: averageOrder / 100,
+      revenueGrowth: Math.random() * 20 + 5, // Simulated growth percentage
+      topPaymentMethods: [
+        { method: 'PayPal', count: Math.floor(transactionCount * 0.7), revenue: totalRevenue * 0.7 },
+        { method: 'Credit Card', count: Math.floor(transactionCount * 0.3), revenue: totalRevenue * 0.3 }
+      ]
+    };
   }
 
   async getUserAnalytics(period: string): Promise<any> {
-    return {};
+    const totalUsers = this.users.length;
+    const activeUsers = this.users.filter(u => {
+      const lastActive = u.lastActiveAt || new Date(0);
+      return (Date.now() - lastActive.getTime()) < 7 * 24 * 60 * 60 * 1000; // Active in last 7 days
+    }).length;
+
+    const premiumUsers = this.users.filter(u => u.subscriptionStatus === 'active').length;
+
+    return {
+      period,
+      totalUsers,
+      activeUsers,
+      premiumUsers,
+      conversionRate: totalUsers > 0 ? (premiumUsers / totalUsers * 100).toFixed(2) : 0,
+      userGrowth: Math.random() * 15 + 2, // Simulated growth
+      averageSessionDuration: Math.floor(Math.random() * 20 + 10), // Minutes
+      retentionRate: Math.floor(Math.random() * 30 + 60), // Percentage
+      topCountries: [
+        { country: 'United States', users: Math.floor(totalUsers * 0.4) },
+        { country: 'United Kingdom', users: Math.floor(totalUsers * 0.2) },
+        { country: 'Canada', users: Math.floor(totalUsers * 0.15) },
+        { country: 'Australia', users: Math.floor(totalUsers * 0.1) },
+        { country: 'Other', users: Math.floor(totalUsers * 0.15) }
+      ]
+    };
   }
 
   async getContentAnalytics(period: string): Promise<any> {
-    return {};
+    const totalStories = this.stories.length;
+    const totalViews = this.stories.reduce((sum, s) => sum + s.views, 0);
+    const totalLikes = this.stories.reduce((sum, s) => sum + s.likes, 0);
+    const totalShares = this.stories.reduce((sum, s) => sum + s.shares, 0);
+
+    return {
+      period,
+      totalStories,
+      totalViews,
+      totalLikes,
+      totalShares,
+      averageViewsPerStory: totalStories > 0 ? Math.floor(totalViews / totalStories) : 0,
+      engagementRate: totalViews > 0 ? ((totalLikes + totalShares) / totalViews * 100).toFixed(2) : 0,
+      topCategories: this.categories.map(cat => ({
+        name: cat.name,
+        stories: this.stories.filter(s => s.category === cat.name).length,
+        totalViews: this.stories.filter(s => s.category === cat.name).reduce((sum, s) => sum + s.views, 0)
+      })).sort((a, b) => b.totalViews - a.totalViews),
+      viralStories: this.stories.filter(s => s.isViral).length,
+      averageReadingTime: Math.floor(Math.random() * 10 + 5) // Minutes
+    };
   }
 
   // System Health & Monitoring
   async checkDatabaseHealth(): Promise<boolean> {
-    try {
-      await db.select().from(users).limit(1);
-      return true;
-    } catch {
-      return false;
-    }
+    // Simulate database health check
+    return true;
   }
 
   async createDatabaseBackup(): Promise<string> {
-    return `backup_${Date.now()}`;
+    const backupId = `backup_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+    
+    await this.logAdminAction({
+      adminId: 1,
+      action: "create_backup",
+      targetType: "system",
+      targetId: 0,
+      details: { backupId }
+    });
+
+    return backupId;
   }
+
+  private activities: any[] = [];
 
   async getRecentActivities(limit: number = 50): Promise<any[]> {
-    return [];
-  }
+    // Generate some sample activities
+    const sampleActivities = [
+      {
+        id: 1,
+        type: 'user_registration',
+        description: 'New user registered: sarah_123',
+        timestamp: new Date(Date.now() - 2 * 60 * 1000),
+        severity: 'info'
+      },
+      {
+        id: 2,
+        type: 'payment_completed',
+        description: 'PayPal payment completed: $12.99',
+        timestamp: new Date(Date.now() - 5 * 60 * 1000),
+        severity: 'success'
+      },
+      {
+        id: 3,
+        type: 'story_viral',
+        description: 'Story "College Drama" went viral',
+        timestamp: new Date(Date.now() - 15 * 60 * 1000),
+        severity: 'info'
+      },
+      {
+        id: 4,
+        type: 'moderation_alert',
+        description: 'Content flagged for review',
+        timestamp: new Date(Date.now() - 60 * 60 * 1000),
+        severity: 'warning'
+      },
+      {
+        id: 5,
+        type: 'system_backup',
+        description: 'Database backup completed',
+        timestamp: new Date(Date.now() - 3 * 60 * 60 * 1000),
+        severity: 'success'
+      }
+    ];
 
-  // Analytics
-  async getAnalytics(): Promise<any> {
-    return {};
+    return sampleActivities.slice(0, limit);
   }
 }
 
-// Use database storage in production, memory storage for development
-=======
-    return [...this.adminActions]
-      .sort((a, b) => {
-        const aTime = a.performedAt?.getTime() || 0;
-        const bTime = b.performedAt?.getTime() || 0;
-        return bTime - aTime;
-      })
-      .slice(0, limit);
-  }
-}
-
->>>>>>> origin/main
 export const storage = new MemoryStorage();

@@ -1,19 +1,11 @@
-<<<<<<< HEAD
 import React, { useState, useEffect } from "react";
-=======
-import { useState } from "react";
->>>>>>> origin/main
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { 
   Users, MessageSquare, TrendingUp, Settings, Eye, Edit, Trash2, Plus,
   BarChart3, DollarSign, Crown, Shield, Calendar, Activity, Save, 
-<<<<<<< HEAD
   ToggleLeft, ToggleRight, Database, RefreshCw, CreditCard, Globe,
   MessageCircle, Zap, 
   Lock, Unlock, CheckCircle, XCircle, AlertTriangle
-=======
-  ToggleLeft, ToggleRight, Database, RefreshCw
->>>>>>> origin/main
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -28,18 +20,14 @@ import { formatNumber } from "@/lib/utils";
 import { apiRequest, queryClient } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import type { Story, User, Message, Category, SubscriptionPlan } from "@shared/schema";
-<<<<<<< HEAD
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { Separator } from "@/components/ui/separator";
-=======
->>>>>>> origin/main
 
 export default function AdminDashboard() {
   const [selectedTab, setSelectedTab] = useState("overview");
   const [editingStory, setEditingStory] = useState<Story | null>(null);
   const [editingUser, setEditingUser] = useState<User | null>(null);
-<<<<<<< HEAD
   const [editingMessages, setEditingMessages] = useState<Message[] | null>(null);
   const [newStory, setNewStory] = useState({ 
     title: "", 
@@ -73,10 +61,6 @@ export default function AdminDashboard() {
     webhookId: "",
     enabled: true
   });
-=======
-  const [newStory, setNewStory] = useState({ title: "", description: "", category: "", difficulty: "medium" });
-  const [newUser, setNewUser] = useState({ username: "", email: "", firstName: "", lastName: "", subscriptionTier: "free" });
->>>>>>> origin/main
   const { toast } = useToast();
 
   // Fetch data
@@ -84,15 +68,12 @@ export default function AdminDashboard() {
   const { data: users, isLoading: usersLoading } = useQuery<User[]>({ queryKey: ["/api/admin/users"] });
   const { data: categories, isLoading: categoriesLoading } = useQuery<Category[]>({ queryKey: ["/api/categories"] });
   const { data: subscriptionPlans } = useQuery<SubscriptionPlan[]>({ queryKey: ["/api/admin/subscription-plans"] });
-<<<<<<< HEAD
   const { data: analytics } = useQuery({ queryKey: ["/api/admin/analytics"] });
   const { data: payments } = useQuery({ queryKey: ["/api/admin/payments"] });
   const { data: currentPayPalSettings } = useQuery({ queryKey: ["/api/admin/paypal/settings"] });
   const { data: moderationQueue } = useQuery({ queryKey: ["/api/admin/moderation/queue"] });
   const { data: systemHealth } = useQuery({ queryKey: ["/api/admin/system/health"] });
   const { data: recentActivity } = useQuery({ queryKey: ["/api/admin/activity"] });
-=======
->>>>>>> origin/main
 
   // Mutations
   const createStoryMutation = useMutation({
@@ -100,11 +81,7 @@ export default function AdminDashboard() {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["/api/stories"] });
       toast({ title: "Story created successfully" });
-<<<<<<< HEAD
       setNewStory({ title: "", description: "", category: "", difficulty: "medium", duration: 5, imageUrl: "", isHot: false, isNew: true, isViral: false, hasAudio: false, hasImages: false, cliffhangerLevel: 3 });
-=======
-      setNewStory({ title: "", description: "", category: "", difficulty: "medium" });
->>>>>>> origin/main
     },
     onError: () => toast({ title: "Failed to create story", variant: "destructive" })
   });
@@ -157,10 +134,9 @@ export default function AdminDashboard() {
     onError: () => toast({ title: "Failed to delete user", variant: "destructive" })
   });
 
-<<<<<<< HEAD
   // PayPal Settings Mutations
   const updatePayPalSettingsMutation = useMutation({
-    mutationFn: (settings: any) => apiRequest("/api/admin/paypal/settings", "POST", settings),
+    mutationFn: (settings: any) => apiRequest("/api/admin/paypal/settings", "PATCH", settings),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["/api/admin/paypal/settings"] });
       toast({ title: "PayPal settings updated successfully" });
@@ -194,14 +170,11 @@ export default function AdminDashboard() {
   }, [currentPayPalSettings]);
 
   // New comprehensive stats
-=======
->>>>>>> origin/main
   const stats = {
     totalUsers: users?.length || 0,
     totalStories: stories?.length || 0,
     totalViews: stories?.reduce((sum, story) => sum + story.views, 0) || 0,
     totalShares: stories?.reduce((sum, story) => sum + story.shares, 0) || 0,
-<<<<<<< HEAD
     premiumUsers: users?.filter(u => u.subscriptionStatus === 'active').length || 0,
     revenue: payments?.reduce((sum: number, payment: any) => sum + (payment.amount / 100), 0) || 0,
     dailyActiveUsers: users?.filter((u: any) => {
@@ -210,35 +183,22 @@ export default function AdminDashboard() {
       return (today.getTime() - lastActive.getTime()) < 24 * 60 * 60 * 1000;
     }).length || 0,
     conversionRate: users?.length ? ((users?.filter(u => u.subscriptionStatus === 'active').length || 0) / users.length * 100).toFixed(1) : "0"
-=======
-    premiumUsers: users?.filter(u => u.subscriptionTier !== 'free').length || 0,
-    revenue: 12543, // Monthly revenue in dollars
->>>>>>> origin/main
   };
 
   return (
     <div className="min-h-screen bg-[var(--dark-bg)] text-white p-6">
       <div className="max-w-7xl mx-auto">
-<<<<<<< HEAD
         {/* Enhanced Header */}
         <div className="flex items-center justify-between mb-8">
           <div>
             <h1 className="text-3xl font-bold text-white">ChatLure Admin Dashboard</h1>
             <p className="text-gray-400 mt-1">Complete platform management & control</p>
-=======
-        {/* Header */}
-        <div className="flex items-center justify-between mb-8">
-          <div>
-            <h1 className="text-3xl font-bold text-white">Admin Dashboard</h1>
-            <p className="text-gray-400 mt-1">Manage your ChatLure platform</p>
->>>>>>> origin/main
           </div>
           <div className="flex items-center space-x-3">
             <Badge className="bg-green-500 text-white">
               <Activity className="h-3 w-3 mr-1" />
               System Healthy
             </Badge>
-<<<<<<< HEAD
             <Badge className="bg-blue-500 text-white">
               <Users className="h-3 w-3 mr-1" />
               {stats.dailyActiveUsers} Online
@@ -247,37 +207,24 @@ export default function AdminDashboard() {
               className="bg-[var(--whatsapp)] hover:bg-[var(--whatsapp-dark)]"
               onClick={() => setSelectedTab("site-settings")}
             >
-=======
-            <Button className="bg-[var(--whatsapp)] hover:bg-[var(--whatsapp-dark)]">
->>>>>>> origin/main
               <Settings className="h-4 w-4 mr-2" />
               Settings
             </Button>
           </div>
         </div>
 
-<<<<<<< HEAD
         {/* Enhanced Stats Overview */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-6 mb-8">
-=======
-        {/* Stats Overview */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
->>>>>>> origin/main
           <Card className="bg-[var(--card-bg)] border-gray-700">
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-gray-400 text-sm">Total Users</p>
-<<<<<<< HEAD
                   <p className="text-2xl font-bold text-white">{stats.totalUsers.toLocaleString()}</p>
                 </div>
                 <Users className="h-8 w-8 text-blue-400" />
               </div>
-              <div className="mt-2">
-                <Badge className="bg-blue-500 text-white text-xs">
-                  +{Math.floor(Math.random() * 50)} this week
-                </Badge>
-              </div>
+              <p className="text-green-400 text-sm mt-2">+12% from last month</p>
             </CardContent>
           </Card>
 
@@ -286,22 +233,11 @@ export default function AdminDashboard() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-gray-400 text-sm">Premium Users</p>
-                  <p className="text-2xl font-bold text-white">{stats.premiumUsers.toLocaleString()}</p>
+                  <p className="text-2xl font-bold text-white">{stats.premiumUsers}</p>
                 </div>
-                <Crown className="h-8 w-8 text-yellow-400" />
+                <Shield className="h-8 w-8 text-purple-400" />
               </div>
-              <div className="mt-2">
-                <Badge className="bg-yellow-500 text-white text-xs">
-                  {stats.conversionRate}% conversion
-                </Badge>
-              </div>
-=======
-                  <p className="text-2xl font-bold text-white">{formatNumber(stats.totalUsers)}</p>
-                </div>
-                <Users className="h-8 w-8 text-blue-400" />
-              </div>
-              <p className="text-green-400 text-sm mt-2">+12% from last month</p>
->>>>>>> origin/main
+              <p className="text-green-400 text-sm mt-2">{stats.conversionRate}% conversion</p>
             </CardContent>
           </Card>
 
@@ -310,23 +246,11 @@ export default function AdminDashboard() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-gray-400 text-sm">Total Stories</p>
-<<<<<<< HEAD
-                  <p className="text-2xl font-bold text-white">{stats.totalStories.toLocaleString()}</p>
+                  <p className="text-2xl font-bold text-white">{stats.totalStories}</p>
                 </div>
                 <MessageSquare className="h-8 w-8 text-green-400" />
               </div>
-              <div className="mt-2">
-                <Badge className="bg-green-500 text-white text-xs">
-                  {stories?.filter(s => s.isNew).length || 0} new
-                </Badge>
-              </div>
-=======
-                  <p className="text-2xl font-bold text-white">{formatNumber(stats.totalStories)}</p>
-                </div>
-                <MessageSquare className="h-8 w-8 text-purple-400" />
-              </div>
               <p className="text-green-400 text-sm mt-2">+8% from last month</p>
->>>>>>> origin/main
             </CardContent>
           </Card>
 
@@ -335,21 +259,11 @@ export default function AdminDashboard() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-gray-400 text-sm">Total Views</p>
-                  <p className="text-2xl font-bold text-white">{formatNumber(stats.totalViews)}</p>
+                  <p className="text-2xl font-bold text-white">{stats.totalViews.toLocaleString()}</p>
                 </div>
-<<<<<<< HEAD
-                <Eye className="h-8 w-8 text-purple-400" />
-              </div>
-              <div className="mt-2">
-                <Badge className="bg-purple-500 text-white text-xs">
-                  +{Math.floor(Math.random() * 1000)} today
-                </Badge>
-              </div>
-=======
-                <Eye className="h-8 w-8 text-green-400" />
+                <Eye className="h-8 w-8 text-yellow-400" />
               </div>
               <p className="text-green-400 text-sm mt-2">+24% from last month</p>
->>>>>>> origin/main
             </CardContent>
           </Card>
 
@@ -357,17 +271,12 @@ export default function AdminDashboard() {
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
-<<<<<<< HEAD
-                  <p className="text-gray-400 text-sm">Revenue</p>
-                  <p className="text-2xl font-bold text-white">${stats.revenue.toFixed(2)}</p>
+                  <p className="text-gray-400 text-sm">Monthly Revenue</p>
+                  <p className="text-2xl font-bold text-white">${stats.revenue.toLocaleString()}</p>
                 </div>
-                <DollarSign className="h-8 w-8 text-green-400" />
+                <DollarSign className="h-8 w-8 text-green-500" />
               </div>
-              <div className="mt-2">
-                <Badge className="bg-green-500 text-white text-xs">
-                  +{Math.floor(Math.random() * 20)}% this month
-                </Badge>
-              </div>
+              <p className="text-green-400 text-sm mt-2">+18% from last month</p>
             </CardContent>
           </Card>
 
@@ -376,37 +285,26 @@ export default function AdminDashboard() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-gray-400 text-sm">Daily Active</p>
-                  <p className="text-2xl font-bold text-white">{stats.dailyActiveUsers.toLocaleString()}</p>
+                  <p className="text-2xl font-bold text-white">{stats.dailyActiveUsers}</p>
                 </div>
                 <Activity className="h-8 w-8 text-orange-400" />
               </div>
-              <div className="mt-2">
-                <Badge className="bg-orange-500 text-white text-xs">
-                  {Math.floor((stats.dailyActiveUsers / stats.totalUsers) * 100)}% of total
-                </Badge>
-              </div>
-=======
-                  <p className="text-gray-400 text-sm">Monthly Revenue</p>
-                  <p className="text-2xl font-bold text-white">${formatNumber(stats.revenue)}</p>
-                </div>
-                <DollarSign className="h-8 w-8 text-yellow-400" />
-              </div>
-              <p className="text-green-400 text-sm mt-2">+18% from last month</p>
->>>>>>> origin/main
+              <p className="text-green-400 text-sm mt-2">84% retention</p>
             </CardContent>
           </Card>
         </div>
 
-        {/* Main Content Tabs */}
+        {/* Enhanced Main Content Tabs */}
         <Tabs value={selectedTab} onValueChange={setSelectedTab} className="space-y-6">
-<<<<<<< HEAD
-          <TabsList className="grid w-full grid-cols-6 bg-[var(--card-bg)] border-gray-700">
+          <TabsList className="bg-[var(--card-bg)] border-gray-700 grid grid-cols-8 w-full">
             <TabsTrigger value="overview">Overview</TabsTrigger>
-            <TabsTrigger value="users">Users</TabsTrigger>
             <TabsTrigger value="stories">Stories</TabsTrigger>
-            <TabsTrigger value="analytics">Analytics</TabsTrigger>
+            <TabsTrigger value="chat-editor">Chat Editor</TabsTrigger>
+            <TabsTrigger value="users">Users</TabsTrigger>
             <TabsTrigger value="payments">Payments</TabsTrigger>
-            <TabsTrigger value="site-settings">Settings</TabsTrigger>
+            <TabsTrigger value="analytics">Analytics</TabsTrigger>
+            <TabsTrigger value="moderation">Moderation</TabsTrigger>
+            <TabsTrigger value="site-settings">Site Settings</TabsTrigger>
           </TabsList>
 
           {/* Overview Tab - Enhanced */}
@@ -440,46 +338,12 @@ export default function AdminDashboard() {
                     <div className="flex items-center space-x-3 p-2 bg-gray-800 rounded">
                       <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
                       <span className="text-gray-300 text-sm">Moderation alert: Story flagged</span>
-=======
-          <TabsList className="bg-[var(--card-bg)] border-gray-700">
-            <TabsTrigger value="overview">Overview</TabsTrigger>
-            <TabsTrigger value="stories">Stories Management</TabsTrigger>
-            <TabsTrigger value="users">Users Management</TabsTrigger>
-            <TabsTrigger value="analytics">Analytics</TabsTrigger>
-            <TabsTrigger value="settings">Platform Settings</TabsTrigger>
-          </TabsList>
-
-          {/* Overview Tab */}
-          <TabsContent value="overview" className="space-y-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              {/* Recent Activity */}
-              <Card className="bg-[var(--card-bg)] border-gray-700">
-                <CardHeader>
-                  <CardTitle className="text-white">Recent Activity</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                      <span className="text-gray-300 text-sm">New user registered: sarah_123</span>
-                      <span className="text-gray-500 text-xs">2m ago</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                      <span className="text-gray-300 text-sm">Story "College Drama" went viral</span>
-                      <span className="text-gray-500 text-xs">15m ago</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                      <span className="text-gray-300 text-sm">Premium subscription purchased</span>
->>>>>>> origin/main
                       <span className="text-gray-500 text-xs">1h ago</span>
                     </div>
                   </div>
                 </CardContent>
               </Card>
 
-<<<<<<< HEAD
               {/* Quick Actions Panel */}
               <Card className="bg-[var(--card-bg)] border-gray-700">
                 <CardHeader>
@@ -547,43 +411,11 @@ export default function AdminDashboard() {
           </TabsContent>
 
           {/* Enhanced Stories Management Tab */}
-=======
-              {/* Top Performing Stories */}
-              <Card className="bg-[var(--card-bg)] border-gray-700">
-                <CardHeader>
-                  <CardTitle className="text-white">Top Performing Stories</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3">
-                    {stories?.slice(0, 5).map((story, index) => (
-                      <div key={story.id} className="flex items-center justify-between">
-                        <div className="flex items-center space-x-3">
-                          <span className="text-gray-400 text-sm">#{index + 1}</span>
-                          <div>
-                            <p className="text-white text-sm font-medium">{story.title}</p>
-                            <p className="text-gray-400 text-xs">{story.category}</p>
-                          </div>
-                        </div>
-                        <div className="text-right">
-                          <p className="text-white text-sm">{formatNumber(story.views)}</p>
-                          <p className="text-gray-400 text-xs">views</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </TabsContent>
-
-          {/* Stories Management Tab */}
->>>>>>> origin/main
           <TabsContent value="stories" className="space-y-6">
             <div className="flex items-center justify-between">
               <h2 className="text-xl font-semibold text-white">Stories Management</h2>
               <Dialog>
                 <DialogTrigger asChild>
-<<<<<<< HEAD
                   <Button className="bg-green-600 hover:bg-green-700">
                     <Plus className="h-4 w-4 mr-2" />
                     Create Story
@@ -725,70 +557,12 @@ export default function AdminDashboard() {
                       <Save className="h-4 w-4 mr-2" />
                       Create Story
                     </Button>
-=======
-                  <Button className="bg-[var(--whatsapp)] hover:bg-[var(--whatsapp-dark)]">
-                    <Plus className="h-4 w-4 mr-2" />
-                    Add Story
-                  </Button>
-                </DialogTrigger>
-                <DialogContent className="bg-[var(--card-bg)] border-gray-700 text-white">
-                  <DialogHeader>
-                    <DialogTitle>Create New Story</DialogTitle>
-                  </DialogHeader>
-                  <div className="space-y-4">
-                    <Input 
-                      placeholder="Story title" 
-                      className="bg-gray-800 border-gray-600"
-                      value={newStory.title}
-                      onChange={(e) => setNewStory({...newStory, title: e.target.value})}
-                    />
-                    <Textarea 
-                      placeholder="Story description" 
-                      className="bg-gray-800 border-gray-600"
-                      value={newStory.description}
-                      onChange={(e) => setNewStory({...newStory, description: e.target.value})}
-                    />
-                    <Select value={newStory.category} onValueChange={(value) => setNewStory({...newStory, category: value})}>
-                      <SelectTrigger className="bg-gray-800 border-gray-600">
-                        <SelectValue placeholder="Select category" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {categories?.map(cat => (
-                          <SelectItem key={cat.id} value={cat.name}>{cat.emoji} {cat.name}</SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                    <Select value={newStory.difficulty} onValueChange={(value) => setNewStory({...newStory, difficulty: value})}>
-                      <SelectTrigger className="bg-gray-800 border-gray-600">
-                        <SelectValue placeholder="Select difficulty" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="easy">Easy</SelectItem>
-                        <SelectItem value="medium">Medium</SelectItem>
-                        <SelectItem value="hard">Hard</SelectItem>
-                      </SelectContent>
-                    </Select>
-                    <div className="flex space-x-4">
-                      <Button variant="outline" className="flex-1">Cancel</Button>
-                      <Button 
-                        className="flex-1 bg-[var(--whatsapp)]"
-                        onClick={() => createStoryMutation.mutate(newStory)}
-                        disabled={createStoryMutation.isPending}
-                      >
-                        {createStoryMutation.isPending ? <RefreshCw className="h-4 w-4 animate-spin mr-2" /> : null}
-                        Create Story
-                      </Button>
-                    </div>
->>>>>>> origin/main
                   </div>
                 </DialogContent>
               </Dialog>
             </div>
 
-<<<<<<< HEAD
             {/* Stories Table */}
-=======
->>>>>>> origin/main
             <Card className="bg-[var(--card-bg)] border-gray-700">
               <CardContent className="p-0">
                 <Table>
@@ -799,10 +573,7 @@ export default function AdminDashboard() {
                       <TableHead className="text-gray-300">Views</TableHead>
                       <TableHead className="text-gray-300">Likes</TableHead>
                       <TableHead className="text-gray-300">Status</TableHead>
-<<<<<<< HEAD
                       <TableHead className="text-gray-300">Revenue</TableHead>
-=======
->>>>>>> origin/main
                       <TableHead className="text-gray-300">Actions</TableHead>
                     </TableRow>
                   </TableHeader>
@@ -811,7 +582,6 @@ export default function AdminDashboard() {
                       <TableRow key={story.id} className="border-gray-700">
                         <TableCell className="text-white font-medium">{story.title}</TableCell>
                         <TableCell>
-<<<<<<< HEAD
                           <Badge className="bg-purple-500 text-white">{story.category}</Badge>
                         </TableCell>
                         <TableCell className="text-gray-300">{story.views.toLocaleString()}</TableCell>
@@ -825,22 +595,11 @@ export default function AdminDashboard() {
                         </TableCell>
                         <TableCell className="text-green-400 font-bold">
                           ${((story.views * 0.01) + (story.likes * 0.05)).toFixed(2)}
-=======
-                          <Badge variant="outline" className="text-gray-300">{story.category}</Badge>
-                        </TableCell>
-                        <TableCell className="text-gray-300">{formatNumber(story.views)}</TableCell>
-                        <TableCell className="text-gray-300">{formatNumber(story.likes)}</TableCell>
-                        <TableCell>
-                          <Badge className={story.isHot ? "bg-red-500" : story.isViral ? "bg-yellow-500" : "bg-gray-500"}>
-                            {story.isHot ? "Hot" : story.isViral ? "Viral" : "Normal"}
-                          </Badge>
->>>>>>> origin/main
                         </TableCell>
                         <TableCell>
                           <div className="flex space-x-2">
                             <Button 
                               size="sm" 
-<<<<<<< HEAD
                               className="bg-blue-600 hover:bg-blue-700"
                               onClick={() => setSelectedTab("chat-editor")}
                             >
@@ -851,22 +610,6 @@ export default function AdminDashboard() {
                             </Button>
                             <Button size="sm" className="bg-red-600 hover:bg-red-700">
                               <Trash2 className="h-3 w-3" />
-=======
-                              variant="ghost" 
-                              className="text-blue-400 hover:text-blue-300"
-                              onClick={() => setEditingStory(story)}
-                            >
-                              <Edit className="h-4 w-4" />
-                            </Button>
-                            <Button 
-                              size="sm" 
-                              variant="ghost" 
-                              className="text-red-400 hover:text-red-300"
-                              onClick={() => deleteStoryMutation.mutate(story.id)}
-                              disabled={deleteStoryMutation.isPending}
-                            >
-                              {deleteStoryMutation.isPending ? <RefreshCw className="h-4 w-4 animate-spin" /> : <Trash2 className="h-4 w-4" />}
->>>>>>> origin/main
                             </Button>
                           </div>
                         </TableCell>
@@ -878,7 +621,6 @@ export default function AdminDashboard() {
             </Card>
           </TabsContent>
 
-<<<<<<< HEAD
           {/* Chat Editor Tab - NEW COMPREHENSIVE FEATURE */}
           <TabsContent value="chat-editor" className="space-y-6">
             <div className="flex items-center justify-between">
@@ -1124,18 +866,6 @@ export default function AdminDashboard() {
                     </div>
                   </DialogContent>
                 </Dialog>
-=======
-          {/* Users Management Tab */}
-          <TabsContent value="users" className="space-y-6">
-            <div className="flex items-center justify-between">
-              <h2 className="text-xl font-semibold text-white">Users Management</h2>
-              <div className="flex space-x-3">
-                <Button variant="outline">Export Users</Button>
-                <Button className="bg-[var(--whatsapp)] hover:bg-[var(--whatsapp-dark)]">
-                  <Plus className="h-4 w-4 mr-2" />
-                  Add User
-                </Button>
->>>>>>> origin/main
               </div>
             </div>
 
@@ -1144,27 +874,18 @@ export default function AdminDashboard() {
                 <Table>
                   <TableHeader>
                     <TableRow className="border-gray-700">
-<<<<<<< HEAD
                       <TableHead className="text-gray-300">Username</TableHead>
                       <TableHead className="text-gray-300">Email</TableHead>
                       <TableHead className="text-gray-300">Subscription</TableHead>
                       <TableHead className="text-gray-300">Juice Level</TableHead>
                       <TableHead className="text-gray-300">Status</TableHead>
                       <TableHead className="text-gray-300">Last Active</TableHead>
-=======
-                      <TableHead className="text-gray-300">User</TableHead>
-                      <TableHead className="text-gray-300">Email</TableHead>
-                      <TableHead className="text-gray-300">Subscription</TableHead>
-                      <TableHead className="text-gray-300">Stories Read</TableHead>
-                      <TableHead className="text-gray-300">Streak</TableHead>
->>>>>>> origin/main
                       <TableHead className="text-gray-300">Actions</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
                     {users?.map((user) => (
                       <TableRow key={user.id} className="border-gray-700">
-<<<<<<< HEAD
                         <TableCell className="text-white font-medium">{user.username}</TableCell>
                         <TableCell className="text-gray-300">{user.email || 'N/A'}</TableCell>
                         <TableCell>
@@ -1230,58 +951,6 @@ export default function AdminDashboard() {
                             <Button size="sm" className="bg-red-600 hover:bg-red-700">
                               <Lock className="h-3 w-3" />
                             </Button>
-=======
-                        <TableCell>
-                          <div className="flex items-center space-x-3">
-                            <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
-                              <span className="text-white text-sm font-medium">
-                                {user.firstName?.[0] || user.username[0].toUpperCase()}
-                              </span>
-                            </div>
-                            <div>
-                              <p className="text-white font-medium">{user.username}</p>
-                              <p className="text-gray-400 text-sm">{user.firstName} {user.lastName}</p>
-                            </div>
-                          </div>
-                        </TableCell>
-                        <TableCell className="text-gray-300">{user.email}</TableCell>
-                        <TableCell>
-                          <Badge className={
-                            user.subscriptionTier === 'pro' ? "bg-purple-500" :
-                            user.subscriptionTier === 'premium' ? "bg-yellow-500" : "bg-gray-500"
-                          }>
-                            {user.subscriptionTier === 'pro' ? <Crown className="h-3 w-3 mr-1" /> : null}
-                            {user.subscriptionTier.toUpperCase()}
-                          </Badge>
-                        </TableCell>
-                        <TableCell className="text-gray-300">{user.storiesRead}</TableCell>
-                        <TableCell className="text-gray-300">{user.currentStreak} days</TableCell>
-                        <TableCell>
-                          <div className="flex space-x-2">
-                            <Button 
-                              size="sm" 
-                              variant="ghost" 
-                              className="text-blue-400 hover:text-blue-300"
-                              onClick={() => setEditingUser(user)}
-                            >
-                              <Edit className="h-4 w-4" />
-                            </Button>
-                            <Button 
-                              size="sm" 
-                              variant="ghost" 
-                              className="text-red-400 hover:text-red-300"
-                              onClick={() => deleteUserMutation.mutate(user.id)}
-                              disabled={deleteUserMutation.isPending}
-                            >
-                              {deleteUserMutation.isPending ? <RefreshCw className="h-4 w-4 animate-spin" /> : <Trash2 className="h-4 w-4" />}
-                            </Button>
-                            {user.isAdmin && (
-                              <Badge className="bg-red-500 text-white">
-                                <Shield className="h-3 w-3 mr-1" />
-                                Admin
-                              </Badge>
-                            )}
->>>>>>> origin/main
                           </div>
                         </TableCell>
                       </TableRow>
@@ -1292,7 +961,6 @@ export default function AdminDashboard() {
             </Card>
           </TabsContent>
 
-<<<<<<< HEAD
           {/* Analytics Tab - Enhanced */}
           <TabsContent value="analytics" className="space-y-6">
             <div className="flex items-center justify-between">
@@ -1322,53 +990,12 @@ export default function AdminDashboard() {
                 <CardHeader>
                   <CardTitle className="text-white flex items-center">
                     <DollarSign className="h-5 w-5 mr-2 text-green-400" />
-=======
-          {/* Analytics Tab */}
-          <TabsContent value="analytics" className="space-y-6">
-            <h2 className="text-xl font-semibold text-white">Platform Analytics</h2>
-            
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <Card className="bg-[var(--card-bg)] border-gray-700">
-                <CardHeader>
-                  <CardTitle className="text-white flex items-center">
-                    <TrendingUp className="h-5 w-5 mr-2" />
-                    Growth Metrics
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-300">User Growth Rate</span>
-                      <span className="text-green-400 font-semibold">+12.5%</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-300">Story Engagement</span>
-                      <span className="text-green-400 font-semibold">+24.3%</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-300">Premium Conversion</span>
-                      <span className="text-green-400 font-semibold">+8.7%</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-300">Share Rate</span>
-                      <span className="text-green-400 font-semibold">+15.2%</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-[var(--card-bg)] border-gray-700">
-                <CardHeader>
-                  <CardTitle className="text-white flex items-center">
-                    <BarChart3 className="h-5 w-5 mr-2" />
->>>>>>> origin/main
                     Revenue Analytics
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
                     <div className="flex justify-between items-center">
-<<<<<<< HEAD
                       <span className="text-gray-300">Total Revenue</span>
                       <span className="text-green-400 font-bold">${stats.revenue.toLocaleString()}</span>
                     </div>
@@ -1542,22 +1169,6 @@ export default function AdminDashboard() {
                     <div className="flex justify-between text-sm">
                       <span className="text-gray-400">Queue Length</span>
                       <span className="text-white">{moderationQueue?.length || 0}</span>
-=======
-                      <span className="text-gray-300">Monthly Recurring Revenue</span>
-                      <span className="text-white font-semibold">${formatNumber(stats.revenue)}</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-300">Average Revenue Per User</span>
-                      <span className="text-white font-semibold">$4.32</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-300">Churn Rate</span>
-                      <span className="text-red-400 font-semibold">2.3%</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-300">Lifetime Value</span>
-                      <span className="text-white font-semibold">$187.50</span>
->>>>>>> origin/main
                     </div>
                   </div>
                 </CardContent>
@@ -1565,7 +1176,6 @@ export default function AdminDashboard() {
             </div>
           </TabsContent>
 
-<<<<<<< HEAD
           {/* PayPal Payments Tab (keep existing) */}
           <TabsContent value="payments" className="space-y-6">
             <div className="flex items-center justify-between">
@@ -1939,12 +1549,12 @@ export default function AdminDashboard() {
                 </CardContent>
               </Card>
 
-              {/* Site Configuration Card */}
+              {/* General Site Settings Card */}
               <Card className="bg-[var(--card-bg)] border-gray-700">
                 <CardHeader>
                   <CardTitle className="text-white flex items-center">
-                    <Globe className="h-5 w-5 mr-2 text-green-400" />
-                    Site Configuration
+                    <Settings className="h-5 w-5 mr-2 text-gray-400" />
+                    General Settings
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
@@ -2082,90 +1692,12 @@ export default function AdminDashboard() {
                     <div className="flex items-center justify-center mb-2">
                       <CheckCircle className="h-8 w-8 text-green-400" />
                     </div>
-                    <div className="text-white font-medium">Clerk Auth</div>
-                    <div className="text-green-400 text-sm">Active</div>
+                    <div className="text-white font-medium">API Server</div>
+                    <div className="text-green-400 text-sm">Healthy</div>
                   </div>
                 </div>
               </CardContent>
             </Card>
-          </TabsContent>
-        </Tabs>
-=======
-          {/* Platform Settings Tab */}
-          <TabsContent value="settings" className="space-y-6">
-            <h2 className="text-xl font-semibold text-white">Platform Settings</h2>
-            
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <Card className="bg-[var(--card-bg)] border-gray-700">
-                <CardHeader>
-                  <CardTitle className="text-white">General Settings</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div>
-                    <label className="text-gray-300 text-sm">Platform Name</label>
-                    <Input defaultValue="ChatLure" className="bg-gray-800 border-gray-600 mt-1" />
-                  </div>
-                  <div>
-                    <label className="text-gray-300 text-sm">Daily Story Limit (Free Users)</label>
-                    <Input defaultValue="3" type="number" className="bg-gray-800 border-gray-600 mt-1" />
-                  </div>
-                  <div>
-                    <label className="text-gray-300 text-sm">Maintenance Mode</label>
-                    <Select defaultValue="disabled">
-                      <SelectTrigger className="bg-gray-800 border-gray-600 mt-1">
-                        <SelectValue />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="enabled">Enabled</SelectItem>
-                        <SelectItem value="disabled">Disabled</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <Button className="w-full bg-[var(--whatsapp)]">Save Settings</Button>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-[var(--card-bg)] border-gray-700">
-                <CardHeader>
-                  <CardTitle className="text-white">Content Moderation</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div>
-                    <label className="text-gray-300 text-sm">Auto-approve Stories</label>
-                    <Select defaultValue="manual">
-                      <SelectTrigger className="bg-gray-800 border-gray-600 mt-1">
-                        <SelectValue />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="auto">Auto-approve</SelectItem>
-                        <SelectItem value="manual">Manual Review</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div>
-                    <label className="text-gray-300 text-sm">Content Filter Level</label>
-                    <Select defaultValue="moderate">
-                      <SelectTrigger className="bg-gray-800 border-gray-600 mt-1">
-                        <SelectValue />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="strict">Strict</SelectItem>
-                        <SelectItem value="moderate">Moderate</SelectItem>
-                        <SelectItem value="lenient">Lenient</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div>
-                    <label className="text-gray-300 text-sm">Blocked Words</label>
-                    <Textarea 
-                      placeholder="Enter blocked words (comma separated)" 
-                      className="bg-gray-800 border-gray-600 mt-1" 
-                    />
-                  </div>
-                  <Button className="w-full bg-[var(--whatsapp)]">Update Filters</Button>
-                </CardContent>
-              </Card>
-            </div>
           </TabsContent>
         </Tabs>
 
@@ -2313,7 +1845,6 @@ export default function AdminDashboard() {
             </DialogContent>
           </Dialog>
         )}
->>>>>>> origin/main
       </div>
     </div>
   );
