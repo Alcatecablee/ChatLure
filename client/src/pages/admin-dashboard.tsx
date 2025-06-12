@@ -10,6 +10,8 @@ import { Badge } from "@/components/ui/badge";
 import { toast } from "@/hooks/use-toast";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
 import {
   Plus, Download, Upload, Edit, Trash2, Eye, Save, Users, Package, 
   MessageCircle, TrendingUp, DollarSign, Activity, Settings, 
@@ -144,8 +146,9 @@ export default function AdminDashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0d1117] p-6">
-      <div className="mx-auto max-w-7xl">
+    <div className="min-h-screen bg-[#0d1117]">
+      <Header />
+      <div className="mx-auto max-w-7xl p-6">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-[#f0f6fc]">ChatLure Admin Dashboard</h1>
           <p className="text-[#7d8590]">Manage your chat stories platform</p>
@@ -699,6 +702,8 @@ export default function AdminDashboard() {
           </TabsContent>
         </Tabs>
       </div>
+      
+      <Footer />
     </div>
   );
 }

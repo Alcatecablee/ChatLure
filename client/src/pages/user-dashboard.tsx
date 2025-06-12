@@ -75,8 +75,9 @@ export default function UserDashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0d1117] text-[#f0f6fc] p-6">
-      <div className="max-w-6xl mx-auto">
+    <div className="min-h-screen bg-[#0d1117] text-[#f0f6fc]">
+      <Header />
+      <div className="max-w-6xl mx-auto p-6">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <div className="flex items-center space-x-4">
@@ -385,6 +386,8 @@ export default function UserDashboard() {
           </TabsContent>
         </Tabs>
       </div>
+      
+      <Footer />
     </div>
   );
 }
