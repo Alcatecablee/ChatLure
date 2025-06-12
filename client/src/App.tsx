@@ -8,6 +8,7 @@ import Chat from "@/pages/chat";
 import UserDashboard from "@/pages/user-dashboard";
 import AdminDashboard from "@/pages/admin-dashboard";
 import Pricing from "@/pages/pricing";
+import ChatEditor from "@/pages/chat-editor";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -18,6 +19,7 @@ function Router() {
       <Route path="/pricing" component={Pricing} />
       <Route path="/dashboard" component={UserDashboard} />
       <Route path="/admin" component={AdminDashboard} />
+      <Route path="/editor" component={ChatEditor} />
       <Route component={NotFound} />
     </Switch>
   );

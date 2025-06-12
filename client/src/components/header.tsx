@@ -13,6 +13,7 @@ export default function Header() {
 
   const navigation = [
     { name: "Home", href: "/", icon: null },
+    { name: "Editor", href: "/editor", icon: Edit3 },
     { name: "Pricing", href: "/pricing", icon: Crown },
     { name: "Dashboard", href: "/dashboard", icon: User },
     { name: "Admin", href: "/admin", icon: Settings },
@@ -33,16 +34,8 @@ export default function Header() {
               <img 
                 src={chatLureLogo} 
                 alt="ChatLure Logo" 
-                className="w-10 h-10 object-contain"
+                className="h-8 w-auto object-contain"
               />
-              <div>
-                <h1 className="text-2xl font-bold tracking-tight text-foreground">
-                  ChatLure
-                </h1>
-                <span className="hidden sm:block text-xs text-muted-foreground -mt-1 font-medium">
-                  Peek, Obsess, Repeat
-                </span>
-              </div>
             </div>
           </Link>
 
