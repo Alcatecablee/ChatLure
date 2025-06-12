@@ -24,16 +24,16 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-surface border-b border-border shadow-lg sticky top-0 z-50 backdrop-blur-md bg-opacity-95">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+    <header className="bg-[#0d1117] border-b border-[#21262d] sticky top-0 z-50 backdrop-blur-md bg-opacity-95">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-14">
           {/* Logo */}
           <Link href="/">
-            <div className="flex items-center space-x-3 cursor-pointer hover:opacity-90 transition-all duration-200 hover:scale-105">
+            <div className="flex items-center space-x-2 cursor-pointer group">
               <img 
                 src={chatLureLogo} 
                 alt="ChatLure Logo" 
-                className="h-16 w-auto object-contain"
+                className="h-8 w-auto object-contain transition-all duration-200 group-hover:scale-105"
               />
             </div>
           </Link>
@@ -44,24 +44,20 @@ export default function Header() {
               const Icon = item.icon;
               return (
                 <Link key={item.name} href={item.href}>
-                  <Button
-                    variant="ghost"
+                  <button
                     className={cn(
-                      "text-foreground hover:bg-surface-hover transition-all duration-200 hover:scale-102 relative",
-                      isActive(item.href) && "bg-surface-hover font-semibold text-primary shadow-md"
+                      "px-3 py-2 text-sm font-medium text-[#7d8590] hover:text-[#f0f6fc] transition-colors duration-200 relative rounded-md",
+                      isActive(item.href) && "text-[#f0f6fc] bg-[#21262d]"
                     )}
                   >
-                    {Icon && <Icon className="w-4 h-4 mr-2" />}
+                    {Icon && <Icon className="w-4 h-4 mr-2 inline" />}
                     {item.name}
                     {item.name === "Pricing" && (
-                      <Badge variant="secondary" className="ml-2 bg-primary text-primary-foreground text-xs shadow-sm">
+                      <span className="ml-2 px-1.5 py-0.5 text-xs bg-[#0969da] text-white rounded-full">
                         New
-                      </Badge>
+                      </span>
                     )}
-                    {isActive(item.href) && (
-                      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-8 h-0.5 bg-primary rounded-full" />
-                    )}
-                  </Button>
+                  </button>
                 </Link>
               );
             })}
@@ -74,11 +70,10 @@ export default function Header() {
             {/* Upgrade Button */}
             <Link href="/pricing">
               <Button
-                variant="secondary"
                 size="sm"
-                className="hidden sm:flex bg-primary text-primary-foreground hover:bg-primary/90 font-semibold shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105"
+                className="hidden sm:flex bg-[#0969da] text-white hover:bg-[#0860ca] border-none font-medium px-3 py-1.5 text-sm"
               >
-                <Crown className="w-4 h-4 mr-1" />
+                <Crown className="w-4 h-4 mr-1.5" />
                 Upgrade
               </Button>
             </Link>
@@ -87,7 +82,7 @@ export default function Header() {
             <Button
               variant="ghost"
               size="sm"
-              className="md:hidden text-foreground hover:bg-surface-hover hover:scale-105 transition-all duration-200"
+              className="md:hidden text-[#7d8590] hover:text-[#f0f6fc] hover:bg-[#21262d] p-2"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -97,41 +92,39 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border bg-surface rounded-b-lg mx-4 -mb-4 shadow-lg slide-in">
+          <div className="md:hidden py-3 border-t border-[#21262d] bg-[#0d1117]">
             <nav className="flex flex-col space-y-1">
               {navigation.map((item) => {
                 const Icon = item.icon;
                 return (
                   <Link key={item.name} href={item.href}>
-                    <Button
-                      variant="ghost"
+                    <button
                       className={cn(
-                        "w-full justify-start text-foreground hover:bg-surface-hover transition-all duration-200",
-                        isActive(item.href) && "bg-surface-hover font-semibold text-primary"
+                        "w-full px-3 py-2 text-left text-sm font-medium text-[#7d8590] hover:text-[#f0f6fc] hover:bg-[#21262d] transition-colors duration-200 rounded-md",
+                        isActive(item.href) && "text-[#f0f6fc] bg-[#21262d]"
                       )}
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      {Icon && <Icon className="w-4 h-4 mr-3" />}
+                      {Icon && <Icon className="w-4 h-4 mr-3 inline" />}
                       {item.name}
                       {item.name === "Pricing" && (
-                        <Badge variant="secondary" className="ml-auto bg-primary text-primary-foreground text-xs">
+                        <span className="ml-auto px-1.5 py-0.5 text-xs bg-[#0969da] text-white rounded-full">
                           New
-                        </Badge>
+                        </span>
                       )}
-                    </Button>
+                    </button>
                   </Link>
                 );
               })}
-              <div className="pt-4 border-t border-surface-hover">
+              <div className="pt-3 mt-3 border-t border-[#21262d]">
                 <Link href="/pricing">
-                  <Button
-                    variant="ghost"
-                    className="w-full justify-start bg-primary text-primary-foreground hover:bg-primary/90 font-semibold shadow-lg"
+                  <button
+                    className="w-full px-3 py-2 text-left text-sm font-medium bg-[#0969da] text-white hover:bg-[#0860ca] transition-colors duration-200 rounded-md"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    <Crown className="w-4 h-4 mr-3" />
+                    <Crown className="w-4 h-4 mr-3 inline" />
                     Upgrade to Premium
-                  </Button>
+                  </button>
                 </Link>
               </div>
             </nav>
