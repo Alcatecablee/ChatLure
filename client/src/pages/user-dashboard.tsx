@@ -89,8 +89,8 @@ export default function UserDashboard() {
                 <h1 className="text-2xl font-bold text-[#f0f6fc]">{currentUser.firstName} {currentUser.lastName}</h1>
                 {getSubscriptionBadge(currentUser.subscriptionTier)}
               </div>
-              <p className="text-gray-400">@{currentUser.username}</p>
-              <p className="text-gray-400 text-sm">Member since {currentUser.createdAt?.toLocaleDateString()}</p>
+              <p className="text-[#7d8590]">@{currentUser.username}</p>
+              <p className="text-[#7d8590] text-sm">Member since {currentUser.createdAt?.toLocaleDateString()}</p>
             </div>
           </div>
           <div className="flex items-center space-x-3">
