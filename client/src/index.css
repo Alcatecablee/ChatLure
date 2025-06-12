@@ -3,45 +3,50 @@
 @tailwind utilities;
 
 :root {
-  /* Cursor.com inspired dark theme with ChatLure specifics */
-  --background: hsl(220, 13%, 9%);
-  --foreground: hsl(220, 9%, 90%);
-  --muted: hsl(220, 13%, 15%);
-  --muted-foreground: hsl(220, 9%, 55%);
-  --popover: hsl(220, 13%, 11%);
-  --popover-foreground: hsl(220, 9%, 90%);
-  --card: hsl(220, 13%, 11%);
-  --card-foreground: hsl(220, 9%, 90%);
-  --border: hsl(220, 13%, 18%);
-  --input: hsl(220, 13%, 15%);
-  --primary: hsl(221, 83%, 53%);
-  --primary-foreground: hsl(210, 40%, 98%);
-  --secondary: hsl(220, 13%, 15%);
-  --secondary-foreground: hsl(220, 9%, 90%);
-  --accent: hsl(220, 13%, 15%);
-  --accent-foreground: hsl(220, 9%, 90%);
-  --destructive: hsl(0, 62%, 50%);
-  --destructive-foreground: hsl(210, 40%, 98%);
-  --ring: hsl(221, 83%, 53%);
+  /* Cursor.com inspired dark theme */
+  --background: #0d1117;
+  --foreground: #f0f6fc;
+  --muted: #161b22;
+  --muted-foreground: #7d8590;
+  --popover: #161b22;
+  --popover-foreground: #f0f6fc;
+  --card: #161b22;
+  --card-foreground: #f0f6fc;
+  --border: #21262d;
+  --input: #21262d;
+  --primary: #0969da;
+  --primary-foreground: #ffffff;
+  --secondary: #21262d;
+  --secondary-foreground: #f0f6fc;
+  --accent: #21262d;
+  --accent-foreground: #f0f6fc;
+  --destructive: #f85149;
+  --destructive-foreground: #ffffff;
+  --ring: #0969da;
   --radius: 0.5rem;
   
-  /* ChatLure specific colors */
-  --whatsapp: hsl(142, 71%, 45%);
-  --whatsapp-dark: hsl(142, 71%, 35%);
-  --chat-incoming: hsl(220, 13%, 15%);
-  --chat-outgoing: hsl(221, 83%, 53%);
-  --dramatic: hsl(0, 84%, 60%);
-  --highlight: hsl(48, 96%, 53%);
-  --dark-bg: hsl(220, 13%, 9%);
-  --card-bg: hsl(220, 13%, 11%);
-  --surface: hsl(220, 13%, 13%);
-  --surface-hover: hsl(220, 13%, 16%);
-  --text-primary: hsl(220, 9%, 90%);
-  --text-secondary: hsl(220, 9%, 65%);
-  --text-muted: hsl(220, 9%, 45%);
-  --accent-blue: hsl(221, 83%, 53%);
-  --accent-purple: hsl(262, 83%, 58%);
-  --accent-green: hsl(142, 71%, 45%);
+  /* ChatLure specific cursor.com colors */
+  --whatsapp: #238636;
+  --whatsapp-dark: #2ea043;
+  --chat-incoming: #21262d;
+  --chat-outgoing: #0969da;
+  --dramatic: #f85149;
+  --highlight: #ffd33d;
+  --dark-bg: #0d1117;
+  --card-bg: #161b22;
+  --surface: #161b22;
+  --surface-hover: #21262d;
+  --text-primary: #f0f6fc;
+  --text-secondary: #7d8590;
+  --text-muted: #656d76;
+  --accent-blue: #0969da;
+  --accent-purple: #6f42c1;
+  --accent-green: #238636;
+  --github-blue: #0969da;
+  --github-green: #238636;
+  --github-red: #f85149;
+  --github-orange: #fb8500;
+  --github-purple: #6f42c1;
 }
 
 /* Light theme fallback */

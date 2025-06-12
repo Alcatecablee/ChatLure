@@ -73,20 +73,20 @@ export default function UserDashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-[var(--dark-bg)] text-white p-6">
+    <div className="min-h-screen bg-[#0d1117] text-[#f0f6fc] p-6">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <div className="flex items-center space-x-4">
             <Avatar className="w-16 h-16">
               <AvatarImage src={currentUser.profileImageUrl || ""} />
-              <AvatarFallback className="bg-gradient-to-r from-blue-500 to-purple-500 text-white text-xl">
+              <AvatarFallback className="bg-gradient-to-r from-[#0969da] to-[#6f42c1] text-white text-xl">
                 {currentUser.firstName?.[0]}{currentUser.lastName?.[0]}
               </AvatarFallback>
             </Avatar>
             <div>
               <div className="flex items-center space-x-3">
-                <h1 className="text-2xl font-bold text-white">{currentUser.firstName} {currentUser.lastName}</h1>
+                <h1 className="text-2xl font-bold text-[#f0f6fc]">{currentUser.firstName} {currentUser.lastName}</h1>
                 {getSubscriptionBadge(currentUser.subscriptionTier)}
               </div>
               <p className="text-gray-400">@{currentUser.username}</p>
