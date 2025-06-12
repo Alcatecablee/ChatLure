@@ -116,6 +116,6 @@ export interface IStorage {
   getRecentActivities(limit: number): Promise<any[]>;
 }
 
-import { MemoryStorage } from "./memory-storage";
+import { DatabaseStorage } from "./db-storage";
 
-export const storage = new MemoryStorage();
+export const storage = new DatabaseStorage();
