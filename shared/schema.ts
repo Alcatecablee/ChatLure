@@ -1,9 +1,9 @@
-import { sqliteTable, text, integer, real } from "drizzle-orm/sqlite-core";
+import { pgTable, text, integer, real, boolean, timestamp, serial } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
-export const stories = sqliteTable("stories", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
+export const stories = pgTable("stories", {
+  id: serial("id").primaryKey(),
   title: text("title").notNull(),
   description: text("description").notNull(),
   category: text("category").notNull(),
@@ -11,25 +11,25 @@ export const stories = sqliteTable("stories", {
   views: integer("views").default(0).notNull(),
   shares: integer("shares").default(0).notNull(),
   likes: integer("likes").default(0).notNull(),
-  isHot: integer("is_hot", { mode: 'boolean' }).default(false).notNull(),
-  isNew: integer("is_new", { mode: 'boolean' }).default(false).notNull(),
-  isViral: integer("is_viral", { mode: 'boolean' }).default(false).notNull(),
+  isHot: boolean("is_hot").default(false).notNull(),
+  isNew: boolean("is_new").default(false).notNull(),
+  isViral: boolean("is_viral").default(false).notNull(),
   difficulty: text("difficulty").default("easy").notNull(), // easy, medium, hard
   duration: integer("duration").default(5).notNull(), // minutes
-  hasAudio: integer("has_audio", { mode: 'boolean' }).default(false).notNull(),
-  hasImages: integer("has_images", { mode: 'boolean' }).default(false).notNull(),
+  hasAudio: boolean("has_audio").default(false).notNull(),
+  hasImages: boolean("has_images").default(false).notNull(),
   cliffhangerLevel: integer("cliffhanger_level").default(3).notNull(), // 1-5
-  createdAt: integer("created_at", { mode: 'timestamp' }).notNull().$defaultFn(() => new Date()),
-  updatedAt: integer("updated_at", { mode: 'timestamp' }).notNull().$defaultFn(() => new Date()),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+  updatedAt: timestamp("updated_at").notNull().defaultNow(),
 });
 
-export const messages = sqliteTable("messages", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
+export const messages = pgTable("messages", {
+  id: serial("id").primaryKey(),
   storyId: integer("story_id").notNull(),
   content: text("content").notNull(),
-  isIncoming: integer("is_incoming", { mode: 'boolean' }).default(true).notNull(),
+  isIncoming: boolean("is_incoming").default(true).notNull(),
   timestamp: text("timestamp").notNull(),
-  hasReadReceipt: integer("has_read_receipt", { mode: 'boolean' }).default(false).notNull(),
+  hasReadReceipt: boolean("has_read_receipt").default(false).notNull(),
   order: integer("order").notNull(),
 });
 

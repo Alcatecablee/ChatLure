@@ -81,6 +81,12 @@ export default function AdminDashboard() {
   const { data: moderationQueue } = useQuery({ queryKey: ["/api/admin/moderation/queue"] });
   const { data: systemHealth } = useQuery({ queryKey: ["/api/admin/system/health"] });
   const { data: recentActivity } = useQuery({ queryKey: ["/api/admin/activity"] });
+  
+  // Fetch messages for selected story
+  const { data: storyMessages, refetch: refetchMessages } = useQuery<Message[]>({ 
+    queryKey: ["/api/messages", selectedStoryId],
+    enabled: !!selectedStoryId
+  });
 
   // Mutations
   const createStoryMutation = useMutation({
@@ -149,6 +155,35 @@ export default function AdminDashboard() {
       toast({ title: "PayPal settings updated successfully" });
     },
     onError: () => toast({ title: "Failed to update PayPal settings", variant: "destructive" })
+  });
+
+  // Message management mutations
+  const createMessageMutation = useMutation({
+    mutationFn: (message: any) => apiRequest("/api/admin/messages", "POST", message),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["/api/messages", selectedStoryId] });
+      toast({ title: "Message created successfully" });
+      setNewMessage({ content: "", isIncoming: true, timestamp: "", hasReadReceipt: false });
+    },
+    onError: () => toast({ title: "Failed to create message", variant: "destructive" })
+  });
+
+  const updateMessageMutation = useMutation({
+    mutationFn: ({ id, ...message }: any) => apiRequest(`/api/admin/messages/${id}`, "PATCH", message),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["/api/messages", selectedStoryId] });
+      toast({ title: "Message updated successfully" });
+    },
+    onError: () => toast({ title: "Failed to update message", variant: "destructive" })
+  });
+
+  const deleteMessageMutation = useMutation({
+    mutationFn: (id: number) => apiRequest(`/api/admin/messages/${id}`, "DELETE"),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["/api/messages", selectedStoryId] });
+      toast({ title: "Message deleted successfully" });
+    },
+    onError: () => toast({ title: "Failed to delete message", variant: "destructive" })
   });
 
   const testPayPalConnectionMutation = useMutation({
@@ -664,8 +699,8 @@ export default function AdminDashboard() {
                       key={story.id}
                       className="p-3 bg-gray-800 hover:bg-gray-700 rounded cursor-pointer border border-gray-600"
                       onClick={() => {
-                        // Load messages for this story
-                        setEditingMessages([]);
+                        setSelectedStoryId(story.id);
+                        refetchMessages();
                       }}
                     >
                       <div className="font-medium text-white text-sm">{story.title}</div>
@@ -703,85 +738,206 @@ export default function AdminDashboard() {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
-                    {/* Sample Chat Messages Interface */}
+                    {/* Real Chat Messages Interface */}
                     <div className="bg-gray-900 rounded-lg p-4 max-h-96 overflow-y-auto">
                       <div className="space-y-3">
-                        {/* Incoming Message */}
-                        <div className="flex items-start space-x-2">
-                          <div className="bg-gray-700 rounded-lg p-3 max-w-xs">
-                            <p className="text-white text-sm">Hey, are you there? Something weird happened at school today...</p>
-                            <span className="text-gray-400 text-xs">2:14 PM</span>
+                        {selectedStoryId && storyMessages ? (
+                          storyMessages.length > 0 ? (
+                            storyMessages.map((message) => (
+                              <div key={message.id} className={`flex items-${message.isIncoming ? 'start' : 'end'} space-x-2 ${!message.isIncoming ? 'justify-end' : ''}`}>
+                                {!message.isIncoming && (
+                                  <Button 
+                                    size="sm" 
+                                    className="bg-yellow-600 hover:bg-yellow-700 mr-2"
+                                    onClick={() => {
+                                      // Edit message functionality
+                                      setNewMessage({
+                                        content: message.content,
+                                        isIncoming: message.isIncoming,
+                                        timestamp: message.timestamp,
+                                        hasReadReceipt: message.hasReadReceipt
+                                      });
+                                    }}
+                                  >
+                                    <Edit className="h-3 w-3" />
+                                  </Button>
+                                )}
+                                <div className={`rounded-lg p-3 max-w-xs ${
+                                  message.isIncoming ? 'bg-gray-700' : 'bg-[var(--whatsapp)]'
+                                }`}>
+                                  <p className="text-white text-sm">{message.content}</p>
+                                  <span className="text-gray-200 text-xs">
+                                    {message.timestamp} {!message.isIncoming && message.hasReadReceipt ? '✓✓' : ''}
+                                  </span>
+                                </div>
+                                {message.isIncoming && (
+                                  <Button 
+                                    size="sm" 
+                                    className="bg-yellow-600 hover:bg-yellow-700 ml-2"
+                                    onClick={() => {
+                                      // Edit message functionality
+                                      setNewMessage({
+                                        content: message.content,
+                                        isIncoming: message.isIncoming,
+                                        timestamp: message.timestamp,
+                                        hasReadReceipt: message.hasReadReceipt
+                                      });
+                                    }}
+                                  >
+                                    <Edit className="h-3 w-3" />
+                                  </Button>
+                                )}
+                                <Button 
+                                  size="sm" 
+                                  className="bg-red-600 hover:bg-red-700 ml-1"
+                                  onClick={() => deleteMessageMutation.mutate(message.id)}
+                                >
+                                  <Trash2 className="h-3 w-3" />
+                                </Button>
+                              </div>
+                            ))
+                          ) : (
+                            <div className="text-gray-400 text-center py-8">
+                              No messages for this story yet. Add the first message below.
+                            </div>
+                          )
+                        ) : (
+                          <div className="text-gray-400 text-center py-8">
+                            Select a story from the left to edit its messages
                           </div>
-                          <Button size="sm" className="bg-yellow-600 hover:bg-yellow-700 ml-2">
-                            <Edit className="h-3 w-3" />
-                          </Button>
-                        </div>
-
-                        {/* Outgoing Message */}
-                        <div className="flex items-end justify-end space-x-2">
-                          <Button size="sm" className="bg-yellow-600 hover:bg-yellow-700 mr-2">
-                            <Edit className="h-3 w-3" />
-                          </Button>
-                          <div className="bg-[var(--whatsapp)] rounded-lg p-3 max-w-xs">
-                            <p className="text-white text-sm">What happened? Tell me everything!</p>
-                            <span className="text-gray-200 text-xs">2:15 PM ✓✓</span>
-                          </div>
-                        </div>
+                        )}
 
                         {/* Add Message Button */}
-                        <div className="flex justify-center">
-                          <Button className="bg-green-600 hover:bg-green-700" size="sm">
-                            <Plus className="h-3 w-3 mr-1" />
-                            Add Message Here
-                          </Button>
-                        </div>
+                        {selectedStoryId && (
+                          <div className="flex justify-center pt-4 border-t border-gray-700">
+                            <Button 
+                              className="bg-green-600 hover:bg-green-700" 
+                              size="sm"
+                              onClick={() => {
+                                if (newMessage.content && selectedStoryId) {
+                                  createMessageMutation.mutate({
+                                    storyId: selectedStoryId,
+                                    content: newMessage.content,
+                                    isIncoming: newMessage.isIncoming,
+                                    timestamp: newMessage.timestamp || new Date().toLocaleTimeString(),
+                                    hasReadReceipt: newMessage.hasReadReceipt,
+                                    order: (storyMessages?.length || 0) + 1
+                                  });
+                                }
+                              }}
+                            >
+                              <Plus className="h-3 w-3 mr-1" />
+                              Add Message
+                            </Button>
+                          </div>
+                        )}
                       </div>
                     </div>
 
-                    {/* Message Editor Form */}
-                    <div className="border-t border-gray-700 pt-4 space-y-3">
-                      <div className="grid grid-cols-4 gap-2">
-                        <Select defaultValue="incoming">
-                          <SelectTrigger className="bg-gray-800 border-gray-600">
-                            <SelectValue />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="incoming">Incoming</SelectItem>
-                            <SelectItem value="outgoing">Outgoing</SelectItem>
-                          </SelectContent>
-                        </Select>
-                        <Input 
-                          placeholder="Time (e.g., 2:14 PM)" 
+                    {/* Enhanced Message Editor Form */}
+                    {selectedStoryId && (
+                      <div className="border-t border-gray-700 pt-4 space-y-3">
+                        <h4 className="text-white font-medium">Add New Message</h4>
+                        <div className="grid grid-cols-4 gap-2">
+                          <Select 
+                            value={newMessage.isIncoming ? "incoming" : "outgoing"}
+                            onValueChange={(value) => setNewMessage({
+                              ...newMessage,
+                              isIncoming: value === "incoming"
+                            })}
+                          >
+                            <SelectTrigger className="bg-gray-800 border-gray-600">
+                              <SelectValue />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="incoming">Incoming</SelectItem>
+                              <SelectItem value="outgoing">Outgoing</SelectItem>
+                            </SelectContent>
+                          </Select>
+                          <Input 
+                            placeholder="Time (e.g., 2:14 PM)" 
+                            className="bg-gray-800 border-gray-600"
+                            value={newMessage.timestamp}
+                            onChange={(e) => setNewMessage({
+                              ...newMessage,
+                              timestamp: e.target.value
+                            })}
+                          />
+                          <div className="flex items-center space-x-2">
+                            <Switch 
+                              checked={newMessage.hasReadReceipt}
+                              onCheckedChange={(checked) => setNewMessage({
+                                ...newMessage,
+                                hasReadReceipt: checked
+                              })}
+                            />
+                            <Label className="text-gray-300 text-xs">Read Receipt</Label>
+                          </div>
+                          <Button 
+                            className="bg-gray-600 hover:bg-gray-700" 
+                            size="sm"
+                            onClick={() => setNewMessage({
+                              content: "",
+                              isIncoming: true,
+                              timestamp: "",
+                              hasReadReceipt: false
+                            })}
+                          >
+                            Clear
+                          </Button>
+                        </div>
+                        <Textarea
+                          placeholder="Enter message content..."
                           className="bg-gray-800 border-gray-600"
+                          rows={3}
+                          value={newMessage.content}
+                          onChange={(e) => setNewMessage({
+                            ...newMessage,
+                            content: e.target.value
+                          })}
                         />
-                        <div className="flex items-center space-x-2">
-                          <Switch />
-                          <Label className="text-gray-300 text-xs">Read Receipt</Label>
+                        <div className="flex justify-between">
+                          <div className="flex space-x-2">
+                            <Button 
+                              size="sm" 
+                              className="bg-blue-600 hover:bg-blue-700"
+                              disabled={!newMessage.content || createMessageMutation.isPending}
+                              onClick={() => {
+                                if (newMessage.content && selectedStoryId) {
+                                  createMessageMutation.mutate({
+                                    storyId: selectedStoryId,
+                                    content: newMessage.content,
+                                    isIncoming: newMessage.isIncoming,
+                                    timestamp: newMessage.timestamp || new Date().toLocaleTimeString(),
+                                    hasReadReceipt: newMessage.hasReadReceipt,
+                                    order: (storyMessages?.length || 0) + 1
+                                  });
+                                }
+                              }}
+                            >
+                              <Save className="h-3 w-3 mr-1" />
+                              {createMessageMutation.isPending ? 'Saving...' : 'Save Message'}
+                            </Button>
+                            <Button 
+                              size="sm" 
+                              variant="outline" 
+                              className="border-gray-600"
+                              onClick={() => setNewMessage({
+                                content: "",
+                                isIncoming: true,
+                                timestamp: "",
+                                hasReadReceipt: false
+                              })}
+                            >
+                              Cancel
+                            </Button>
+                          </div>
+                          <Badge className="bg-gray-700 text-white">
+                            Message #{(storyMessages?.length || 0) + 1}
+                          </Badge>
                         </div>
-                        <Button className="bg-red-600 hover:bg-red-700" size="sm">
-                          <Trash2 className="h-3 w-3" />
-                        </Button>
                       </div>
-                      <Textarea
-                        placeholder="Enter message content..."
-                        className="bg-gray-800 border-gray-600"
-                        rows={2}
-                      />
-                      <div className="flex justify-between">
-                        <div className="flex space-x-2">
-                          <Button size="sm" className="bg-blue-600 hover:bg-blue-700">
-                            <Save className="h-3 w-3 mr-1" />
-                            Save Message
-                          </Button>
-                          <Button size="sm" variant="outline" className="border-gray-600">
-                            Cancel
-                          </Button>
-                        </div>
-                        <Badge className="bg-gray-700 text-white">
-                          Message #{editingMessages?.length ? editingMessages.length + 1 : 1}
-                        </Badge>
-                      </div>
-                    </div>
+                    )}
                   </div>
                 </CardContent>
               </Card>
