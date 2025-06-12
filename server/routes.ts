@@ -3,6 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertStorySchema, insertMessageSchema, insertCategorySchema } from "@shared/schema";
 import { paypalService } from "./paypal-service";
+import { importStoriesFromJSON } from "./import-stories";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Stories routes

@@ -1,0 +1,3104 @@
+[
+  {
+    "id": "1",
+    "title": "Romance Epic Chat",
+    "description": "A long, 10-minute romance chat story full of suspense and drama.",
+    "category": "Romance",
+    "characters": [
+      {
+        "id": "user",
+        "name": "You",
+        "avatar": "\ud83d\udc64",
+        "color": "#3b82f6"
+      },
+      {
+        "id": "other",
+        "name": "Alex",
+        "avatar": "\ud83d\udcac",
+        "color": "#10b981"
+      }
+    ],
+    "messages": [
+      {
+        "id": "1",
+        "type": "text",
+        "sender": "user",
+        "content": "(Romance Story) Message 1: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771241768,
+        "delay": 500
+      },
+      {
+        "id": "2",
+        "type": "text",
+        "sender": "other",
+        "content": "(Romance Story) Message 2: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771242768,
+        "delay": 500
+      },
+      {
+        "id": "3",
+        "type": "text",
+        "sender": "user",
+        "content": "(Romance Story) Message 3: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771243768,
+        "delay": 500
+      },
+      {
+        "id": "4",
+        "type": "text",
+        "sender": "other",
+        "content": "(Romance Story) Message 4: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771244768,
+        "delay": 500
+      },
+      {
+        "id": "5",
+        "type": "text",
+        "sender": "user",
+        "content": "(Romance Story) Message 5: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771245768,
+        "delay": 500
+      },
+      {
+        "id": "6",
+        "type": "text",
+        "sender": "other",
+        "content": "(Romance Story) Message 6: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771246768,
+        "delay": 500
+      },
+      {
+        "id": "7",
+        "type": "text",
+        "sender": "user",
+        "content": "(Romance Story) Message 7: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771247768,
+        "delay": 500
+      },
+      {
+        "id": "8",
+        "type": "text",
+        "sender": "other",
+        "content": "(Romance Story) Message 8: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771248768,
+        "delay": 500
+      },
+      {
+        "id": "9",
+        "type": "text",
+        "sender": "user",
+        "content": "(Romance Story) Message 9: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771249768,
+        "delay": 500
+      },
+      {
+        "id": "10",
+        "type": "text",
+        "sender": "other",
+        "content": "(Romance Story) Message 10: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771250768,
+        "delay": 500
+      },
+      {
+        "id": "11",
+        "type": "text",
+        "sender": "user",
+        "content": "(Romance Story) Message 11: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771251768,
+        "delay": 500
+      },
+      {
+        "id": "12",
+        "type": "text",
+        "sender": "other",
+        "content": "(Romance Story) Message 12: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771252768,
+        "delay": 500
+      },
+      {
+        "id": "13",
+        "type": "text",
+        "sender": "user",
+        "content": "(Romance Story) Message 13: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771253768,
+        "delay": 500
+      },
+      {
+        "id": "14",
+        "type": "text",
+        "sender": "other",
+        "content": "(Romance Story) Message 14: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771254768,
+        "delay": 500
+      },
+      {
+        "id": "15",
+        "type": "text",
+        "sender": "user",
+        "content": "(Romance Story) Message 15: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771255768,
+        "delay": 500
+      },
+      {
+        "id": "16",
+        "type": "text",
+        "sender": "other",
+        "content": "(Romance Story) Message 16: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771256768,
+        "delay": 500
+      },
+      {
+        "id": "17",
+        "type": "text",
+        "sender": "user",
+        "content": "(Romance Story) Message 17: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771257768,
+        "delay": 500
+      },
+      {
+        "id": "18",
+        "type": "text",
+        "sender": "other",
+        "content": "(Romance Story) Message 18: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771258768,
+        "delay": 500
+      },
+      {
+        "id": "19",
+        "type": "text",
+        "sender": "user",
+        "content": "(Romance Story) Message 19: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771259768,
+        "delay": 500
+      },
+      {
+        "id": "20",
+        "type": "text",
+        "sender": "other",
+        "content": "(Romance Story) Message 20: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771260768,
+        "delay": 500
+      },
+      {
+        "id": "21",
+        "type": "text",
+        "sender": "user",
+        "content": "(Romance Story) Message 21: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771261768,
+        "delay": 500
+      },
+      {
+        "id": "22",
+        "type": "text",
+        "sender": "other",
+        "content": "(Romance Story) Message 22: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771262768,
+        "delay": 500
+      },
+      {
+        "id": "23",
+        "type": "text",
+        "sender": "user",
+        "content": "(Romance Story) Message 23: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771263768,
+        "delay": 500
+      },
+      {
+        "id": "24",
+        "type": "text",
+        "sender": "other",
+        "content": "(Romance Story) Message 24: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771264768,
+        "delay": 500
+      },
+      {
+        "id": "25",
+        "type": "text",
+        "sender": "user",
+        "content": "(Romance Story) Message 25: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771265768,
+        "delay": 500
+      },
+      {
+        "id": "26",
+        "type": "text",
+        "sender": "other",
+        "content": "(Romance Story) Message 26: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771266768,
+        "delay": 500
+      },
+      {
+        "id": "27",
+        "type": "text",
+        "sender": "user",
+        "content": "(Romance Story) Message 27: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771267768,
+        "delay": 500
+      },
+      {
+        "id": "28",
+        "type": "text",
+        "sender": "other",
+        "content": "(Romance Story) Message 28: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771268768,
+        "delay": 500
+      },
+      {
+        "id": "29",
+        "type": "text",
+        "sender": "user",
+        "content": "(Romance Story) Message 29: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771269768,
+        "delay": 500
+      },
+      {
+        "id": "30",
+        "type": "text",
+        "sender": "other",
+        "content": "(Romance Story) Message 30: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771270768,
+        "delay": 500
+      },
+      {
+        "id": "31",
+        "type": "text",
+        "sender": "user",
+        "content": "(Romance Story) Message 31: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771271768,
+        "delay": 500
+      },
+      {
+        "id": "32",
+        "type": "text",
+        "sender": "other",
+        "content": "(Romance Story) Message 32: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771272768,
+        "delay": 500
+      },
+      {
+        "id": "33",
+        "type": "text",
+        "sender": "user",
+        "content": "(Romance Story) Message 33: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771273768,
+        "delay": 500
+      },
+      {
+        "id": "34",
+        "type": "text",
+        "sender": "other",
+        "content": "(Romance Story) Message 34: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771274768,
+        "delay": 500
+      },
+      {
+        "id": "35",
+        "type": "text",
+        "sender": "user",
+        "content": "(Romance Story) Message 35: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771275768,
+        "delay": 500
+      },
+      {
+        "id": "36",
+        "type": "text",
+        "sender": "other",
+        "content": "(Romance Story) Message 36: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771276768,
+        "delay": 500
+      },
+      {
+        "id": "37",
+        "type": "text",
+        "sender": "user",
+        "content": "(Romance Story) Message 37: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771277768,
+        "delay": 500
+      },
+      {
+        "id": "38",
+        "type": "text",
+        "sender": "other",
+        "content": "(Romance Story) Message 38: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771278768,
+        "delay": 500
+      },
+      {
+        "id": "39",
+        "type": "text",
+        "sender": "user",
+        "content": "(Romance Story) Message 39: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771279768,
+        "delay": 500
+      },
+      {
+        "id": "40",
+        "type": "text",
+        "sender": "other",
+        "content": "(Romance Story) Message 40: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771280768,
+        "delay": 500
+      },
+      {
+        "id": "41",
+        "type": "text",
+        "sender": "user",
+        "content": "(Romance Story) Message 41: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771281768,
+        "delay": 500
+      },
+      {
+        "id": "42",
+        "type": "text",
+        "sender": "other",
+        "content": "(Romance Story) Message 42: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771282768,
+        "delay": 500
+      },
+      {
+        "id": "43",
+        "type": "text",
+        "sender": "user",
+        "content": "(Romance Story) Message 43: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771283768,
+        "delay": 500
+      },
+      {
+        "id": "44",
+        "type": "text",
+        "sender": "other",
+        "content": "(Romance Story) Message 44: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771284768,
+        "delay": 500
+      },
+      {
+        "id": "45",
+        "type": "text",
+        "sender": "user",
+        "content": "(Romance Story) Message 45: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771285768,
+        "delay": 500
+      },
+      {
+        "id": "46",
+        "type": "text",
+        "sender": "other",
+        "content": "(Romance Story) Message 46: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771286768,
+        "delay": 500
+      },
+      {
+        "id": "47",
+        "type": "text",
+        "sender": "user",
+        "content": "(Romance Story) Message 47: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771287768,
+        "delay": 500
+      },
+      {
+        "id": "48",
+        "type": "text",
+        "sender": "other",
+        "content": "(Romance Story) Message 48: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771288768,
+        "delay": 500
+      },
+      {
+        "id": "49",
+        "type": "text",
+        "sender": "user",
+        "content": "(Romance Story) Message 49: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771289768,
+        "delay": 500
+      },
+      {
+        "id": "50",
+        "type": "text",
+        "sender": "other",
+        "content": "(Romance Story) Message 50: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771290768,
+        "delay": 500
+      },
+      {
+        "id": "51",
+        "type": "text",
+        "sender": "user",
+        "content": "(Romance Story) Message 51: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771291768,
+        "delay": 500
+      },
+      {
+        "id": "52",
+        "type": "text",
+        "sender": "other",
+        "content": "(Romance Story) Message 52: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771292768,
+        "delay": 500
+      },
+      {
+        "id": "53",
+        "type": "text",
+        "sender": "user",
+        "content": "(Romance Story) Message 53: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771293768,
+        "delay": 500
+      },
+      {
+        "id": "54",
+        "type": "text",
+        "sender": "other",
+        "content": "(Romance Story) Message 54: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771294768,
+        "delay": 500
+      },
+      {
+        "id": "55",
+        "type": "text",
+        "sender": "user",
+        "content": "(Romance Story) Message 55: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771295768,
+        "delay": 500
+      },
+      {
+        "id": "56",
+        "type": "text",
+        "sender": "other",
+        "content": "(Romance Story) Message 56: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771296768,
+        "delay": 500
+      },
+      {
+        "id": "57",
+        "type": "text",
+        "sender": "user",
+        "content": "(Romance Story) Message 57: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771297768,
+        "delay": 500
+      },
+      {
+        "id": "58",
+        "type": "text",
+        "sender": "other",
+        "content": "(Romance Story) Message 58: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771298768,
+        "delay": 500
+      },
+      {
+        "id": "59",
+        "type": "text",
+        "sender": "user",
+        "content": "(Romance Story) Message 59: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771299768,
+        "delay": 500
+      },
+      {
+        "id": "60",
+        "type": "text",
+        "sender": "other",
+        "content": "(Romance Story) Message 60: This is part of a long, immersive romance chat narrative.",
+        "timestamp": 1749771300768,
+        "delay": 500
+      },
+      {
+        "id": "61",
+        "type": "system",
+        "sender": "system",
+        "content": "\ud83d\udd0b Juice is at 0%. Recharge to continue this story\u2026",
+        "timestamp": 1749771302768,
+        "delay": 0
+      }
+    ],
+    "settings": {
+      "autoAdvance": true,
+      "typingSpeed": 50,
+      "theme": "dark"
+    },
+    "created": 1749771240768,
+    "updated": 1749771302768
+  },
+  {
+    "id": "2",
+    "title": "Adventure Epic Chat",
+    "description": "A long, 10-minute adventure chat story full of suspense and drama.",
+    "category": "Adventure",
+    "characters": [
+      {
+        "id": "user",
+        "name": "You",
+        "avatar": "\ud83d\udc64",
+        "color": "#3b82f6"
+      },
+      {
+        "id": "other",
+        "name": "Alex",
+        "avatar": "\ud83d\udcac",
+        "color": "#10b981"
+      }
+    ],
+    "messages": [
+      {
+        "id": "1",
+        "type": "text",
+        "sender": "user",
+        "content": "(Adventure Story) Message 1: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771241768,
+        "delay": 500
+      },
+      {
+        "id": "2",
+        "type": "text",
+        "sender": "other",
+        "content": "(Adventure Story) Message 2: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771242768,
+        "delay": 500
+      },
+      {
+        "id": "3",
+        "type": "text",
+        "sender": "user",
+        "content": "(Adventure Story) Message 3: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771243768,
+        "delay": 500
+      },
+      {
+        "id": "4",
+        "type": "text",
+        "sender": "other",
+        "content": "(Adventure Story) Message 4: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771244768,
+        "delay": 500
+      },
+      {
+        "id": "5",
+        "type": "text",
+        "sender": "user",
+        "content": "(Adventure Story) Message 5: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771245768,
+        "delay": 500
+      },
+      {
+        "id": "6",
+        "type": "text",
+        "sender": "other",
+        "content": "(Adventure Story) Message 6: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771246768,
+        "delay": 500
+      },
+      {
+        "id": "7",
+        "type": "text",
+        "sender": "user",
+        "content": "(Adventure Story) Message 7: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771247768,
+        "delay": 500
+      },
+      {
+        "id": "8",
+        "type": "text",
+        "sender": "other",
+        "content": "(Adventure Story) Message 8: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771248768,
+        "delay": 500
+      },
+      {
+        "id": "9",
+        "type": "text",
+        "sender": "user",
+        "content": "(Adventure Story) Message 9: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771249768,
+        "delay": 500
+      },
+      {
+        "id": "10",
+        "type": "text",
+        "sender": "other",
+        "content": "(Adventure Story) Message 10: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771250768,
+        "delay": 500
+      },
+      {
+        "id": "11",
+        "type": "text",
+        "sender": "user",
+        "content": "(Adventure Story) Message 11: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771251768,
+        "delay": 500
+      },
+      {
+        "id": "12",
+        "type": "text",
+        "sender": "other",
+        "content": "(Adventure Story) Message 12: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771252768,
+        "delay": 500
+      },
+      {
+        "id": "13",
+        "type": "text",
+        "sender": "user",
+        "content": "(Adventure Story) Message 13: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771253768,
+        "delay": 500
+      },
+      {
+        "id": "14",
+        "type": "text",
+        "sender": "other",
+        "content": "(Adventure Story) Message 14: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771254768,
+        "delay": 500
+      },
+      {
+        "id": "15",
+        "type": "text",
+        "sender": "user",
+        "content": "(Adventure Story) Message 15: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771255768,
+        "delay": 500
+      },
+      {
+        "id": "16",
+        "type": "text",
+        "sender": "other",
+        "content": "(Adventure Story) Message 16: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771256768,
+        "delay": 500
+      },
+      {
+        "id": "17",
+        "type": "text",
+        "sender": "user",
+        "content": "(Adventure Story) Message 17: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771257768,
+        "delay": 500
+      },
+      {
+        "id": "18",
+        "type": "text",
+        "sender": "other",
+        "content": "(Adventure Story) Message 18: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771258768,
+        "delay": 500
+      },
+      {
+        "id": "19",
+        "type": "text",
+        "sender": "user",
+        "content": "(Adventure Story) Message 19: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771259768,
+        "delay": 500
+      },
+      {
+        "id": "20",
+        "type": "text",
+        "sender": "other",
+        "content": "(Adventure Story) Message 20: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771260768,
+        "delay": 500
+      },
+      {
+        "id": "21",
+        "type": "text",
+        "sender": "user",
+        "content": "(Adventure Story) Message 21: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771261768,
+        "delay": 500
+      },
+      {
+        "id": "22",
+        "type": "text",
+        "sender": "other",
+        "content": "(Adventure Story) Message 22: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771262768,
+        "delay": 500
+      },
+      {
+        "id": "23",
+        "type": "text",
+        "sender": "user",
+        "content": "(Adventure Story) Message 23: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771263768,
+        "delay": 500
+      },
+      {
+        "id": "24",
+        "type": "text",
+        "sender": "other",
+        "content": "(Adventure Story) Message 24: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771264768,
+        "delay": 500
+      },
+      {
+        "id": "25",
+        "type": "text",
+        "sender": "user",
+        "content": "(Adventure Story) Message 25: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771265768,
+        "delay": 500
+      },
+      {
+        "id": "26",
+        "type": "text",
+        "sender": "other",
+        "content": "(Adventure Story) Message 26: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771266768,
+        "delay": 500
+      },
+      {
+        "id": "27",
+        "type": "text",
+        "sender": "user",
+        "content": "(Adventure Story) Message 27: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771267768,
+        "delay": 500
+      },
+      {
+        "id": "28",
+        "type": "text",
+        "sender": "other",
+        "content": "(Adventure Story) Message 28: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771268768,
+        "delay": 500
+      },
+      {
+        "id": "29",
+        "type": "text",
+        "sender": "user",
+        "content": "(Adventure Story) Message 29: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771269768,
+        "delay": 500
+      },
+      {
+        "id": "30",
+        "type": "text",
+        "sender": "other",
+        "content": "(Adventure Story) Message 30: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771270768,
+        "delay": 500
+      },
+      {
+        "id": "31",
+        "type": "text",
+        "sender": "user",
+        "content": "(Adventure Story) Message 31: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771271768,
+        "delay": 500
+      },
+      {
+        "id": "32",
+        "type": "text",
+        "sender": "other",
+        "content": "(Adventure Story) Message 32: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771272768,
+        "delay": 500
+      },
+      {
+        "id": "33",
+        "type": "text",
+        "sender": "user",
+        "content": "(Adventure Story) Message 33: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771273768,
+        "delay": 500
+      },
+      {
+        "id": "34",
+        "type": "text",
+        "sender": "other",
+        "content": "(Adventure Story) Message 34: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771274768,
+        "delay": 500
+      },
+      {
+        "id": "35",
+        "type": "text",
+        "sender": "user",
+        "content": "(Adventure Story) Message 35: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771275768,
+        "delay": 500
+      },
+      {
+        "id": "36",
+        "type": "text",
+        "sender": "other",
+        "content": "(Adventure Story) Message 36: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771276768,
+        "delay": 500
+      },
+      {
+        "id": "37",
+        "type": "text",
+        "sender": "user",
+        "content": "(Adventure Story) Message 37: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771277768,
+        "delay": 500
+      },
+      {
+        "id": "38",
+        "type": "text",
+        "sender": "other",
+        "content": "(Adventure Story) Message 38: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771278768,
+        "delay": 500
+      },
+      {
+        "id": "39",
+        "type": "text",
+        "sender": "user",
+        "content": "(Adventure Story) Message 39: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771279768,
+        "delay": 500
+      },
+      {
+        "id": "40",
+        "type": "text",
+        "sender": "other",
+        "content": "(Adventure Story) Message 40: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771280768,
+        "delay": 500
+      },
+      {
+        "id": "41",
+        "type": "text",
+        "sender": "user",
+        "content": "(Adventure Story) Message 41: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771281768,
+        "delay": 500
+      },
+      {
+        "id": "42",
+        "type": "text",
+        "sender": "other",
+        "content": "(Adventure Story) Message 42: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771282768,
+        "delay": 500
+      },
+      {
+        "id": "43",
+        "type": "text",
+        "sender": "user",
+        "content": "(Adventure Story) Message 43: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771283768,
+        "delay": 500
+      },
+      {
+        "id": "44",
+        "type": "text",
+        "sender": "other",
+        "content": "(Adventure Story) Message 44: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771284768,
+        "delay": 500
+      },
+      {
+        "id": "45",
+        "type": "text",
+        "sender": "user",
+        "content": "(Adventure Story) Message 45: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771285768,
+        "delay": 500
+      },
+      {
+        "id": "46",
+        "type": "text",
+        "sender": "other",
+        "content": "(Adventure Story) Message 46: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771286768,
+        "delay": 500
+      },
+      {
+        "id": "47",
+        "type": "text",
+        "sender": "user",
+        "content": "(Adventure Story) Message 47: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771287768,
+        "delay": 500
+      },
+      {
+        "id": "48",
+        "type": "text",
+        "sender": "other",
+        "content": "(Adventure Story) Message 48: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771288768,
+        "delay": 500
+      },
+      {
+        "id": "49",
+        "type": "text",
+        "sender": "user",
+        "content": "(Adventure Story) Message 49: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771289768,
+        "delay": 500
+      },
+      {
+        "id": "50",
+        "type": "text",
+        "sender": "other",
+        "content": "(Adventure Story) Message 50: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771290768,
+        "delay": 500
+      },
+      {
+        "id": "51",
+        "type": "text",
+        "sender": "user",
+        "content": "(Adventure Story) Message 51: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771291768,
+        "delay": 500
+      },
+      {
+        "id": "52",
+        "type": "text",
+        "sender": "other",
+        "content": "(Adventure Story) Message 52: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771292768,
+        "delay": 500
+      },
+      {
+        "id": "53",
+        "type": "text",
+        "sender": "user",
+        "content": "(Adventure Story) Message 53: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771293768,
+        "delay": 500
+      },
+      {
+        "id": "54",
+        "type": "text",
+        "sender": "other",
+        "content": "(Adventure Story) Message 54: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771294768,
+        "delay": 500
+      },
+      {
+        "id": "55",
+        "type": "text",
+        "sender": "user",
+        "content": "(Adventure Story) Message 55: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771295768,
+        "delay": 500
+      },
+      {
+        "id": "56",
+        "type": "text",
+        "sender": "other",
+        "content": "(Adventure Story) Message 56: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771296768,
+        "delay": 500
+      },
+      {
+        "id": "57",
+        "type": "text",
+        "sender": "user",
+        "content": "(Adventure Story) Message 57: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771297768,
+        "delay": 500
+      },
+      {
+        "id": "58",
+        "type": "text",
+        "sender": "other",
+        "content": "(Adventure Story) Message 58: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771298768,
+        "delay": 500
+      },
+      {
+        "id": "59",
+        "type": "text",
+        "sender": "user",
+        "content": "(Adventure Story) Message 59: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771299768,
+        "delay": 500
+      },
+      {
+        "id": "60",
+        "type": "text",
+        "sender": "other",
+        "content": "(Adventure Story) Message 60: This is part of a long, immersive adventure chat narrative.",
+        "timestamp": 1749771300768,
+        "delay": 500
+      },
+      {
+        "id": "61",
+        "type": "system",
+        "sender": "system",
+        "content": "\ud83d\udd0b Juice is at 0%. Recharge to continue this story\u2026",
+        "timestamp": 1749771302768,
+        "delay": 0
+      }
+    ],
+    "settings": {
+      "autoAdvance": true,
+      "typingSpeed": 50,
+      "theme": "dark"
+    },
+    "created": 1749771240768,
+    "updated": 1749771302768
+  },
+  {
+    "id": "3",
+    "title": "Mystery Epic Chat",
+    "description": "A long, 10-minute mystery chat story full of suspense and drama.",
+    "category": "Mystery",
+    "characters": [
+      {
+        "id": "user",
+        "name": "You",
+        "avatar": "\ud83d\udc64",
+        "color": "#3b82f6"
+      },
+      {
+        "id": "other",
+        "name": "Alex",
+        "avatar": "\ud83d\udcac",
+        "color": "#10b981"
+      }
+    ],
+    "messages": [
+      {
+        "id": "1",
+        "type": "text",
+        "sender": "user",
+        "content": "(Mystery Story) Message 1: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771241768,
+        "delay": 500
+      },
+      {
+        "id": "2",
+        "type": "text",
+        "sender": "other",
+        "content": "(Mystery Story) Message 2: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771242768,
+        "delay": 500
+      },
+      {
+        "id": "3",
+        "type": "text",
+        "sender": "user",
+        "content": "(Mystery Story) Message 3: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771243768,
+        "delay": 500
+      },
+      {
+        "id": "4",
+        "type": "text",
+        "sender": "other",
+        "content": "(Mystery Story) Message 4: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771244768,
+        "delay": 500
+      },
+      {
+        "id": "5",
+        "type": "text",
+        "sender": "user",
+        "content": "(Mystery Story) Message 5: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771245768,
+        "delay": 500
+      },
+      {
+        "id": "6",
+        "type": "text",
+        "sender": "other",
+        "content": "(Mystery Story) Message 6: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771246768,
+        "delay": 500
+      },
+      {
+        "id": "7",
+        "type": "text",
+        "sender": "user",
+        "content": "(Mystery Story) Message 7: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771247768,
+        "delay": 500
+      },
+      {
+        "id": "8",
+        "type": "text",
+        "sender": "other",
+        "content": "(Mystery Story) Message 8: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771248768,
+        "delay": 500
+      },
+      {
+        "id": "9",
+        "type": "text",
+        "sender": "user",
+        "content": "(Mystery Story) Message 9: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771249768,
+        "delay": 500
+      },
+      {
+        "id": "10",
+        "type": "text",
+        "sender": "other",
+        "content": "(Mystery Story) Message 10: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771250768,
+        "delay": 500
+      },
+      {
+        "id": "11",
+        "type": "text",
+        "sender": "user",
+        "content": "(Mystery Story) Message 11: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771251768,
+        "delay": 500
+      },
+      {
+        "id": "12",
+        "type": "text",
+        "sender": "other",
+        "content": "(Mystery Story) Message 12: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771252768,
+        "delay": 500
+      },
+      {
+        "id": "13",
+        "type": "text",
+        "sender": "user",
+        "content": "(Mystery Story) Message 13: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771253768,
+        "delay": 500
+      },
+      {
+        "id": "14",
+        "type": "text",
+        "sender": "other",
+        "content": "(Mystery Story) Message 14: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771254768,
+        "delay": 500
+      },
+      {
+        "id": "15",
+        "type": "text",
+        "sender": "user",
+        "content": "(Mystery Story) Message 15: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771255768,
+        "delay": 500
+      },
+      {
+        "id": "16",
+        "type": "text",
+        "sender": "other",
+        "content": "(Mystery Story) Message 16: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771256768,
+        "delay": 500
+      },
+      {
+        "id": "17",
+        "type": "text",
+        "sender": "user",
+        "content": "(Mystery Story) Message 17: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771257768,
+        "delay": 500
+      },
+      {
+        "id": "18",
+        "type": "text",
+        "sender": "other",
+        "content": "(Mystery Story) Message 18: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771258768,
+        "delay": 500
+      },
+      {
+        "id": "19",
+        "type": "text",
+        "sender": "user",
+        "content": "(Mystery Story) Message 19: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771259768,
+        "delay": 500
+      },
+      {
+        "id": "20",
+        "type": "text",
+        "sender": "other",
+        "content": "(Mystery Story) Message 20: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771260768,
+        "delay": 500
+      },
+      {
+        "id": "21",
+        "type": "text",
+        "sender": "user",
+        "content": "(Mystery Story) Message 21: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771261768,
+        "delay": 500
+      },
+      {
+        "id": "22",
+        "type": "text",
+        "sender": "other",
+        "content": "(Mystery Story) Message 22: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771262768,
+        "delay": 500
+      },
+      {
+        "id": "23",
+        "type": "text",
+        "sender": "user",
+        "content": "(Mystery Story) Message 23: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771263768,
+        "delay": 500
+      },
+      {
+        "id": "24",
+        "type": "text",
+        "sender": "other",
+        "content": "(Mystery Story) Message 24: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771264768,
+        "delay": 500
+      },
+      {
+        "id": "25",
+        "type": "text",
+        "sender": "user",
+        "content": "(Mystery Story) Message 25: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771265768,
+        "delay": 500
+      },
+      {
+        "id": "26",
+        "type": "text",
+        "sender": "other",
+        "content": "(Mystery Story) Message 26: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771266768,
+        "delay": 500
+      },
+      {
+        "id": "27",
+        "type": "text",
+        "sender": "user",
+        "content": "(Mystery Story) Message 27: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771267768,
+        "delay": 500
+      },
+      {
+        "id": "28",
+        "type": "text",
+        "sender": "other",
+        "content": "(Mystery Story) Message 28: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771268768,
+        "delay": 500
+      },
+      {
+        "id": "29",
+        "type": "text",
+        "sender": "user",
+        "content": "(Mystery Story) Message 29: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771269768,
+        "delay": 500
+      },
+      {
+        "id": "30",
+        "type": "text",
+        "sender": "other",
+        "content": "(Mystery Story) Message 30: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771270768,
+        "delay": 500
+      },
+      {
+        "id": "31",
+        "type": "text",
+        "sender": "user",
+        "content": "(Mystery Story) Message 31: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771271768,
+        "delay": 500
+      },
+      {
+        "id": "32",
+        "type": "text",
+        "sender": "other",
+        "content": "(Mystery Story) Message 32: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771272768,
+        "delay": 500
+      },
+      {
+        "id": "33",
+        "type": "text",
+        "sender": "user",
+        "content": "(Mystery Story) Message 33: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771273768,
+        "delay": 500
+      },
+      {
+        "id": "34",
+        "type": "text",
+        "sender": "other",
+        "content": "(Mystery Story) Message 34: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771274768,
+        "delay": 500
+      },
+      {
+        "id": "35",
+        "type": "text",
+        "sender": "user",
+        "content": "(Mystery Story) Message 35: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771275768,
+        "delay": 500
+      },
+      {
+        "id": "36",
+        "type": "text",
+        "sender": "other",
+        "content": "(Mystery Story) Message 36: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771276768,
+        "delay": 500
+      },
+      {
+        "id": "37",
+        "type": "text",
+        "sender": "user",
+        "content": "(Mystery Story) Message 37: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771277768,
+        "delay": 500
+      },
+      {
+        "id": "38",
+        "type": "text",
+        "sender": "other",
+        "content": "(Mystery Story) Message 38: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771278768,
+        "delay": 500
+      },
+      {
+        "id": "39",
+        "type": "text",
+        "sender": "user",
+        "content": "(Mystery Story) Message 39: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771279768,
+        "delay": 500
+      },
+      {
+        "id": "40",
+        "type": "text",
+        "sender": "other",
+        "content": "(Mystery Story) Message 40: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771280768,
+        "delay": 500
+      },
+      {
+        "id": "41",
+        "type": "text",
+        "sender": "user",
+        "content": "(Mystery Story) Message 41: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771281768,
+        "delay": 500
+      },
+      {
+        "id": "42",
+        "type": "text",
+        "sender": "other",
+        "content": "(Mystery Story) Message 42: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771282768,
+        "delay": 500
+      },
+      {
+        "id": "43",
+        "type": "text",
+        "sender": "user",
+        "content": "(Mystery Story) Message 43: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771283768,
+        "delay": 500
+      },
+      {
+        "id": "44",
+        "type": "text",
+        "sender": "other",
+        "content": "(Mystery Story) Message 44: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771284768,
+        "delay": 500
+      },
+      {
+        "id": "45",
+        "type": "text",
+        "sender": "user",
+        "content": "(Mystery Story) Message 45: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771285768,
+        "delay": 500
+      },
+      {
+        "id": "46",
+        "type": "text",
+        "sender": "other",
+        "content": "(Mystery Story) Message 46: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771286768,
+        "delay": 500
+      },
+      {
+        "id": "47",
+        "type": "text",
+        "sender": "user",
+        "content": "(Mystery Story) Message 47: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771287768,
+        "delay": 500
+      },
+      {
+        "id": "48",
+        "type": "text",
+        "sender": "other",
+        "content": "(Mystery Story) Message 48: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771288768,
+        "delay": 500
+      },
+      {
+        "id": "49",
+        "type": "text",
+        "sender": "user",
+        "content": "(Mystery Story) Message 49: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771289768,
+        "delay": 500
+      },
+      {
+        "id": "50",
+        "type": "text",
+        "sender": "other",
+        "content": "(Mystery Story) Message 50: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771290768,
+        "delay": 500
+      },
+      {
+        "id": "51",
+        "type": "text",
+        "sender": "user",
+        "content": "(Mystery Story) Message 51: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771291768,
+        "delay": 500
+      },
+      {
+        "id": "52",
+        "type": "text",
+        "sender": "other",
+        "content": "(Mystery Story) Message 52: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771292768,
+        "delay": 500
+      },
+      {
+        "id": "53",
+        "type": "text",
+        "sender": "user",
+        "content": "(Mystery Story) Message 53: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771293768,
+        "delay": 500
+      },
+      {
+        "id": "54",
+        "type": "text",
+        "sender": "other",
+        "content": "(Mystery Story) Message 54: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771294768,
+        "delay": 500
+      },
+      {
+        "id": "55",
+        "type": "text",
+        "sender": "user",
+        "content": "(Mystery Story) Message 55: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771295768,
+        "delay": 500
+      },
+      {
+        "id": "56",
+        "type": "text",
+        "sender": "other",
+        "content": "(Mystery Story) Message 56: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771296768,
+        "delay": 500
+      },
+      {
+        "id": "57",
+        "type": "text",
+        "sender": "user",
+        "content": "(Mystery Story) Message 57: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771297768,
+        "delay": 500
+      },
+      {
+        "id": "58",
+        "type": "text",
+        "sender": "other",
+        "content": "(Mystery Story) Message 58: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771298768,
+        "delay": 500
+      },
+      {
+        "id": "59",
+        "type": "text",
+        "sender": "user",
+        "content": "(Mystery Story) Message 59: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771299768,
+        "delay": 500
+      },
+      {
+        "id": "60",
+        "type": "text",
+        "sender": "other",
+        "content": "(Mystery Story) Message 60: This is part of a long, immersive mystery chat narrative.",
+        "timestamp": 1749771300768,
+        "delay": 500
+      },
+      {
+        "id": "61",
+        "type": "system",
+        "sender": "system",
+        "content": "\ud83d\udd0b Juice is at 0%. Recharge to continue this story\u2026",
+        "timestamp": 1749771302768,
+        "delay": 0
+      }
+    ],
+    "settings": {
+      "autoAdvance": true,
+      "typingSpeed": 50,
+      "theme": "dark"
+    },
+    "created": 1749771240768,
+    "updated": 1749771302768
+  },
+  {
+    "id": "4",
+    "title": "Fantasy Epic Chat",
+    "description": "A long, 10-minute fantasy chat story full of suspense and drama.",
+    "category": "Fantasy",
+    "characters": [
+      {
+        "id": "user",
+        "name": "You",
+        "avatar": "\ud83d\udc64",
+        "color": "#3b82f6"
+      },
+      {
+        "id": "other",
+        "name": "Alex",
+        "avatar": "\ud83d\udcac",
+        "color": "#10b981"
+      }
+    ],
+    "messages": [
+      {
+        "id": "1",
+        "type": "text",
+        "sender": "user",
+        "content": "(Fantasy Story) Message 1: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771241768,
+        "delay": 500
+      },
+      {
+        "id": "2",
+        "type": "text",
+        "sender": "other",
+        "content": "(Fantasy Story) Message 2: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771242768,
+        "delay": 500
+      },
+      {
+        "id": "3",
+        "type": "text",
+        "sender": "user",
+        "content": "(Fantasy Story) Message 3: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771243768,
+        "delay": 500
+      },
+      {
+        "id": "4",
+        "type": "text",
+        "sender": "other",
+        "content": "(Fantasy Story) Message 4: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771244768,
+        "delay": 500
+      },
+      {
+        "id": "5",
+        "type": "text",
+        "sender": "user",
+        "content": "(Fantasy Story) Message 5: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771245768,
+        "delay": 500
+      },
+      {
+        "id": "6",
+        "type": "text",
+        "sender": "other",
+        "content": "(Fantasy Story) Message 6: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771246768,
+        "delay": 500
+      },
+      {
+        "id": "7",
+        "type": "text",
+        "sender": "user",
+        "content": "(Fantasy Story) Message 7: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771247768,
+        "delay": 500
+      },
+      {
+        "id": "8",
+        "type": "text",
+        "sender": "other",
+        "content": "(Fantasy Story) Message 8: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771248768,
+        "delay": 500
+      },
+      {
+        "id": "9",
+        "type": "text",
+        "sender": "user",
+        "content": "(Fantasy Story) Message 9: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771249768,
+        "delay": 500
+      },
+      {
+        "id": "10",
+        "type": "text",
+        "sender": "other",
+        "content": "(Fantasy Story) Message 10: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771250768,
+        "delay": 500
+      },
+      {
+        "id": "11",
+        "type": "text",
+        "sender": "user",
+        "content": "(Fantasy Story) Message 11: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771251768,
+        "delay": 500
+      },
+      {
+        "id": "12",
+        "type": "text",
+        "sender": "other",
+        "content": "(Fantasy Story) Message 12: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771252768,
+        "delay": 500
+      },
+      {
+        "id": "13",
+        "type": "text",
+        "sender": "user",
+        "content": "(Fantasy Story) Message 13: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771253768,
+        "delay": 500
+      },
+      {
+        "id": "14",
+        "type": "text",
+        "sender": "other",
+        "content": "(Fantasy Story) Message 14: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771254768,
+        "delay": 500
+      },
+      {
+        "id": "15",
+        "type": "text",
+        "sender": "user",
+        "content": "(Fantasy Story) Message 15: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771255768,
+        "delay": 500
+      },
+      {
+        "id": "16",
+        "type": "text",
+        "sender": "other",
+        "content": "(Fantasy Story) Message 16: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771256768,
+        "delay": 500
+      },
+      {
+        "id": "17",
+        "type": "text",
+        "sender": "user",
+        "content": "(Fantasy Story) Message 17: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771257768,
+        "delay": 500
+      },
+      {
+        "id": "18",
+        "type": "text",
+        "sender": "other",
+        "content": "(Fantasy Story) Message 18: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771258768,
+        "delay": 500
+      },
+      {
+        "id": "19",
+        "type": "text",
+        "sender": "user",
+        "content": "(Fantasy Story) Message 19: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771259768,
+        "delay": 500
+      },
+      {
+        "id": "20",
+        "type": "text",
+        "sender": "other",
+        "content": "(Fantasy Story) Message 20: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771260768,
+        "delay": 500
+      },
+      {
+        "id": "21",
+        "type": "text",
+        "sender": "user",
+        "content": "(Fantasy Story) Message 21: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771261768,
+        "delay": 500
+      },
+      {
+        "id": "22",
+        "type": "text",
+        "sender": "other",
+        "content": "(Fantasy Story) Message 22: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771262768,
+        "delay": 500
+      },
+      {
+        "id": "23",
+        "type": "text",
+        "sender": "user",
+        "content": "(Fantasy Story) Message 23: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771263768,
+        "delay": 500
+      },
+      {
+        "id": "24",
+        "type": "text",
+        "sender": "other",
+        "content": "(Fantasy Story) Message 24: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771264768,
+        "delay": 500
+      },
+      {
+        "id": "25",
+        "type": "text",
+        "sender": "user",
+        "content": "(Fantasy Story) Message 25: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771265768,
+        "delay": 500
+      },
+      {
+        "id": "26",
+        "type": "text",
+        "sender": "other",
+        "content": "(Fantasy Story) Message 26: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771266768,
+        "delay": 500
+      },
+      {
+        "id": "27",
+        "type": "text",
+        "sender": "user",
+        "content": "(Fantasy Story) Message 27: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771267768,
+        "delay": 500
+      },
+      {
+        "id": "28",
+        "type": "text",
+        "sender": "other",
+        "content": "(Fantasy Story) Message 28: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771268768,
+        "delay": 500
+      },
+      {
+        "id": "29",
+        "type": "text",
+        "sender": "user",
+        "content": "(Fantasy Story) Message 29: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771269768,
+        "delay": 500
+      },
+      {
+        "id": "30",
+        "type": "text",
+        "sender": "other",
+        "content": "(Fantasy Story) Message 30: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771270768,
+        "delay": 500
+      },
+      {
+        "id": "31",
+        "type": "text",
+        "sender": "user",
+        "content": "(Fantasy Story) Message 31: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771271768,
+        "delay": 500
+      },
+      {
+        "id": "32",
+        "type": "text",
+        "sender": "other",
+        "content": "(Fantasy Story) Message 32: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771272768,
+        "delay": 500
+      },
+      {
+        "id": "33",
+        "type": "text",
+        "sender": "user",
+        "content": "(Fantasy Story) Message 33: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771273768,
+        "delay": 500
+      },
+      {
+        "id": "34",
+        "type": "text",
+        "sender": "other",
+        "content": "(Fantasy Story) Message 34: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771274768,
+        "delay": 500
+      },
+      {
+        "id": "35",
+        "type": "text",
+        "sender": "user",
+        "content": "(Fantasy Story) Message 35: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771275768,
+        "delay": 500
+      },
+      {
+        "id": "36",
+        "type": "text",
+        "sender": "other",
+        "content": "(Fantasy Story) Message 36: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771276768,
+        "delay": 500
+      },
+      {
+        "id": "37",
+        "type": "text",
+        "sender": "user",
+        "content": "(Fantasy Story) Message 37: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771277768,
+        "delay": 500
+      },
+      {
+        "id": "38",
+        "type": "text",
+        "sender": "other",
+        "content": "(Fantasy Story) Message 38: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771278768,
+        "delay": 500
+      },
+      {
+        "id": "39",
+        "type": "text",
+        "sender": "user",
+        "content": "(Fantasy Story) Message 39: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771279768,
+        "delay": 500
+      },
+      {
+        "id": "40",
+        "type": "text",
+        "sender": "other",
+        "content": "(Fantasy Story) Message 40: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771280768,
+        "delay": 500
+      },
+      {
+        "id": "41",
+        "type": "text",
+        "sender": "user",
+        "content": "(Fantasy Story) Message 41: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771281768,
+        "delay": 500
+      },
+      {
+        "id": "42",
+        "type": "text",
+        "sender": "other",
+        "content": "(Fantasy Story) Message 42: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771282768,
+        "delay": 500
+      },
+      {
+        "id": "43",
+        "type": "text",
+        "sender": "user",
+        "content": "(Fantasy Story) Message 43: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771283768,
+        "delay": 500
+      },
+      {
+        "id": "44",
+        "type": "text",
+        "sender": "other",
+        "content": "(Fantasy Story) Message 44: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771284768,
+        "delay": 500
+      },
+      {
+        "id": "45",
+        "type": "text",
+        "sender": "user",
+        "content": "(Fantasy Story) Message 45: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771285768,
+        "delay": 500
+      },
+      {
+        "id": "46",
+        "type": "text",
+        "sender": "other",
+        "content": "(Fantasy Story) Message 46: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771286768,
+        "delay": 500
+      },
+      {
+        "id": "47",
+        "type": "text",
+        "sender": "user",
+        "content": "(Fantasy Story) Message 47: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771287768,
+        "delay": 500
+      },
+      {
+        "id": "48",
+        "type": "text",
+        "sender": "other",
+        "content": "(Fantasy Story) Message 48: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771288768,
+        "delay": 500
+      },
+      {
+        "id": "49",
+        "type": "text",
+        "sender": "user",
+        "content": "(Fantasy Story) Message 49: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771289768,
+        "delay": 500
+      },
+      {
+        "id": "50",
+        "type": "text",
+        "sender": "other",
+        "content": "(Fantasy Story) Message 50: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771290768,
+        "delay": 500
+      },
+      {
+        "id": "51",
+        "type": "text",
+        "sender": "user",
+        "content": "(Fantasy Story) Message 51: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771291768,
+        "delay": 500
+      },
+      {
+        "id": "52",
+        "type": "text",
+        "sender": "other",
+        "content": "(Fantasy Story) Message 52: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771292768,
+        "delay": 500
+      },
+      {
+        "id": "53",
+        "type": "text",
+        "sender": "user",
+        "content": "(Fantasy Story) Message 53: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771293768,
+        "delay": 500
+      },
+      {
+        "id": "54",
+        "type": "text",
+        "sender": "other",
+        "content": "(Fantasy Story) Message 54: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771294768,
+        "delay": 500
+      },
+      {
+        "id": "55",
+        "type": "text",
+        "sender": "user",
+        "content": "(Fantasy Story) Message 55: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771295768,
+        "delay": 500
+      },
+      {
+        "id": "56",
+        "type": "text",
+        "sender": "other",
+        "content": "(Fantasy Story) Message 56: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771296768,
+        "delay": 500
+      },
+      {
+        "id": "57",
+        "type": "text",
+        "sender": "user",
+        "content": "(Fantasy Story) Message 57: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771297768,
+        "delay": 500
+      },
+      {
+        "id": "58",
+        "type": "text",
+        "sender": "other",
+        "content": "(Fantasy Story) Message 58: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771298768,
+        "delay": 500
+      },
+      {
+        "id": "59",
+        "type": "text",
+        "sender": "user",
+        "content": "(Fantasy Story) Message 59: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771299768,
+        "delay": 500
+      },
+      {
+        "id": "60",
+        "type": "text",
+        "sender": "other",
+        "content": "(Fantasy Story) Message 60: This is part of a long, immersive fantasy chat narrative.",
+        "timestamp": 1749771300768,
+        "delay": 500
+      },
+      {
+        "id": "61",
+        "type": "system",
+        "sender": "system",
+        "content": "\ud83d\udd0b Juice is at 0%. Recharge to continue this story\u2026",
+        "timestamp": 1749771302768,
+        "delay": 0
+      }
+    ],
+    "settings": {
+      "autoAdvance": true,
+      "typingSpeed": 50,
+      "theme": "dark"
+    },
+    "created": 1749771240768,
+    "updated": 1749771302768
+  },
+  {
+    "id": "5",
+    "title": "Horror Epic Chat",
+    "description": "A long, 10-minute horror chat story full of suspense and drama.",
+    "category": "Horror",
+    "characters": [
+      {
+        "id": "user",
+        "name": "You",
+        "avatar": "\ud83d\udc64",
+        "color": "#3b82f6"
+      },
+      {
+        "id": "other",
+        "name": "Alex",
+        "avatar": "\ud83d\udcac",
+        "color": "#10b981"
+      }
+    ],
+    "messages": [
+      {
+        "id": "1",
+        "type": "text",
+        "sender": "user",
+        "content": "(Horror Story) Message 1: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771241768,
+        "delay": 500
+      },
+      {
+        "id": "2",
+        "type": "text",
+        "sender": "other",
+        "content": "(Horror Story) Message 2: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771242768,
+        "delay": 500
+      },
+      {
+        "id": "3",
+        "type": "text",
+        "sender": "user",
+        "content": "(Horror Story) Message 3: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771243768,
+        "delay": 500
+      },
+      {
+        "id": "4",
+        "type": "text",
+        "sender": "other",
+        "content": "(Horror Story) Message 4: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771244768,
+        "delay": 500
+      },
+      {
+        "id": "5",
+        "type": "text",
+        "sender": "user",
+        "content": "(Horror Story) Message 5: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771245768,
+        "delay": 500
+      },
+      {
+        "id": "6",
+        "type": "text",
+        "sender": "other",
+        "content": "(Horror Story) Message 6: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771246768,
+        "delay": 500
+      },
+      {
+        "id": "7",
+        "type": "text",
+        "sender": "user",
+        "content": "(Horror Story) Message 7: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771247768,
+        "delay": 500
+      },
+      {
+        "id": "8",
+        "type": "text",
+        "sender": "other",
+        "content": "(Horror Story) Message 8: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771248768,
+        "delay": 500
+      },
+      {
+        "id": "9",
+        "type": "text",
+        "sender": "user",
+        "content": "(Horror Story) Message 9: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771249768,
+        "delay": 500
+      },
+      {
+        "id": "10",
+        "type": "text",
+        "sender": "other",
+        "content": "(Horror Story) Message 10: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771250768,
+        "delay": 500
+      },
+      {
+        "id": "11",
+        "type": "text",
+        "sender": "user",
+        "content": "(Horror Story) Message 11: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771251768,
+        "delay": 500
+      },
+      {
+        "id": "12",
+        "type": "text",
+        "sender": "other",
+        "content": "(Horror Story) Message 12: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771252768,
+        "delay": 500
+      },
+      {
+        "id": "13",
+        "type": "text",
+        "sender": "user",
+        "content": "(Horror Story) Message 13: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771253768,
+        "delay": 500
+      },
+      {
+        "id": "14",
+        "type": "text",
+        "sender": "other",
+        "content": "(Horror Story) Message 14: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771254768,
+        "delay": 500
+      },
+      {
+        "id": "15",
+        "type": "text",
+        "sender": "user",
+        "content": "(Horror Story) Message 15: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771255768,
+        "delay": 500
+      },
+      {
+        "id": "16",
+        "type": "text",
+        "sender": "other",
+        "content": "(Horror Story) Message 16: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771256768,
+        "delay": 500
+      },
+      {
+        "id": "17",
+        "type": "text",
+        "sender": "user",
+        "content": "(Horror Story) Message 17: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771257768,
+        "delay": 500
+      },
+      {
+        "id": "18",
+        "type": "text",
+        "sender": "other",
+        "content": "(Horror Story) Message 18: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771258768,
+        "delay": 500
+      },
+      {
+        "id": "19",
+        "type": "text",
+        "sender": "user",
+        "content": "(Horror Story) Message 19: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771259768,
+        "delay": 500
+      },
+      {
+        "id": "20",
+        "type": "text",
+        "sender": "other",
+        "content": "(Horror Story) Message 20: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771260768,
+        "delay": 500
+      },
+      {
+        "id": "21",
+        "type": "text",
+        "sender": "user",
+        "content": "(Horror Story) Message 21: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771261768,
+        "delay": 500
+      },
+      {
+        "id": "22",
+        "type": "text",
+        "sender": "other",
+        "content": "(Horror Story) Message 22: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771262768,
+        "delay": 500
+      },
+      {
+        "id": "23",
+        "type": "text",
+        "sender": "user",
+        "content": "(Horror Story) Message 23: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771263768,
+        "delay": 500
+      },
+      {
+        "id": "24",
+        "type": "text",
+        "sender": "other",
+        "content": "(Horror Story) Message 24: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771264768,
+        "delay": 500
+      },
+      {
+        "id": "25",
+        "type": "text",
+        "sender": "user",
+        "content": "(Horror Story) Message 25: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771265768,
+        "delay": 500
+      },
+      {
+        "id": "26",
+        "type": "text",
+        "sender": "other",
+        "content": "(Horror Story) Message 26: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771266768,
+        "delay": 500
+      },
+      {
+        "id": "27",
+        "type": "text",
+        "sender": "user",
+        "content": "(Horror Story) Message 27: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771267768,
+        "delay": 500
+      },
+      {
+        "id": "28",
+        "type": "text",
+        "sender": "other",
+        "content": "(Horror Story) Message 28: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771268768,
+        "delay": 500
+      },
+      {
+        "id": "29",
+        "type": "text",
+        "sender": "user",
+        "content": "(Horror Story) Message 29: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771269768,
+        "delay": 500
+      },
+      {
+        "id": "30",
+        "type": "text",
+        "sender": "other",
+        "content": "(Horror Story) Message 30: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771270768,
+        "delay": 500
+      },
+      {
+        "id": "31",
+        "type": "text",
+        "sender": "user",
+        "content": "(Horror Story) Message 31: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771271768,
+        "delay": 500
+      },
+      {
+        "id": "32",
+        "type": "text",
+        "sender": "other",
+        "content": "(Horror Story) Message 32: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771272768,
+        "delay": 500
+      },
+      {
+        "id": "33",
+        "type": "text",
+        "sender": "user",
+        "content": "(Horror Story) Message 33: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771273768,
+        "delay": 500
+      },
+      {
+        "id": "34",
+        "type": "text",
+        "sender": "other",
+        "content": "(Horror Story) Message 34: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771274768,
+        "delay": 500
+      },
+      {
+        "id": "35",
+        "type": "text",
+        "sender": "user",
+        "content": "(Horror Story) Message 35: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771275768,
+        "delay": 500
+      },
+      {
+        "id": "36",
+        "type": "text",
+        "sender": "other",
+        "content": "(Horror Story) Message 36: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771276768,
+        "delay": 500
+      },
+      {
+        "id": "37",
+        "type": "text",
+        "sender": "user",
+        "content": "(Horror Story) Message 37: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771277768,
+        "delay": 500
+      },
+      {
+        "id": "38",
+        "type": "text",
+        "sender": "other",
+        "content": "(Horror Story) Message 38: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771278768,
+        "delay": 500
+      },
+      {
+        "id": "39",
+        "type": "text",
+        "sender": "user",
+        "content": "(Horror Story) Message 39: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771279768,
+        "delay": 500
+      },
+      {
+        "id": "40",
+        "type": "text",
+        "sender": "other",
+        "content": "(Horror Story) Message 40: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771280768,
+        "delay": 500
+      },
+      {
+        "id": "41",
+        "type": "text",
+        "sender": "user",
+        "content": "(Horror Story) Message 41: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771281768,
+        "delay": 500
+      },
+      {
+        "id": "42",
+        "type": "text",
+        "sender": "other",
+        "content": "(Horror Story) Message 42: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771282768,
+        "delay": 500
+      },
+      {
+        "id": "43",
+        "type": "text",
+        "sender": "user",
+        "content": "(Horror Story) Message 43: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771283768,
+        "delay": 500
+      },
+      {
+        "id": "44",
+        "type": "text",
+        "sender": "other",
+        "content": "(Horror Story) Message 44: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771284768,
+        "delay": 500
+      },
+      {
+        "id": "45",
+        "type": "text",
+        "sender": "user",
+        "content": "(Horror Story) Message 45: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771285768,
+        "delay": 500
+      },
+      {
+        "id": "46",
+        "type": "text",
+        "sender": "other",
+        "content": "(Horror Story) Message 46: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771286768,
+        "delay": 500
+      },
+      {
+        "id": "47",
+        "type": "text",
+        "sender": "user",
+        "content": "(Horror Story) Message 47: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771287768,
+        "delay": 500
+      },
+      {
+        "id": "48",
+        "type": "text",
+        "sender": "other",
+        "content": "(Horror Story) Message 48: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771288768,
+        "delay": 500
+      },
+      {
+        "id": "49",
+        "type": "text",
+        "sender": "user",
+        "content": "(Horror Story) Message 49: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771289768,
+        "delay": 500
+      },
+      {
+        "id": "50",
+        "type": "text",
+        "sender": "other",
+        "content": "(Horror Story) Message 50: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771290768,
+        "delay": 500
+      },
+      {
+        "id": "51",
+        "type": "text",
+        "sender": "user",
+        "content": "(Horror Story) Message 51: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771291768,
+        "delay": 500
+      },
+      {
+        "id": "52",
+        "type": "text",
+        "sender": "other",
+        "content": "(Horror Story) Message 52: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771292768,
+        "delay": 500
+      },
+      {
+        "id": "53",
+        "type": "text",
+        "sender": "user",
+        "content": "(Horror Story) Message 53: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771293768,
+        "delay": 500
+      },
+      {
+        "id": "54",
+        "type": "text",
+        "sender": "other",
+        "content": "(Horror Story) Message 54: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771294768,
+        "delay": 500
+      },
+      {
+        "id": "55",
+        "type": "text",
+        "sender": "user",
+        "content": "(Horror Story) Message 55: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771295768,
+        "delay": 500
+      },
+      {
+        "id": "56",
+        "type": "text",
+        "sender": "other",
+        "content": "(Horror Story) Message 56: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771296768,
+        "delay": 500
+      },
+      {
+        "id": "57",
+        "type": "text",
+        "sender": "user",
+        "content": "(Horror Story) Message 57: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771297768,
+        "delay": 500
+      },
+      {
+        "id": "58",
+        "type": "text",
+        "sender": "other",
+        "content": "(Horror Story) Message 58: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771298768,
+        "delay": 500
+      },
+      {
+        "id": "59",
+        "type": "text",
+        "sender": "user",
+        "content": "(Horror Story) Message 59: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771299768,
+        "delay": 500
+      },
+      {
+        "id": "60",
+        "type": "text",
+        "sender": "other",
+        "content": "(Horror Story) Message 60: This is part of a long, immersive horror chat narrative.",
+        "timestamp": 1749771300768,
+        "delay": 500
+      },
+      {
+        "id": "61",
+        "type": "system",
+        "sender": "system",
+        "content": "\ud83d\udd0b Juice is at 0%. Recharge to continue this story\u2026",
+        "timestamp": 1749771302768,
+        "delay": 0
+      }
+    ],
+    "settings": {
+      "autoAdvance": true,
+      "typingSpeed": 50,
+      "theme": "dark"
+    },
+    "created": 1749771240768,
+    "updated": 1749771302768
+  },
+  {
+    "id": "6",
+    "title": "Comedy Epic Chat",
+    "description": "A long, 10-minute comedy chat story full of suspense and drama.",
+    "category": "Comedy",
+    "characters": [
+      {
+        "id": "user",
+        "name": "You",
+        "avatar": "\ud83d\udc64",
+        "color": "#3b82f6"
+      },
+      {
+        "id": "other",
+        "name": "Alex",
+        "avatar": "\ud83d\udcac",
+        "color": "#10b981"
+      }
+    ],
+    "messages": [
+      {
+        "id": "1",
+        "type": "text",
+        "sender": "user",
+        "content": "(Comedy Story) Message 1: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771241768,
+        "delay": 500
+      },
+      {
+        "id": "2",
+        "type": "text",
+        "sender": "other",
+        "content": "(Comedy Story) Message 2: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771242768,
+        "delay": 500
+      },
+      {
+        "id": "3",
+        "type": "text",
+        "sender": "user",
+        "content": "(Comedy Story) Message 3: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771243768,
+        "delay": 500
+      },
+      {
+        "id": "4",
+        "type": "text",
+        "sender": "other",
+        "content": "(Comedy Story) Message 4: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771244768,
+        "delay": 500
+      },
+      {
+        "id": "5",
+        "type": "text",
+        "sender": "user",
+        "content": "(Comedy Story) Message 5: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771245768,
+        "delay": 500
+      },
+      {
+        "id": "6",
+        "type": "text",
+        "sender": "other",
+        "content": "(Comedy Story) Message 6: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771246768,
+        "delay": 500
+      },
+      {
+        "id": "7",
+        "type": "text",
+        "sender": "user",
+        "content": "(Comedy Story) Message 7: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771247768,
+        "delay": 500
+      },
+      {
+        "id": "8",
+        "type": "text",
+        "sender": "other",
+        "content": "(Comedy Story) Message 8: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771248768,
+        "delay": 500
+      },
+      {
+        "id": "9",
+        "type": "text",
+        "sender": "user",
+        "content": "(Comedy Story) Message 9: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771249768,
+        "delay": 500
+      },
+      {
+        "id": "10",
+        "type": "text",
+        "sender": "other",
+        "content": "(Comedy Story) Message 10: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771250768,
+        "delay": 500
+      },
+      {
+        "id": "11",
+        "type": "text",
+        "sender": "user",
+        "content": "(Comedy Story) Message 11: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771251768,
+        "delay": 500
+      },
+      {
+        "id": "12",
+        "type": "text",
+        "sender": "other",
+        "content": "(Comedy Story) Message 12: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771252768,
+        "delay": 500
+      },
+      {
+        "id": "13",
+        "type": "text",
+        "sender": "user",
+        "content": "(Comedy Story) Message 13: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771253768,
+        "delay": 500
+      },
+      {
+        "id": "14",
+        "type": "text",
+        "sender": "other",
+        "content": "(Comedy Story) Message 14: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771254768,
+        "delay": 500
+      },
+      {
+        "id": "15",
+        "type": "text",
+        "sender": "user",
+        "content": "(Comedy Story) Message 15: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771255768,
+        "delay": 500
+      },
+      {
+        "id": "16",
+        "type": "text",
+        "sender": "other",
+        "content": "(Comedy Story) Message 16: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771256768,
+        "delay": 500
+      },
+      {
+        "id": "17",
+        "type": "text",
+        "sender": "user",
+        "content": "(Comedy Story) Message 17: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771257768,
+        "delay": 500
+      },
+      {
+        "id": "18",
+        "type": "text",
+        "sender": "other",
+        "content": "(Comedy Story) Message 18: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771258768,
+        "delay": 500
+      },
+      {
+        "id": "19",
+        "type": "text",
+        "sender": "user",
+        "content": "(Comedy Story) Message 19: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771259768,
+        "delay": 500
+      },
+      {
+        "id": "20",
+        "type": "text",
+        "sender": "other",
+        "content": "(Comedy Story) Message 20: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771260768,
+        "delay": 500
+      },
+      {
+        "id": "21",
+        "type": "text",
+        "sender": "user",
+        "content": "(Comedy Story) Message 21: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771261768,
+        "delay": 500
+      },
+      {
+        "id": "22",
+        "type": "text",
+        "sender": "other",
+        "content": "(Comedy Story) Message 22: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771262768,
+        "delay": 500
+      },
+      {
+        "id": "23",
+        "type": "text",
+        "sender": "user",
+        "content": "(Comedy Story) Message 23: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771263768,
+        "delay": 500
+      },
+      {
+        "id": "24",
+        "type": "text",
+        "sender": "other",
+        "content": "(Comedy Story) Message 24: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771264768,
+        "delay": 500
+      },
+      {
+        "id": "25",
+        "type": "text",
+        "sender": "user",
+        "content": "(Comedy Story) Message 25: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771265768,
+        "delay": 500
+      },
+      {
+        "id": "26",
+        "type": "text",
+        "sender": "other",
+        "content": "(Comedy Story) Message 26: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771266768,
+        "delay": 500
+      },
+      {
+        "id": "27",
+        "type": "text",
+        "sender": "user",
+        "content": "(Comedy Story) Message 27: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771267768,
+        "delay": 500
+      },
+      {
+        "id": "28",
+        "type": "text",
+        "sender": "other",
+        "content": "(Comedy Story) Message 28: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771268768,
+        "delay": 500
+      },
+      {
+        "id": "29",
+        "type": "text",
+        "sender": "user",
+        "content": "(Comedy Story) Message 29: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771269768,
+        "delay": 500
+      },
+      {
+        "id": "30",
+        "type": "text",
+        "sender": "other",
+        "content": "(Comedy Story) Message 30: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771270768,
+        "delay": 500
+      },
+      {
+        "id": "31",
+        "type": "text",
+        "sender": "user",
+        "content": "(Comedy Story) Message 31: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771271768,
+        "delay": 500
+      },
+      {
+        "id": "32",
+        "type": "text",
+        "sender": "other",
+        "content": "(Comedy Story) Message 32: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771272768,
+        "delay": 500
+      },
+      {
+        "id": "33",
+        "type": "text",
+        "sender": "user",
+        "content": "(Comedy Story) Message 33: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771273768,
+        "delay": 500
+      },
+      {
+        "id": "34",
+        "type": "text",
+        "sender": "other",
+        "content": "(Comedy Story) Message 34: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771274768,
+        "delay": 500
+      },
+      {
+        "id": "35",
+        "type": "text",
+        "sender": "user",
+        "content": "(Comedy Story) Message 35: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771275768,
+        "delay": 500
+      },
+      {
+        "id": "36",
+        "type": "text",
+        "sender": "other",
+        "content": "(Comedy Story) Message 36: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771276768,
+        "delay": 500
+      },
+      {
+        "id": "37",
+        "type": "text",
+        "sender": "user",
+        "content": "(Comedy Story) Message 37: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771277768,
+        "delay": 500
+      },
+      {
+        "id": "38",
+        "type": "text",
+        "sender": "other",
+        "content": "(Comedy Story) Message 38: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771278768,
+        "delay": 500
+      },
+      {
+        "id": "39",
+        "type": "text",
+        "sender": "user",
+        "content": "(Comedy Story) Message 39: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771279768,
+        "delay": 500
+      },
+      {
+        "id": "40",
+        "type": "text",
+        "sender": "other",
+        "content": "(Comedy Story) Message 40: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771280768,
+        "delay": 500
+      },
+      {
+        "id": "41",
+        "type": "text",
+        "sender": "user",
+        "content": "(Comedy Story) Message 41: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771281768,
+        "delay": 500
+      },
+      {
+        "id": "42",
+        "type": "text",
+        "sender": "other",
+        "content": "(Comedy Story) Message 42: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771282768,
+        "delay": 500
+      },
+      {
+        "id": "43",
+        "type": "text",
+        "sender": "user",
+        "content": "(Comedy Story) Message 43: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771283768,
+        "delay": 500
+      },
+      {
+        "id": "44",
+        "type": "text",
+        "sender": "other",
+        "content": "(Comedy Story) Message 44: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771284768,
+        "delay": 500
+      },
+      {
+        "id": "45",
+        "type": "text",
+        "sender": "user",
+        "content": "(Comedy Story) Message 45: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771285768,
+        "delay": 500
+      },
+      {
+        "id": "46",
+        "type": "text",
+        "sender": "other",
+        "content": "(Comedy Story) Message 46: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771286768,
+        "delay": 500
+      },
+      {
+        "id": "47",
+        "type": "text",
+        "sender": "user",
+        "content": "(Comedy Story) Message 47: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771287768,
+        "delay": 500
+      },
+      {
+        "id": "48",
+        "type": "text",
+        "sender": "other",
+        "content": "(Comedy Story) Message 48: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771288768,
+        "delay": 500
+      },
+      {
+        "id": "49",
+        "type": "text",
+        "sender": "user",
+        "content": "(Comedy Story) Message 49: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771289768,
+        "delay": 500
+      },
+      {
+        "id": "50",
+        "type": "text",
+        "sender": "other",
+        "content": "(Comedy Story) Message 50: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771290768,
+        "delay": 500
+      },
+      {
+        "id": "51",
+        "type": "text",
+        "sender": "user",
+        "content": "(Comedy Story) Message 51: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771291768,
+        "delay": 500
+      },
+      {
+        "id": "52",
+        "type": "text",
+        "sender": "other",
+        "content": "(Comedy Story) Message 52: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771292768,
+        "delay": 500
+      },
+      {
+        "id": "53",
+        "type": "text",
+        "sender": "user",
+        "content": "(Comedy Story) Message 53: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771293768,
+        "delay": 500
+      },
+      {
+        "id": "54",
+        "type": "text",
+        "sender": "other",
+        "content": "(Comedy Story) Message 54: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771294768,
+        "delay": 500
+      },
+      {
+        "id": "55",
+        "type": "text",
+        "sender": "user",
+        "content": "(Comedy Story) Message 55: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771295768,
+        "delay": 500
+      },
+      {
+        "id": "56",
+        "type": "text",
+        "sender": "other",
+        "content": "(Comedy Story) Message 56: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771296768,
+        "delay": 500
+      },
+      {
+        "id": "57",
+        "type": "text",
+        "sender": "user",
+        "content": "(Comedy Story) Message 57: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771297768,
+        "delay": 500
+      },
+      {
+        "id": "58",
+        "type": "text",
+        "sender": "other",
+        "content": "(Comedy Story) Message 58: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771298768,
+        "delay": 500
+      },
+      {
+        "id": "59",
+        "type": "text",
+        "sender": "user",
+        "content": "(Comedy Story) Message 59: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771299768,
+        "delay": 500
+      },
+      {
+        "id": "60",
+        "type": "text",
+        "sender": "other",
+        "content": "(Comedy Story) Message 60: This is part of a long, immersive comedy chat narrative.",
+        "timestamp": 1749771300768,
+        "delay": 500
+      },
+      {
+        "id": "61",
+        "type": "system",
+        "sender": "system",
+        "content": "\ud83d\udd0b Juice is at 0%. Recharge to continue this story\u2026",
+        "timestamp": 1749771302768,
+        "delay": 0
+      }
+    ],
+    "settings": {
+      "autoAdvance": true,
+      "typingSpeed": 50,
+      "theme": "dark"
+    },
+    "created": 1749771240768,
+    "updated": 1749771302768
+  }
+]
