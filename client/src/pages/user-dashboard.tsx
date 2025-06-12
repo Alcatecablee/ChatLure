@@ -11,6 +11,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Progress } from "@/components/ui/progress";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { formatNumber } from "@/lib/utils";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
 import type { Story, User as UserType, UserAchievement, SubscriptionPlan } from "@shared/schema";
 
 export default function UserDashboard() {

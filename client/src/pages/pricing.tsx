@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Check, Zap, Crown, Sparkles, Heart, Battery, Coins, CreditCard, Infinity } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Header from "@/components/header";
+import Footer from "@/components/footer";
 
 export default function Pricing() {
   const [selectedTab, setSelectedTab] = useState<"subscriptions" | "topups" | "paygo">("subscriptions");
@@ -326,18 +327,20 @@ export default function Pricing() {
         )}
 
         {/* Bottom CTA */}
-        <div className="text-center mt-16 p-8 bg-gradient-to-r from-green-500/10 to-blue-500/10 rounded-lg border border-green-500/20">
-          <h3 className="text-2xl font-bold text-white mb-4">
+        <div className="text-center mt-16 p-8 bg-[#161b22] rounded-lg border border-[#21262d]">
+          <h3 className="text-2xl font-bold text-[#f0f6fc] mb-4">
             Need help choosing the right plan?
           </h3>
-          <p className="text-gray-300 mb-6">
+          <p className="text-[#7d8590] mb-6">
             Our PeepPower experts are here to help you find the perfect plan for your chat addiction
           </p>
-          <Button variant="outline" className="border-green-500 text-green-500 hover:bg-green-500 hover:text-white">
+          <Button className="bg-[#0969da] text-white hover:bg-[#0860ca] border-none">
             Contact Support
           </Button>
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 }

@@ -4,6 +4,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/header";
+import Footer from "@/components/footer";
 import StoryCard from "@/components/story-card";
 import StoryTeaser from "@/components/story-teaser";
 import PhoneModal from "@/components/phone-modal";
@@ -337,13 +338,13 @@ export default function Home() {
               {categories?.map((category, index) => (
                 <Card 
                   key={category.id} 
-                  className={`cursor-pointer hover:scale-105 transition-all duration-200 border-2 hover:border-primary fade-in ${getCategoryGradient(category.name)}`}
+                  className="cursor-pointer hover:scale-105 transition-all duration-200 border border-[#21262d] hover:border-[#0969da] fade-in bg-[#161b22]"
                   style={{ animationDelay: `${index * 50}ms` }}
                 >
                   <CardContent className="p-6 text-center">
-                    <div className="text-3xl mb-2">{category.emoji}</div>
-                    <h4 className="font-bold text-foreground mb-1">{category.name}</h4>
-                    <p className="text-xs text-muted-foreground">{formatNumber(category.storyCount)} stories</p>
+                    <div className="text-3xl mb-2">📱</div>
+                    <h4 className="font-bold text-[#f0f6fc] mb-1">{category.name}</h4>
+                    <p className="text-xs text-[#7d8590]">{category.description || "Interactive stories"}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -360,11 +361,13 @@ export default function Home() {
       </section>
 
       {/* Streak Counter */}
-      <section className="py-8 px-4 bg-surface border-t border-border">
+      <section className="py-8 px-4 bg-[#161b22] border-t border-[#21262d]">
         <div className="max-w-4xl mx-auto">
           <StreakCounter />
         </div>
       </section>
+      
+      <Footer />
     </div>
   );
 }
