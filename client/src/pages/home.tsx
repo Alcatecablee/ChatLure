@@ -67,13 +67,13 @@ export default function Home() {
               
               <h1 className="text-6xl md:text-8xl lg:text-9xl font-black mb-6 text-foreground animate-in slide-in-from-bottom-8 duration-1000 delay-200">
                 <span className="bg-gradient-to-r from-foreground via-primary to-destructive bg-clip-text text-transparent">
-                  Peekay
+                  ChatLure
                 </span>
               </h1>
               
               <div className="relative mb-8 animate-in slide-in-from-bottom-8 duration-1000 delay-400">
                 <h2 className="text-3xl md:text-5xl font-bold mb-2 text-destructive">
-                  Interactive Chat Stories
+                  Peek, Obsess, Repeat
                 </h2>
                 <div className="w-32 h-1 bg-gradient-to-r from-red-500 to-pink-500 mx-auto rounded-full"></div>
               </div>

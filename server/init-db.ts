@@ -17,8 +17,8 @@ export async function initializeDatabase() {
     const existingSettings = await db.select().from(siteSettings).limit(1);
     if (existingSettings.length === 0) {
       await db.insert(siteSettings).values({
-        siteName: "Peekay",
-        tagline: "Interactive Chat Stories",
+        siteName: "ChatLure",
+        tagline: "Peek, Obsess, Repeat",
         maintenanceMode: false,
         juiceModeEnabled: true,
         defaultBattery: 75,
