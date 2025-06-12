@@ -1,120 +1,3 @@
-import type { 
-  User, InsertUser, Story, InsertStory, Message, InsertMessage,
-  Category, InsertCategory, SubscriptionPlan, InsertSubscriptionPlan,
-  UserShare, InsertUserShare, UserAchievement, InsertUserAchievement,
-  AdminAction, InsertAdminAction, JuicePackage, InsertJuicePackage,
-  JuiceTransaction, Payment, InsertPayment, ReadingSession, InsertReadingSession
-} from "@shared/schema";
-
-export interface IStorage {
-  // Users
-  getUser(id: number): Promise<User | undefined>;
-  getUserByUsername(username: string): Promise<User | undefined>;
-  getAllUsers(): Promise<User[]>;
-  createUser(user: InsertUser): Promise<User>;
-  updateUser(id: number, updates: Partial<User>): Promise<User>;
-  deleteUser(id: number): Promise<void>;
-  
-  // Stories
-  getAllStories(): Promise<Story[]>;
-  getStoryById(id: number): Promise<Story | undefined>;
-  getStoriesByCategory(category: string): Promise<Story[]>;
-  getTrendingStories(): Promise<Story[]>;
-  createStory(story: InsertStory): Promise<Story>;
-  updateStory(id: number, updates: Partial<Story>): Promise<Story>;
-  deleteStory(id: number): Promise<void>;
-  incrementStoryViews(id: number): Promise<void>;
-  incrementStoryShares(id: number): Promise<void>;
-  incrementStoryLikes(id: number): Promise<void>;
-  
-  // Messages
-  getMessagesByStoryId(storyId: number): Promise<Message[]>;
-  createMessage(message: InsertMessage): Promise<Message>;
-  updateMessage(id: number, updates: Partial<Message>): Promise<Message>;
-  deleteMessage(id: number): Promise<void>;
-  
-  // Categories
-  getAllCategories(): Promise<Category[]>;
-  getCategoryByName(name: string): Promise<Category | undefined>;
-  createCategory(category: InsertCategory): Promise<Category>;
-  updateCategory(id: number, updates: Partial<Category>): Promise<Category>;
-  deleteCategory(id: number): Promise<void>;
-  
-  // Subscription Plans
-  getAllSubscriptionPlans(): Promise<SubscriptionPlan[]>;
-  getSubscriptionPlan(id: number): Promise<SubscriptionPlan | undefined>;
-  createSubscriptionPlan(plan: InsertSubscriptionPlan): Promise<SubscriptionPlan>;
-  updateSubscriptionPlan(id: number, updates: Partial<SubscriptionPlan>): Promise<SubscriptionPlan>;
-  
-  // User Shares
-  getUserShares(userId: number): Promise<UserShare[]>;
-  createUserShare(share: InsertUserShare): Promise<UserShare>;
-  markShareAsUnlocked(userId: number, storyId: number): Promise<void>;
-  
-  // Achievements
-  getUserAchievements(userId: number): Promise<UserAchievement[]>;
-  unlockAchievement(userId: number, achievementId: string): Promise<UserAchievement>;
-  
-  // Admin Actions
-  logAdminAction(action: InsertAdminAction): Promise<AdminAction>;
-  getAdminActions(limit?: number): Promise<AdminAction[]>;
-  
-  // PeepPower System
-  updateUserJuice(userId: number, amount: number, type: string, description?: string): Promise<JuiceTransaction>;
-  getUserJuiceBalance(userId: number): Promise<number>;
-  getUserJuiceTransactions(userId: number, limit?: number): Promise<JuiceTransaction[]>;
-  
-  // Juice Packages
-  getAllJuicePackages(): Promise<JuicePackage[]>;
-  getJuicePackage(id: number): Promise<JuicePackage | undefined>;
-  createJuicePackage(pkg: InsertJuicePackage): Promise<JuicePackage>;
-  
-  // Payments
-  createPayment(payment: InsertPayment): Promise<Payment>;
-  updatePayment(id: number, updates: Partial<Payment>): Promise<Payment>;
-  getUserPayments(userId: number): Promise<Payment[]>;
-  
-  // Reading Sessions
-  createReadingSession(session: InsertReadingSession): Promise<ReadingSession>;
-  updateReadingSession(id: number, updates: Partial<ReadingSession>): Promise<ReadingSession>;
-  getUserReadingSessions(userId: number): Promise<ReadingSession[]>;
-  
-  // Enhanced Payment Management
-  getAllPayments(): Promise<Payment[]>;
-  getPaymentsByUser(userId: number): Promise<Payment[]>;
-  getPaymentsByStatus(status: string): Promise<Payment[]>;
-  
-  // Site Settings Management
-  getSiteSettings(): Promise<any>;
-  updateSiteSettings(settings: any): Promise<any>;
-  setMaintenanceMode(enabled: boolean, message?: string): Promise<void>;
-  
-  // PayPal Settings Management
-  getPayPalSettings(): Promise<any>;
-  updatePayPalSettings(settings: any): Promise<any>;
-  testPayPalConnection(): Promise<{ success: boolean, message: string }>;
-  
-  // Enhanced User Management
-  updateUserSubscription(userId: number, planId: number, status: string): Promise<User>;
-  blockUser(userId: number, reason: string, duration?: number): Promise<void>;
-  unblockUser(userId: number): Promise<void>;
-  
-  // Content Moderation
-  getModerationQueue(): Promise<any[]>;
-  approveContent(id: number): Promise<void>;
-  rejectContent(id: number, reason: string): Promise<void>;
-  
-  // Enhanced Analytics
-  getRevenueAnalytics(period: string): Promise<any>;
-  getUserAnalytics(period: string): Promise<any>;
-  getContentAnalytics(period: string): Promise<any>;
-  
-  // System Health & Monitoring
-  checkDatabaseHealth(): Promise<boolean>;
-  createDatabaseBackup(): Promise<string>;
-  getRecentActivities(limit: number): Promise<any[]>;
-}
-
 import { db } from "./db";
 import { 
   users, stories, messages, categories, subscriptionPlans, userShares, 
@@ -122,6 +5,14 @@ import {
   payments, readingSessions
 } from "@shared/schema";
 import { eq, desc, and, gte, lte } from "drizzle-orm";
+import type { 
+  User, InsertUser, Story, InsertStory, Message, InsertMessage,
+  Category, InsertCategory, SubscriptionPlan, InsertSubscriptionPlan,
+  UserShare, InsertUserShare, UserAchievement, InsertUserAchievement,
+  AdminAction, InsertAdminAction, JuicePackage, InsertJuicePackage,
+  JuiceTransaction, Payment, InsertPayment, ReadingSession, InsertReadingSession
+} from "@shared/schema";
+import type { IStorage } from "./storage";
 
 export class DatabaseStorage implements IStorage {
   // Users
@@ -186,24 +77,15 @@ export class DatabaseStorage implements IStorage {
   }
 
   async incrementStoryViews(id: number): Promise<void> {
-    const [story] = await db.select().from(stories).where(eq(stories.id, id));
-    if (story) {
-      await db.update(stories).set({ views: story.views + 1 }).where(eq(stories.id, id));
-    }
+    await db.update(stories).set({ views: db.select().from(stories).where(eq(stories.id, id)) }).where(eq(stories.id, id));
   }
 
   async incrementStoryShares(id: number): Promise<void> {
-    const [story] = await db.select().from(stories).where(eq(stories.id, id));
-    if (story) {
-      await db.update(stories).set({ shares: story.shares + 1 }).where(eq(stories.id, id));
-    }
+    await db.update(stories).set({ shares: db.select().from(stories).where(eq(stories.id, id)) }).where(eq(stories.id, id));
   }
 
   async incrementStoryLikes(id: number): Promise<void> {
-    const [story] = await db.select().from(stories).where(eq(stories.id, id));
-    if (story) {
-      await db.update(stories).set({ likes: story.likes + 1 }).where(eq(stories.id, id));
-    }
+    await db.update(stories).set({ likes: db.select().from(stories).where(eq(stories.id, id)) }).where(eq(stories.id, id));
   }
 
   // Messages
@@ -280,7 +162,7 @@ export class DatabaseStorage implements IStorage {
   }
 
   async markShareAsUnlocked(userId: number, storyId: number): Promise<void> {
-    await db.update(userShares).set({ unlocked: true }).where(
+    await db.update(userShares).set({ isUnlocked: true }).where(
       and(eq(userShares.userId, userId), eq(userShares.storyId, storyId))
     );
   }
@@ -315,8 +197,8 @@ export class DatabaseStorage implements IStorage {
       userId,
       amount: amount.toString(),
       type,
-      description: description || null,
-      balanceAfter: "0",
+      description,
+      balanceAfter: "0", // Would need to calculate actual balance
       createdAt: new Date()
     }).returning();
     return transaction;
@@ -420,7 +302,7 @@ export class DatabaseStorage implements IStorage {
     if (message) this.siteSettings.maintenanceMessage = message;
   }
 
-  // PayPal Settings Management  
+  // PayPal Settings Management
   private paypalSettings: any = {
     clientId: "",
     clientSecret: "",
@@ -453,6 +335,7 @@ export class DatabaseStorage implements IStorage {
 
   async blockUser(userId: number, reason: string, duration?: number): Promise<void> {
     await db.update(users).set({
+      isBlocked: true,
       blockedReason: reason,
       blockedUntil: duration ? new Date(Date.now() + duration * 24 * 60 * 60 * 1000) : null
     }).where(eq(users.id, userId));
@@ -460,6 +343,7 @@ export class DatabaseStorage implements IStorage {
 
   async unblockUser(userId: number): Promise<void> {
     await db.update(users).set({
+      isBlocked: false,
       blockedReason: null,
       blockedUntil: null
     }).where(eq(users.id, userId));
@@ -533,7 +417,7 @@ export class DatabaseStorage implements IStorage {
       totalStories: allStories.length,
       totalViews,
       totalShares,
-      averageViewsPerStory: Math.round(totalViews / allStories.length) || 0,
+      averageViewsPerStory: Math.round(totalViews / allStories.length),
       period
     };
   }
@@ -563,5 +447,3 @@ export class DatabaseStorage implements IStorage {
     }));
   }
 }
-
-export const storage = new DatabaseStorage();
