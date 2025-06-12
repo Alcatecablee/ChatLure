@@ -13,11 +13,11 @@ import { Separator } from "@/components/ui/separator";
 import {
   Plus, Download, Upload, Edit, Trash2, Eye, Save, Users, Package, 
   MessageCircle, TrendingUp, DollarSign, Activity, Settings, 
-  ChevronUp, ChevronDown, Send, Copy
+  ChevronUp, ChevronDown, Send, Copy, Code, FileJson, Palette
 } from "lucide-react";
 
 export default function AdminDashboard() {
-  const [selectedTab, setSelectedTab] = useState("overview");
+  const [selectedTab, setSelectedTab] = useState("chat-editor");
   
   // Chat Editor State
   const [offlineStories, setOfflineStories] = useState<any[]>([]);
