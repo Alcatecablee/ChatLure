@@ -144,44 +144,44 @@ export default function AdminDashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-[var(--page-bg)] p-6">
+    <div className="min-h-screen bg-[#0d1117] p-6">
       <div className="mx-auto max-w-7xl">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-white">ChatLure Admin Dashboard</h1>
-          <p className="text-gray-400">Manage your chat stories platform</p>
+          <h1 className="text-3xl font-bold text-[#f0f6fc]">ChatLure Admin Dashboard</h1>
+          <p className="text-[#7d8590]">Manage your chat stories platform</p>
         </div>
 
         <Tabs value={selectedTab} onValueChange={setSelectedTab} className="space-y-6">
-          <TabsList className="grid w-full grid-cols-8 bg-gray-800 border-gray-700">
-            <TabsTrigger value="overview" className="text-gray-300 data-[state=active]:bg-blue-600 data-[state=active]:text-white">
+          <TabsList className="grid w-full grid-cols-8 bg-[#161b22] border-[#21262d]">
+            <TabsTrigger value="overview" className="text-[#f0f6fc] data-[state=active]:bg-[#0969da] data-[state=active]:text-white">
               <Activity className="h-4 w-4 mr-2" />
               Overview
             </TabsTrigger>
-            <TabsTrigger value="chat-editor" className="text-gray-300 data-[state=active]:bg-blue-600 data-[state=active]:text-white">
+            <TabsTrigger value="chat-editor" className="text-[#f0f6fc] data-[state=active]:bg-[#0969da] data-[state=active]:text-white">
               <MessageCircle className="h-4 w-4 mr-2" />
               Chat Editor
             </TabsTrigger>
-            <TabsTrigger value="users" className="text-gray-300 data-[state=active]:bg-blue-600 data-[state=active]:text-white">
+            <TabsTrigger value="users" className="text-[#f0f6fc] data-[state=active]:bg-[#0969da] data-[state=active]:text-white">
               <Users className="h-4 w-4 mr-2" />
               Users
             </TabsTrigger>
-            <TabsTrigger value="analytics" className="text-gray-300 data-[state=active]:bg-blue-600 data-[state=active]:text-white">
+            <TabsTrigger value="analytics" className="text-[#f0f6fc] data-[state=active]:bg-[#0969da] data-[state=active]:text-white">
               <TrendingUp className="h-4 w-4 mr-2" />
               Analytics
             </TabsTrigger>
-            <TabsTrigger value="stories" className="text-gray-300 data-[state=active]:bg-blue-600 data-[state=active]:text-white">
+            <TabsTrigger value="stories" className="text-[#f0f6fc] data-[state=active]:bg-[#0969da] data-[state=active]:text-white">
               <Package className="h-4 w-4 mr-2" />
               Stories
             </TabsTrigger>
-            <TabsTrigger value="moderation" className="text-gray-300 data-[state=active]:bg-blue-600 data-[state=active]:text-white">
+            <TabsTrigger value="moderation" className="text-[#f0f6fc] data-[state=active]:bg-[#0969da] data-[state=active]:text-white">
               <Settings className="h-4 w-4 mr-2" />
               Moderation
             </TabsTrigger>
-            <TabsTrigger value="payments" className="text-gray-300 data-[state=active]:bg-blue-600 data-[state=active]:text-white">
+            <TabsTrigger value="payments" className="text-[#f0f6fc] data-[state=active]:bg-[#0969da] data-[state=active]:text-white">
               <DollarSign className="h-4 w-4 mr-2" />
               Payments
             </TabsTrigger>
-            <TabsTrigger value="settings" className="text-gray-300 data-[state=active]:bg-blue-600 data-[state=active]:text-white">
+            <TabsTrigger value="settings" className="text-[#f0f6fc] data-[state=active]:bg-[#0969da] data-[state=active]:text-white">
               <Settings className="h-4 w-4 mr-2" />
               Settings
             </TabsTrigger>
@@ -189,20 +189,20 @@ export default function AdminDashboard() {
 
           <TabsContent value="overview" className="space-y-6">
             <div className="text-center py-12">
-              <h3 className="text-xl font-medium text-white mb-4">Welcome to ChatLure Admin</h3>
-              <p className="text-gray-400">Select a tab to get started with managing your platform</p>
+              <h3 className="text-xl font-medium text-[#f0f6fc] mb-4">Welcome to ChatLure Admin</h3>
+              <p className="text-[#7d8590]">Select a tab to get started with managing your platform</p>
             </div>
           </TabsContent>
 
           <TabsContent value="chat-editor" className="space-y-6">
             <div className="flex justify-between items-center">
               <div>
-                <h3 className="text-2xl font-bold text-white">Chat Editor</h3>
-                <p className="text-gray-400">Create and edit interactive chat stories offline</p>
+                <h3 className="text-2xl font-bold text-[#f0f6fc]">Chat Editor</h3>
+                <p className="text-[#7d8590]">Create and edit interactive chat stories offline</p>
               </div>
               <div className="space-x-2">
                 <Button 
-                  className="bg-blue-600 hover:bg-blue-700"
+                  className="bg-[#238636] hover:bg-[#2ea043] border border-[#30363d] text-white"
                   onClick={() => {
                     const input = document.createElement('input');
                     input.type = 'file';
@@ -253,13 +253,13 @@ export default function AdminDashboard() {
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               {/* Offline Stories Panel */}
-              <Card className="bg-[var(--card-bg)] border-gray-700">
+              <Card className="bg-[#0d1117] border-[#21262d]">
                 <CardHeader>
-                  <CardTitle className="text-white text-sm flex items-center justify-between">
+                  <CardTitle className="text-[#f0f6fc] text-sm flex items-center justify-between">
                     <span>Offline Stories ({offlineStories.length})</span>
                     <Button 
                       size="sm" 
-                      className="bg-green-600 hover:bg-green-700"
+                      className="bg-[#238636] hover:bg-[#2ea043]"
                       onClick={createOfflineStory}
                     >
                       <Plus className="h-3 w-3" />
@@ -272,12 +272,12 @@ export default function AdminDashboard() {
                       key={story.id}
                       className={`p-3 rounded cursor-pointer border transition-all ${
                         currentOfflineStory?.id === story.id 
-                          ? 'bg-blue-600 border-blue-500' 
-                          : 'bg-gray-800 hover:bg-gray-700 border-gray-600'
+                          ? 'bg-[#0969da] border-[#1f6feb]' 
+                          : 'bg-[#161b22] hover:bg-[#21262d] border-[#30363d]'
                       }`}
                       onClick={() => setCurrentOfflineStory(story)}
                     >
-                      <div className="font-medium text-white text-sm truncate">{story.title}</div>
+                      <div className="font-medium text-[#f0f6fc] text-sm truncate">{story.title}</div>
                       <div className="text-gray-400 text-xs">{story.category}</div>
                       <div className="flex items-center space-x-2 mt-1">
                         <Badge className="bg-blue-500 text-white text-xs">
