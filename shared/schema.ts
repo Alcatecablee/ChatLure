@@ -33,131 +33,131 @@ export const messages = pgTable("messages", {
   order: integer("order").notNull(),
 });
 
-export const categories = sqliteTable("categories", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
+export const categories = pgTable("categories", {
+  id: serial("id").primaryKey(),
   name: text("name").notNull(),
   description: text("description"),
   imageUrl: text("image_url"),
 });
 
-export const users = sqliteTable("users", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
-  createdAt: integer("created_at", { mode: 'timestamp' }).$defaultFn(() => new Date()),
-  updatedAt: integer("updated_at", { mode: 'timestamp' }).$defaultFn(() => new Date()),
+export const users = pgTable("users", {
+  id: serial("id").primaryKey(),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+  updatedAt: timestamp("updated_at").notNull().defaultNow(),
   username: text("username").notNull(),
   email: text("email"),
   password: text("password").notNull(),
   firstName: text("first_name"),
   lastName: text("last_name"),
   profileImageUrl: text("profile_image_url"),
-  isAdmin: integer("is_admin", { mode: 'boolean' }).default(false).notNull(),
+  isAdmin: boolean("is_admin").default(false).notNull(),
   juiceLevel: text("juice_level").default("75").notNull(),
   maxJuiceLevel: text("max_juice_level").default("100").notNull(),
-  lastJuiceRefill: integer("last_juice_refill", { mode: 'timestamp' }).notNull().$defaultFn(() => new Date()),
+  lastJuiceRefill: timestamp("last_juice_refill").notNull().defaultNow(),
   subscriptionPlanId: integer("subscription_plan_id"),
   subscriptionStatus: text("subscription_status").default("free").notNull(),
-  subscriptionExpiresAt: integer("subscription_expires_at", { mode: 'timestamp' }),
-  subscriptionRenewalDate: integer("subscription_renewal_date", { mode: 'timestamp' }),
-  isBlocked: integer("is_blocked", { mode: 'boolean' }).default(false).notNull(),
+  subscriptionExpiresAt: timestamp("subscription_expires_at"),
+  subscriptionRenewalDate: timestamp("subscription_renewal_date"),
+  isBlocked: boolean("is_blocked").default(false).notNull(),
   blockReason: text("block_reason"),
-  blockExpiresAt: integer("block_expires_at", { mode: 'timestamp' }),
+  blockExpiresAt: timestamp("block_expires_at"),
   totalStoriesRead: integer("total_stories_read").default(0).notNull(),
   totalJuiceSpent: text("total_juice_spent").default("0").notNull(),
   totalShares: integer("total_shares").default(0).notNull(),
   referralCode: text("referral_code"),
   referredBy: integer("referred_by"),
-  lastActiveAt: integer("last_active_at", { mode: 'timestamp' }),
+  lastActiveAt: timestamp("last_active_at"),
 });
 
-export const subscriptionPlans = sqliteTable("subscription_plans", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
+export const subscriptionPlans = pgTable("subscription_plans", {
+  id: serial("id").primaryKey(),
   name: text("name").notNull(),
-  createdAt: integer("created_at", { mode: 'timestamp' }).$defaultFn(() => new Date()),
-  updatedAt: integer("updated_at", { mode: 'timestamp' }).$defaultFn(() => new Date()),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+  updatedAt: timestamp("updated_at").notNull().defaultNow(),
   price: real("price").notNull(),
   interval: text("interval").notNull(), // monthly, yearly
   features: text("features").notNull(), // JSON array as string
   juicePerDay: integer("juice_per_day"),
   maxStoriesPerDay: integer("max_stories_per_day").notNull(),
-  hasUnlimitedAccess: integer("has_unlimited_access", { mode: 'boolean' }).default(false).notNull(),
+  hasUnlimitedAccess: boolean("has_unlimited_access").default(false).notNull(),
   rechargeRate: text("recharge_rate").default("normal").notNull(),
-  isActive: integer("is_active", { mode: 'boolean' }).default(true).notNull(),
+  isActive: boolean("is_active").default(true).notNull(),
 });
 
-export const juicePackages = sqliteTable("juice_packages", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
+export const juicePackages = pgTable("juice_packages", {
+  id: serial("id").primaryKey(),
   name: text("name").notNull(),
-  createdAt: integer("created_at", { mode: 'timestamp' }).$defaultFn(() => new Date()),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
   price: real("price").notNull(),
-  isActive: integer("is_active", { mode: 'boolean' }).default(true).notNull(),
+  isActive: boolean("is_active").default(true).notNull(),
   juiceAmount: text("juice_amount").notNull(),
   bonusAmount: text("bonus_amount").default("0").notNull(),
   sortOrder: integer("sort_order").default(0).notNull(),
 });
 
-export const juiceTransactions = sqliteTable("juice_transactions", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
+export const juiceTransactions = pgTable("juice_transactions", {
+  id: serial("id").primaryKey(),
   userId: integer("user_id").notNull(),
   amount: text("amount").notNull(),
   type: text("type").notNull(), // earned, spent, purchased, bonus
   description: text("description"),
-  createdAt: integer("created_at", { mode: 'timestamp' }).notNull().$defaultFn(() => new Date()),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
 });
 
-export const payments = sqliteTable("payments", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
+export const payments = pgTable("payments", {
+  id: serial("id").primaryKey(),
   subscriptionPlanId: integer("subscription_plan_id"),
-  createdAt: integer("created_at", { mode: 'timestamp' }).$defaultFn(() => new Date()),
-  updatedAt: integer("updated_at", { mode: 'timestamp' }).$defaultFn(() => new Date()),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+  updatedAt: timestamp("updated_at").notNull().defaultNow(),
   type: text("type").notNull(), // subscription, juice_package, one_time
   status: text("status").notNull(), // pending, completed, failed, refunded
   userId: integer("user_id").notNull(),
   amount: real("amount").notNull(),
   juiceAmount: text("juice_amount"),
   currency: text("currency").default("USD").notNull(),
-  billingPeriodStart: integer("billing_period_start", { mode: 'timestamp' }),
-  billingPeriodEnd: integer("billing_period_end", { mode: 'timestamp' }),
+  billingPeriodStart: timestamp("billing_period_start"),
+  billingPeriodEnd: timestamp("billing_period_end"),
   paypalOrderId: text("paypal_order_id"),
   paypalCaptureId: text("paypal_capture_id"),
   paypalPayerId: text("paypal_payer_id"),
   paymentMethod: text("payment_method"),
 });
 
-export const readingSessions = sqliteTable("reading_sessions", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
+export const readingSessions = pgTable("reading_sessions", {
+  id: serial("id").primaryKey(),
   messagesRead: integer("messages_read").default(0).notNull(),
   storyId: integer("story_id").notNull(),
   userId: integer("user_id").notNull(),
-  startedAt: integer("started_at", { mode: 'timestamp' }).$defaultFn(() => new Date()),
-  endedAt: integer("ended_at", { mode: 'timestamp' }),
+  startedAt: timestamp("started_at").notNull().defaultNow(),
+  endedAt: timestamp("ended_at"),
   juiceConsumed: text("juice_consumed").default("0").notNull(),
-  completed: integer("completed", { mode: 'boolean' }).default(false).notNull(),
-  sharedForContinuation: integer("shared_for_continuation", { mode: 'boolean' }).default(false).notNull(),
+  completed: boolean("completed").default(false).notNull(),
+  sharedForContinuation: boolean("shared_for_continuation").default(false).notNull(),
 });
 
-export const userShares = sqliteTable("user_shares", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
+export const userShares = pgTable("user_shares", {
+  id: serial("id").primaryKey(),
   userId: integer("user_id").notNull(),
   storyId: integer("story_id").notNull(),
-  sharedAt: integer("shared_at", { mode: 'timestamp' }).notNull().$defaultFn(() => new Date()),
-  unlocked: integer("unlocked", { mode: 'boolean' }).default(false).notNull(),
+  sharedAt: timestamp("shared_at").notNull().defaultNow(),
+  unlocked: boolean("unlocked").default(false).notNull(),
 });
 
-export const userAchievements = sqliteTable("user_achievements", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
+export const userAchievements = pgTable("user_achievements", {
+  id: serial("id").primaryKey(),
   userId: integer("user_id").notNull(),
   achievementId: text("achievement_id").notNull(),
-  unlockedAt: integer("unlocked_at", { mode: 'timestamp' }).notNull().$defaultFn(() => new Date()),
+  unlockedAt: timestamp("unlocked_at").notNull().defaultNow(),
 });
 
-export const adminActions = sqliteTable("admin_actions", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
+export const adminActions = pgTable("admin_actions", {
+  id: serial("id").primaryKey(),
   adminId: integer("admin_id").notNull(),
   action: text("action").notNull(),
   targetType: text("target_type").notNull(), // user, story, payment, etc.
   targetId: integer("target_id"),
   details: text("details"),
-  performedAt: integer("performed_at", { mode: 'timestamp' }).notNull().$defaultFn(() => new Date()),
+  performedAt: timestamp("performed_at").notNull().defaultNow(),
 });
 
 // Insert schemas and types
@@ -255,17 +255,17 @@ export type AdminAction = typeof adminActions.$inferSelect;
 export type InsertAdminAction = z.infer<typeof insertAdminActionSchema>;
 
 // Site settings and PayPal settings tables
-export const siteSettings = sqliteTable("site_settings", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
+export const siteSettings = pgTable("site_settings", {
+  id: serial("id").primaryKey(),
   siteName: text("site_name").default("ChatLure").notNull(),
   tagline: text("tagline").default("Immersive Story Experience").notNull(),
-  maintenanceMode: integer("maintenance_mode", { mode: 'boolean' }).default(false).notNull(),
+  maintenanceMode: boolean("maintenance_mode").default(false).notNull(),
   maintenanceMessage: text("maintenance_message"),
-  juiceModeEnabled: integer("juice_mode_enabled", { mode: 'boolean' }).default(true).notNull(),
+  juiceModeEnabled: boolean("juice_mode_enabled").default(true).notNull(),
   defaultBattery: integer("default_battery").default(75).notNull(),
   drainRate: integer("drain_rate").default(3).notNull(),
-  createdAt: integer("created_at", { mode: 'timestamp' }).notNull().$defaultFn(() => new Date()),
-  updatedAt: integer("updated_at", { mode: 'timestamp' }).notNull().$defaultFn(() => new Date()),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+  updatedAt: timestamp("updated_at").notNull().defaultNow(),
 });
 
 export const insertSiteSettingsSchema = createInsertSchema(siteSettings).omit({
@@ -274,15 +274,15 @@ export const insertSiteSettingsSchema = createInsertSchema(siteSettings).omit({
   updatedAt: true,
 });
 
-export const paypalSettings = sqliteTable("paypal_settings", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
-  enabled: integer("enabled", { mode: 'boolean' }).default(false).notNull(),
+export const paypalSettings = pgTable("paypal_settings", {
+  id: serial("id").primaryKey(),
+  enabled: boolean("enabled").default(false).notNull(),
   environment: text("environment").default("sandbox").notNull(),
   clientId: text("client_id").default("").notNull(),
   webhookId: text("webhook_id"),
-  hasClientSecret: integer("has_client_secret", { mode: 'boolean' }).default(false).notNull(),
-  createdAt: integer("created_at", { mode: 'timestamp' }).notNull().$defaultFn(() => new Date()),
-  updatedAt: integer("updated_at", { mode: 'timestamp' }).notNull().$defaultFn(() => new Date()),
+  hasClientSecret: boolean("has_client_secret").default(false).notNull(),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+  updatedAt: timestamp("updated_at").notNull().defaultNow(),
 });
 
 export const insertPayPalSettingsSchema = createInsertSchema(paypalSettings).omit({
