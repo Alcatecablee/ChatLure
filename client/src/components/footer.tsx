@@ -1,6 +1,6 @@
 import { Heart, Github, Twitter, Instagram, Mail } from "lucide-react";
 import { Link } from "wouter";
-import chatLureLogo from "../assets/chatlure-logo.png";
+import newLogo from "@assets/favico_1749769718941.png";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -40,12 +40,20 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <Link href="/">
-              <div className="flex items-center space-x-2 mb-4">
-                <img 
-                  src={chatLureLogo} 
-                  alt="ChatLure Logo" 
-                  className="h-8 w-auto object-contain"
-                />
+              <div className="flex items-center space-x-3 mb-4">
+                <div className="relative">
+                  <div className="bg-white rounded-full p-2 shadow-lg">
+                    <img 
+                      src={newLogo} 
+                      alt="ChatLure" 
+                      className="h-6 w-6 object-contain"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-white">ChatLure</h3>
+                  <p className="text-xs text-gray-400">Peek • Obsess • Repeat</p>
+                </div>
               </div>
             </Link>
             <p className="text-[#7d8590] text-sm mb-6 max-w-md">

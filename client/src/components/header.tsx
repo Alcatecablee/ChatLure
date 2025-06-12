@@ -1,5 +1,5 @@
-import { Bell, Settings, User, Menu, X, Crown, Zap, Edit3 } from "lucide-react";
-import chatLureLogo from "../assets/chatlure-logo.png";
+import { Bell, Settings, User, Menu, X, Crown, Zap, Bot, Home, DollarSign } from "lucide-react";
+import newLogo from "@assets/favico_1749769718941.png";
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
@@ -12,8 +12,8 @@ export default function Header() {
   const [location] = useLocation();
 
   const navigation = [
-    { name: "Home", href: "/", icon: null },
-    { name: "Pricing", href: "/pricing", icon: Crown },
+    { name: "Home", href: "/", icon: Home },
+    { name: "Pricing", href: "/pricing", icon: DollarSign },
     { name: "Dashboard", href: "/dashboard", icon: User },
     { name: "Admin", href: "/admin", icon: Settings },
   ];
@@ -24,56 +24,69 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-[#0d1117] border-b border-[#21262d] sticky top-0 z-50 backdrop-blur-md bg-opacity-95">
+    <header className="bg-gradient-to-r from-[#0a0a0a] via-[#1a1a1a] to-[#0a0a0a] border-b border-[#333333] sticky top-0 z-50 backdrop-blur-xl shadow-2xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-14">
-          {/* Logo */}
+        <div className="flex items-center justify-between h-16">
+          {/* Logo Section */}
           <Link href="/">
-            <div className="flex items-center space-x-2 cursor-pointer group">
-              <img 
-                src={chatLureLogo} 
-                alt="ChatLure Logo" 
-                className="h-8 w-auto object-contain transition-all duration-200 group-hover:scale-105"
-              />
+            <div className="flex items-center space-x-4 cursor-pointer group">
+              <div className="relative">
+                <div className="absolute -inset-2 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full blur-sm opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
+                <div className="relative bg-white rounded-full p-2 shadow-lg">
+                  <img 
+                    src={newLogo} 
+                    alt="ChatLure" 
+                    className="h-8 w-8 object-contain"
+                  />
+                </div>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-2xl font-black text-white tracking-tight">
+                  ChatLure
+                </span>
+                <span className="text-xs text-gray-400 font-medium -mt-1">
+                  Peek • Obsess • Repeat
+                </span>
+              </div>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-1">
+          <nav className="hidden md:flex items-center space-x-2">
             {navigation.map((item) => {
               const Icon = item.icon;
+              const active = isActive(item.href);
               return (
                 <Link key={item.name} href={item.href}>
-                  <button
+                  <div
                     className={cn(
-                      "px-3 py-2 text-sm font-medium text-[#7d8590] hover:text-[#f0f6fc] transition-colors duration-200 relative rounded-md",
-                      isActive(item.href) && "text-[#f0f6fc] bg-[#21262d]"
+                      "flex items-center px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 relative",
+                      active 
+                        ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg" 
+                        : "text-gray-300 hover:text-white hover:bg-gray-800"
                     )}
                   >
-                    {Icon && <Icon className="w-4 h-4 mr-2 inline" />}
+                    <Icon className="w-4 h-4 mr-2" />
                     {item.name}
                     {item.name === "Pricing" && (
-                      <span className="ml-2 px-1.5 py-0.5 text-xs bg-[#0969da] text-white rounded-full">
+                      <Badge className="ml-2 bg-gradient-to-r from-orange-500 to-red-500 text-white text-xs px-2 py-0.5">
                         New
-                      </span>
+                      </Badge>
                     )}
-                  </button>
+                  </div>
                 </Link>
               );
             })}
           </nav>
 
           {/* Right Side Actions */}
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-4">
             <NotificationBell />
             
             {/* Upgrade Button */}
             <Link href="/pricing">
-              <Button
-                size="sm"
-                className="hidden sm:flex bg-[#0969da] text-white hover:bg-[#0860ca] border-none font-medium px-3 py-1.5 text-sm"
-              >
-                <Crown className="w-4 h-4 mr-1.5" />
+              <Button className="hidden sm:flex bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium px-4 py-2 rounded-lg shadow-lg transition-all duration-200">
+                <Crown className="w-4 h-4 mr-2" />
                 Upgrade
               </Button>
             </Link>
@@ -82,7 +95,7 @@ export default function Header() {
             <Button
               variant="ghost"
               size="sm"
-              className="md:hidden text-[#7d8590] hover:text-[#f0f6fc] hover:bg-[#21262d] p-2"
+              className="md:hidden text-gray-300 hover:text-white hover:bg-gray-800 p-2 rounded-lg"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -92,42 +105,40 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-3 border-t border-[#21262d] bg-[#0d1117]">
-            <nav className="flex flex-col space-y-1">
-              {navigation.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <Link key={item.name} href={item.href}>
-                    <button
-                      className={cn(
-                        "w-full px-3 py-2 text-left text-sm font-medium text-[#7d8590] hover:text-[#f0f6fc] hover:bg-[#21262d] transition-colors duration-200 rounded-md",
-                        isActive(item.href) && "text-[#f0f6fc] bg-[#21262d]"
-                      )}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      {Icon && <Icon className="w-4 h-4 mr-3 inline" />}
-                      {item.name}
-                      {item.name === "Pricing" && (
-                        <span className="ml-auto px-1.5 py-0.5 text-xs bg-[#0969da] text-white rounded-full">
-                          New
-                        </span>
-                      )}
-                    </button>
-                  </Link>
-                );
-              })}
-              <div className="pt-3 mt-3 border-t border-[#21262d]">
-                <Link href="/pricing">
-                  <button
-                    className="w-full px-3 py-2 text-left text-sm font-medium bg-[#0969da] text-white hover:bg-[#0860ca] transition-colors duration-200 rounded-md"
+          <div className="md:hidden py-4 space-y-2">
+            {navigation.map((item) => {
+              const Icon = item.icon;
+              const active = isActive(item.href);
+              return (
+                <Link key={item.name} href={item.href}>
+                  <div
+                    className={cn(
+                      "flex items-center px-4 py-3 text-sm font-medium rounded-lg transition-all duration-200",
+                      active 
+                        ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white" 
+                        : "text-gray-300 hover:text-white hover:bg-gray-800"
+                    )}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    <Crown className="w-4 h-4 mr-3 inline" />
-                    Upgrade to Premium
-                  </button>
+                    <Icon className="w-4 h-4 mr-3" />
+                    {item.name}
+                    {item.name === "Pricing" && (
+                      <Badge className="ml-auto bg-gradient-to-r from-orange-500 to-red-500 text-white text-xs px-2 py-0.5">
+                        New
+                      </Badge>
+                    )}
+                  </div>
                 </Link>
-              </div>
-            </nav>
+              );
+            })}
+            
+            {/* Mobile Upgrade Button */}
+            <Link href="/pricing">
+              <Button className="w-full mt-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium py-3 rounded-lg shadow-lg">
+                <Crown className="w-4 h-4 mr-2" />
+                Upgrade Now
+              </Button>
+            </Link>
           </div>
         )}
       </div>
