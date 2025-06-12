@@ -3,4 +3,5 @@ import { drizzle } from 'drizzle-orm/better-sqlite3';
 import * as schema from "@shared/schema";
 
 const sqlite = new Database('database.sqlite');
+sqlite.pragma('journal_mode = WAL');
 export const db = drizzle(sqlite, { schema });

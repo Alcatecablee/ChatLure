@@ -16,14 +16,50 @@ export async function initializeDatabase() {
     // Create initial site settings if they don't exist
     const existingSettings = await db.select().from(siteSettings).limit(1);
     if (existingSettings.length === 0) {
-      await db.insert(siteSettings).values({
-        siteName: "ChatLure",
-        tagline: "Peek, Obsess, Repeat",
-        maintenanceMode: false,
-        juiceModeEnabled: true,
-        defaultBattery: 75,
-        drainRate: 3,
-      });
+      await db.insert(siteSettings).values([
+        {
+          key: "siteName",
+          value: "ChatLure",
+          type: "string",
+          description: "The name of the site",
+          category: "general"
+        },
+        {
+          key: "tagline",
+          value: "Peek, Obsess, Repeat",
+          type: "string",
+          description: "Site tagline",
+          category: "general"
+        },
+        {
+          key: "maintenanceMode",
+          value: "false",
+          type: "boolean",
+          description: "Whether the site is in maintenance mode",
+          category: "general"
+        },
+        {
+          key: "juiceModeEnabled",
+          value: "true",
+          type: "boolean",
+          description: "Whether juice mode is enabled",
+          category: "features"
+        },
+        {
+          key: "defaultBattery",
+          value: "75",
+          type: "number",
+          description: "Default battery level for new users",
+          category: "features"
+        },
+        {
+          key: "drainRate",
+          value: "3",
+          type: "number",
+          description: "Battery drain rate",
+          category: "features"
+        }
+      ]);
       console.log('Created initial site settings');
     }
 
@@ -31,10 +67,12 @@ export async function initializeDatabase() {
     const existingPayPal = await db.select().from(paypalSettings).limit(1);
     if (existingPayPal.length === 0) {
       await db.insert(paypalSettings).values({
-        enabled: false,
-        environment: "sandbox",
         clientId: "",
-        hasClientSecret: false,
+        clientSecret: "",
+        environment: "sandbox",
+        webhookId: "",
+        isActive: false,
+        testResult: ""
       });
       console.log('Created initial PayPal settings');
     }
