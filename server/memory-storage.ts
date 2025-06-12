@@ -783,15 +783,60 @@ export class MemoryStorage implements IStorage {
   }
 
   async getRecentActivities(limit: number = 50): Promise<any[]> {
-    const activities = [
-      ...this.adminActions.map(a => ({ type: 'admin_action', ...a })),
-      ...this.payments.slice(-10).map(p => ({ type: 'payment', ...p }))
-    ].sort((a, b) => {
-      const aDate = a.performedAt || a.createdAt || new Date(0);
-      const bDate = b.performedAt || b.createdAt || new Date(0);
-      return bDate.getTime() - aDate.getTime();
+    const now = new Date();
+    const activities: any[] = [];
+
+    // Add user registrations
+    this.users.forEach(user => {
+      activities.push({
+        id: `user_${user.id}`,
+        type: 'user_registration',
+        message: `New user registered: ${user.username}`,
+        timestamp: user.createdAt || now,
+        icon: 'user-plus',
+        color: 'green'
+      });
     });
 
-    return activities.slice(0, limit);
+    // Add story creations
+    this.stories.forEach(story => {
+      activities.push({
+        id: `story_${story.id}`,
+        type: 'story_created',
+        message: `New story published: "${story.title}"`,
+        timestamp: story.createdAt || now,
+        icon: 'file-text',
+        color: 'blue'
+      });
+    });
+
+    // Add payments
+    this.payments.forEach(payment => {
+      activities.push({
+        id: `payment_${payment.id}`,
+        type: 'payment',
+        message: `Payment completed: $${payment.amount}`,
+        timestamp: payment.createdAt || now,
+        icon: 'dollar-sign',
+        color: 'green'
+      });
+    });
+
+    // Add admin actions
+    this.adminActions.forEach(action => {
+      activities.push({
+        id: `admin_${action.id}`,
+        type: 'admin_action',
+        message: `Admin action: ${action.action}`,
+        timestamp: action.performedAt || now,
+        icon: 'shield',
+        color: 'orange'
+      });
+    });
+
+    // Sort by timestamp (newest first) and limit results
+    return activities
+      .sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime())
+      .slice(0, limit);
   }
 }

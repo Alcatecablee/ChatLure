@@ -29,6 +29,13 @@ export default function AdminDashboard() {
   const [editingStory, setEditingStory] = useState<Story | null>(null);
   const [editingUser, setEditingUser] = useState<User | null>(null);
   const [editingMessages, setEditingMessages] = useState<Message[] | null>(null);
+  const [selectedStoryId, setSelectedStoryId] = useState<number | null>(null);
+  const [newMessage, setNewMessage] = useState({
+    content: "",
+    isIncoming: true,
+    timestamp: "",
+    hasReadReceipt: false
+  });
   const [newStory, setNewStory] = useState({ 
     title: "", 
     description: "", 
@@ -320,26 +327,27 @@ export default function AdminDashboard() {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4 max-h-96 overflow-y-auto">
-                    <div className="flex items-center space-x-3 p-2 bg-gray-800 rounded">
-                      <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                      <span className="text-gray-300 text-sm">New user registered: sarah_123</span>
-                      <span className="text-gray-500 text-xs">2m ago</span>
-                    </div>
-                    <div className="flex items-center space-x-3 p-2 bg-gray-800 rounded">
-                      <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                      <span className="text-gray-300 text-sm">PayPal payment completed: $12.99</span>
-                      <span className="text-gray-500 text-xs">5m ago</span>
-                    </div>
-                    <div className="flex items-center space-x-3 p-2 bg-gray-800 rounded">
-                      <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
-                      <span className="text-gray-300 text-sm">Story "College Drama" went viral</span>
-                      <span className="text-gray-500 text-xs">15m ago</span>
-                    </div>
-                    <div className="flex items-center space-x-3 p-2 bg-gray-800 rounded">
-                      <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                      <span className="text-gray-300 text-sm">Moderation alert: Story flagged</span>
-                      <span className="text-gray-500 text-xs">1h ago</span>
-                    </div>
+                    {recentActivity && recentActivity.length > 0 ? (
+                      recentActivity.map((activity: any) => (
+                        <div key={activity.id} className="flex items-center space-x-3 p-2 bg-gray-800 rounded">
+                          <div className={`w-2 h-2 rounded-full animate-pulse ${
+                            activity.color === 'green' ? 'bg-green-400' :
+                            activity.color === 'blue' ? 'bg-blue-400' :
+                            activity.color === 'purple' ? 'bg-purple-400' :
+                            activity.color === 'orange' ? 'bg-orange-400' :
+                            'bg-yellow-400'
+                          }`}></div>
+                          <span className="text-gray-300 text-sm">{activity.message}</span>
+                          <span className="text-gray-500 text-xs">
+                            {new Date(activity.timestamp).toLocaleTimeString()}
+                          </span>
+                        </div>
+                      ))
+                    ) : (
+                      <div className="text-gray-400 text-center py-4">
+                        No recent activity to display
+                      </div>
+                    )}
                   </div>
                 </CardContent>
               </Card>
