@@ -1,4 +1,5 @@
 import { Bell, Settings, User, Menu, X, Crown, Zap } from "lucide-react";
+import peekayLogo from "../assets/peekay-logo.png";
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
@@ -29,15 +30,17 @@ export default function Header() {
           {/* Logo */}
           <Link href="/">
             <div className="flex items-center space-x-3 cursor-pointer hover:opacity-90 transition-all duration-200 hover:scale-105">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center shadow-lg">
-                <Zap className="w-5 h-5 text-primary-foreground" />
-              </div>
+              <img 
+                src={peekayLogo} 
+                alt="Peekay Logo" 
+                className="w-10 h-10 object-contain"
+              />
               <div>
                 <h1 className="text-2xl font-bold tracking-tight text-foreground">
-                  ChatLure
+                  Peekay
                 </h1>
                 <span className="hidden sm:block text-xs text-muted-foreground -mt-1 font-medium">
-                  Peek. Obsess. Repeat.
+                  Interactive Chat Stories
                 </span>
               </div>
             </div>
