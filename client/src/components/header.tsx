@@ -1,4 +1,4 @@
-import { Bell, Settings, User, Menu, X, Crown, Zap } from "lucide-react";
+import { Bell, Settings, User, Menu, X, Crown, Zap, Edit3 } from "lucide-react";
 import chatLureLogo from "../assets/chatlure-logo.png";
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
@@ -13,7 +13,6 @@ export default function Header() {
 
   const navigation = [
     { name: "Home", href: "/", icon: null },
-    { name: "Editor", href: "/editor", icon: Edit3 },
     { name: "Pricing", href: "/pricing", icon: Crown },
     { name: "Dashboard", href: "/dashboard", icon: User },
     { name: "Admin", href: "/admin", icon: Settings },

@@ -5,7 +5,9 @@ import {
   BarChart3, DollarSign, Crown, Shield, Calendar, Activity, Save, 
   ToggleLeft, ToggleRight, Database, RefreshCw, CreditCard, Globe,
   MessageCircle, Zap, 
-  Lock, Unlock, CheckCircle, XCircle, AlertTriangle
+  Lock, Unlock, CheckCircle, XCircle, AlertTriangle, Clock, Share2,
+  Play, Pause, Smartphone, Move, ChevronUp, ChevronDown, Copy,
+  Download, Upload, FileText, Image, Tag
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -664,25 +666,59 @@ export default function AdminDashboard() {
             </Card>
           </TabsContent>
 
-          {/* Chat Editor Tab - NEW COMPREHENSIVE FEATURE */}
+          {/* Chat Editor Tab - COMPREHENSIVE OFFLINE EDITOR */}
           <TabsContent value="chat-editor" className="space-y-6">
             <div className="flex items-center justify-between">
-              <h2 className="text-xl font-semibold text-white">Chat Editor - Story Messages</h2>
+              <h2 className="text-xl font-semibold text-white">ChatLure Story Editor</h2>
               <div className="flex space-x-2">
-                <Select defaultValue="all">
-                  <SelectTrigger className="bg-gray-800 border-gray-600 w-48">
-                    <SelectValue placeholder="Filter by story" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="all">All Stories</SelectItem>
-                    {stories?.map((story) => (
-                      <SelectItem key={story.id} value={story.id.toString()}>{story.title}</SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-                <Button className="bg-green-600 hover:bg-green-700">
+                <Button 
+                  className="bg-green-600 hover:bg-green-700"
+                  onClick={() => {
+                    // Create new offline story
+                    const newStory = {
+                      id: Date.now().toString(),
+                      title: "New Chat Story",
+                      description: "An engaging conversation",
+                      category: "Romance",
+                      messages: [
+                        {
+                          id: "1",
+                          type: "text",
+                          sender: "other",
+                          content: "Hey there! 👋",
+                          timestamp: Date.now(),
+                          delay: 1000
+                        }
+                      ],
+                      created: Date.now()
+                    };
+                    
+                    const existingStories = JSON.parse(localStorage.getItem('chatlure-offline-stories') || '[]');
+                    existingStories.push(newStory);
+                    localStorage.setItem('chatlure-offline-stories', JSON.stringify(existingStories));
+                    setSelectedStoryId(parseInt(newStory.id));
+                    refetchMessages();
+                    toast({ title: "New story created for editing" });
+                  }}
+                >
                   <Plus className="h-4 w-4 mr-2" />
-                  Add Message
+                  New Story
+                </Button>
+                <Button 
+                  className="bg-blue-600 hover:bg-blue-700"
+                  onClick={() => {
+                    const stories = JSON.parse(localStorage.getItem('chatlure-offline-stories') || '[]');
+                    const dataStr = JSON.stringify(stories, null, 2);
+                    const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+                    const linkElement = document.createElement('a');
+                    linkElement.setAttribute('href', dataUri);
+                    linkElement.setAttribute('download', 'chatlure-stories-backup.json');
+                    linkElement.click();
+                    toast({ title: "Stories exported successfully" });
+                  }}
+                >
+                  <Download className="h-4 w-4 mr-2" />
+                  Export
                 </Button>
               </div>
             </div>
