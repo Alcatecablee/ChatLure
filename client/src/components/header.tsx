@@ -33,7 +33,7 @@ export default function Header() {
               <img 
                 src={chatLureLogo} 
                 alt="ChatLure Logo" 
-                className="h-8 w-auto object-contain"
+                className="h-16 w-auto object-contain"
               />
             </div>
           </Link>
