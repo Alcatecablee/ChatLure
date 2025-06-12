@@ -275,6 +275,25 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
 
   // Site Settings Management Routes
+  app.get("/api/admin/site-settings", async (req, res) => {
+    try {
+      const settings = await storage.getSiteSettings();
+      res.json(settings);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch site settings" });
+    }
+  });
+
+  app.patch("/api/admin/site-settings", async (req, res) => {
+    try {
+      const settings = await storage.updateSiteSettings(req.body);
+      res.json(settings);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to update site settings" });
+    }
+  });
+
+  // Legacy endpoint for backward compatibility
   app.get("/api/admin/settings", async (req, res) => {
     try {
       const settings = await storage.getSiteSettings();

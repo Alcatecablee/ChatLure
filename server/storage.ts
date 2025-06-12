@@ -3,7 +3,8 @@ import type {
   Category, InsertCategory, SubscriptionPlan, InsertSubscriptionPlan,
   UserShare, InsertUserShare, UserAchievement, InsertUserAchievement,
   AdminAction, InsertAdminAction, JuicePackage, InsertJuicePackage,
-  JuiceTransaction, Payment, InsertPayment, ReadingSession, InsertReadingSession
+  JuiceTransaction, Payment, InsertPayment, ReadingSession, InsertReadingSession,
+  SiteSettings, PayPalSettings
 } from "@shared/schema";
 
 export interface IStorage {
@@ -85,13 +86,13 @@ export interface IStorage {
   getPaymentsByStatus(status: string): Promise<Payment[]>;
   
   // Site Settings Management
-  getSiteSettings(): Promise<any>;
-  updateSiteSettings(settings: any): Promise<any>;
+  getSiteSettings(): Promise<SiteSettings>;
+  updateSiteSettings(settings: Partial<SiteSettings>): Promise<SiteSettings>;
   setMaintenanceMode(enabled: boolean, message?: string): Promise<void>;
   
   // PayPal Settings Management
-  getPayPalSettings(): Promise<any>;
-  updatePayPalSettings(settings: any): Promise<any>;
+  getPayPalSettings(): Promise<PayPalSettings>;
+  updatePayPalSettings(settings: Partial<PayPalSettings>): Promise<PayPalSettings>;
   testPayPalConnection(): Promise<{ success: boolean, message: string }>;
   
   // Enhanced User Management

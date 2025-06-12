@@ -3,7 +3,8 @@ import type {
   Category, InsertCategory, SubscriptionPlan, InsertSubscriptionPlan,
   UserShare, InsertUserShare, UserAchievement, InsertUserAchievement,
   AdminAction, InsertAdminAction, JuicePackage, InsertJuicePackage,
-  JuiceTransaction, Payment, InsertPayment, ReadingSession, InsertReadingSession
+  JuiceTransaction, Payment, InsertPayment, ReadingSession, InsertReadingSession,
+  SiteSettings, InsertSiteSettings, PayPalSettings, InsertPayPalSettings
 } from "@shared/schema";
 import type { IStorage } from "./storage";
 
@@ -20,6 +21,8 @@ export class MemoryStorage implements IStorage {
   private juiceTransactions: JuiceTransaction[] = [];
   private payments: Payment[] = [];
   private readingSessions: ReadingSession[] = [];
+  private siteSettingsStore: SiteSettings[] = [];
+  private paypalSettingsStore: PayPalSettings[] = [];
 
   private nextUserId = 1;
   private nextStoryId = 1;
@@ -33,31 +36,39 @@ export class MemoryStorage implements IStorage {
   private nextJuiceTransactionId = 1;
   private nextPaymentId = 1;
   private nextReadingSessionId = 1;
-
-  private siteSettings: any = {
-    siteName: "ChatLure",
-    tagline: "Peek. Obsess. Repeat.",
-    maintenanceMode: false,
-    maintenanceMessage: "",
-    juiceMode: {
-      enabled: true,
-      defaultBattery: 75,
-      drainRate: 3
-    }
-  };
-
-  private paypalSettings: any = {
-    clientId: "",
-    clientSecret: "",
-    environment: "sandbox",
-    webhookId: ""
-  };
+  private nextSiteSettingsId = 1;
+  private nextPayPalSettingsId = 1;
 
   constructor() {
     this.seedInitialData();
   }
 
   private seedInitialData() {
+    // Initialize default site settings
+    this.siteSettingsStore.push({
+      id: this.nextSiteSettingsId++,
+      siteName: "ChatLure",
+      tagline: "Peek. Obsess. Repeat.",
+      maintenanceMode: false,
+      maintenanceMessage: null,
+      juiceModeEnabled: true,
+      defaultBattery: 75,
+      drainRate: 3,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    });
+
+    // Initialize default PayPal settings
+    this.paypalSettingsStore.push({
+      id: this.nextPayPalSettingsId++,
+      enabled: false,
+      environment: "sandbox",
+      clientId: null,
+      clientSecret: null,
+      webhookId: null,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    });
     // Seed categories
     const categories = [
       { name: "Romance", emoji: "💕", color: "#FF6B9D" },
@@ -544,32 +555,81 @@ export class MemoryStorage implements IStorage {
   }
 
   // Site Settings Management
-  async getSiteSettings(): Promise<any> {
-    return { ...this.siteSettings };
+  async getSiteSettings(): Promise<SiteSettings> {
+    if (this.siteSettingsStore.length === 0) {
+      // Create default settings if none exist
+      const defaultSettings: SiteSettings = {
+        id: this.nextSiteSettingsId++,
+        siteName: "ChatLure",
+        tagline: "Peek. Obsess. Repeat.",
+        maintenanceMode: false,
+        maintenanceMessage: null,
+        juiceModeEnabled: true,
+        defaultBattery: 75,
+        drainRate: 3,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      };
+      this.siteSettingsStore.push(defaultSettings);
+    }
+    return { ...this.siteSettingsStore[0] };
   }
 
-  async updateSiteSettings(settings: any): Promise<any> {
-    this.siteSettings = { ...this.siteSettings, ...settings };
-    return { ...this.siteSettings };
+  async updateSiteSettings(settings: Partial<SiteSettings>): Promise<SiteSettings> {
+    if (this.siteSettingsStore.length === 0) {
+      await this.getSiteSettings(); // Initialize if needed
+    }
+    
+    this.siteSettingsStore[0] = { 
+      ...this.siteSettingsStore[0], 
+      ...settings, 
+      updatedAt: new Date() 
+    };
+    return { ...this.siteSettingsStore[0] };
   }
 
   async setMaintenanceMode(enabled: boolean, message?: string): Promise<void> {
-    this.siteSettings.maintenanceMode = enabled;
-    if (message) this.siteSettings.maintenanceMessage = message;
+    await this.updateSiteSettings({
+      maintenanceMode: enabled,
+      maintenanceMessage: message || null
+    });
   }
 
   // PayPal Settings Management
-  async getPayPalSettings(): Promise<any> {
-    return { ...this.paypalSettings };
+  async getPayPalSettings(): Promise<PayPalSettings> {
+    if (this.paypalSettingsStore.length === 0) {
+      // Create default settings if none exist
+      const defaultSettings: PayPalSettings = {
+        id: this.nextPayPalSettingsId++,
+        enabled: false,
+        environment: "sandbox",
+        clientId: null,
+        clientSecret: null,
+        webhookId: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      };
+      this.paypalSettingsStore.push(defaultSettings);
+    }
+    return { ...this.paypalSettingsStore[0] };
   }
 
-  async updatePayPalSettings(settings: any): Promise<any> {
-    this.paypalSettings = { ...this.paypalSettings, ...settings };
-    return { ...this.paypalSettings };
+  async updatePayPalSettings(settings: Partial<PayPalSettings>): Promise<PayPalSettings> {
+    if (this.paypalSettingsStore.length === 0) {
+      await this.getPayPalSettings(); // Initialize if needed
+    }
+    
+    this.paypalSettingsStore[0] = { 
+      ...this.paypalSettingsStore[0], 
+      ...settings, 
+      updatedAt: new Date() 
+    };
+    return { ...this.paypalSettingsStore[0] };
   }
 
   async testPayPalConnection(): Promise<{ success: boolean, message: string }> {
-    if (!this.paypalSettings.clientId || !this.paypalSettings.clientSecret) {
+    const settings = await this.getPayPalSettings();
+    if (!settings.clientId || !settings.clientSecret) {
       return { success: false, message: "PayPal credentials not configured" };
     }
     return { success: true, message: "PayPal connection test successful" };
