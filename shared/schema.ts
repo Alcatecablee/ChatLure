@@ -295,3 +295,46 @@ export type UserAchievement = typeof userAchievements.$inferSelect;
 export type InsertUserAchievement = z.infer<typeof insertUserAchievementSchema>;
 export type AdminAction = typeof adminActions.$inferSelect;
 export type InsertAdminAction = z.infer<typeof insertAdminActionSchema>;
+
+// Site Settings Table
+export const siteSettings = pgTable("site_settings", {
+  id: serial("id").primaryKey(),
+  siteName: text("site_name").notNull().default("ChatLure"),
+  tagline: text("tagline").default("Peek. Obsess. Repeat."),
+  maintenanceMode: boolean("maintenance_mode").notNull().default(false),
+  maintenanceMessage: text("maintenance_message"),
+  juiceModeEnabled: boolean("juice_mode_enabled").notNull().default(true),
+  defaultBattery: integer("default_battery").notNull().default(75),
+  drainRate: integer("drain_rate").notNull().default(3),
+  createdAt: timestamp("created_at").defaultNow(),
+  updatedAt: timestamp("updated_at").defaultNow()
+});
+
+export const insertSiteSettingsSchema = createInsertSchema(siteSettings).omit({
+  id: true,
+  createdAt: true,
+  updatedAt: true
+});
+
+// PayPal Settings Table
+export const paypalSettings = pgTable("paypal_settings", {
+  id: serial("id").primaryKey(),
+  enabled: boolean("enabled").notNull().default(false),
+  environment: text("environment").notNull().default("sandbox"),
+  clientId: text("client_id"),
+  clientSecret: text("client_secret"),
+  webhookId: text("webhook_id"),
+  createdAt: timestamp("created_at").defaultNow(),
+  updatedAt: timestamp("updated_at").defaultNow()
+});
+
+export const insertPayPalSettingsSchema = createInsertSchema(paypalSettings).omit({
+  id: true,
+  createdAt: true,
+  updatedAt: true
+});
+
+export type SiteSettings = typeof siteSettings.$inferSelect;
+export type InsertSiteSettings = z.infer<typeof insertSiteSettingsSchema>;
+export type PayPalSettings = typeof paypalSettings.$inferSelect;
+export type InsertPayPalSettings = z.infer<typeof insertPayPalSettingsSchema>;

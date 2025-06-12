@@ -58,7 +58,7 @@ app.use((req, res, next) => {
 
   // Serve the app on port 5000 for Replit compatibility
   // this serves both the API and the client.
-  const port = process.env.PORT || 5000;
+  const port = parseInt(process.env.PORT || "5000", 10);
   server.listen(port, "0.0.0.0", () => {
     log(`serving on port ${port}`);
   });

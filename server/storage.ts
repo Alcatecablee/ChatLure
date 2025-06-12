@@ -422,6 +422,7 @@ export class DatabaseStorage implements IStorage {
 
   // PayPal Settings Management  
   private paypalSettings: any = {
+    enabled: false,
     clientId: "",
     clientSecret: "",
     environment: "sandbox",
@@ -453,14 +454,12 @@ export class DatabaseStorage implements IStorage {
 
   async blockUser(userId: number, reason: string, duration?: number): Promise<void> {
     await db.update(users).set({
-      blockedReason: reason,
       blockedUntil: duration ? new Date(Date.now() + duration * 24 * 60 * 60 * 1000) : null
     }).where(eq(users.id, userId));
   }
 
   async unblockUser(userId: number): Promise<void> {
     await db.update(users).set({
-      blockedReason: null,
       blockedUntil: null
     }).where(eq(users.id, userId));
   }

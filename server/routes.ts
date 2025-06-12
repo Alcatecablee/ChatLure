@@ -208,7 +208,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         totalViews: stories.reduce((sum, story) => sum + story.views, 0),
         totalShares: stories.reduce((sum, story) => sum + story.shares, 0),
         totalLikes: stories.reduce((sum, story) => sum + story.likes, 0),
-        premiumUsers: users.filter(u => u.subscriptionTier !== 'free').length,
+        premiumUsers: users.filter(u => u.subscriptionStatus === 'active' && u.subscriptionPlanId !== null).length,
         storiesThisMonth: stories.filter(s => {
           const created = new Date(s.createdAt);
           const now = new Date();
