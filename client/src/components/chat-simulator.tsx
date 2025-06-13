@@ -52,37 +52,37 @@ const deviceConfigs = {
     name: 'iPhone',
     icon: Smartphone,
     containerClass: 'max-w-sm',
-    phoneClass: 'rounded-[2.5rem] w-80',
-    screenClass: 'rounded-[2rem]',
+    phoneClass: 'rounded-[2.5rem] w-80 h-[700px] p-2',
+    screenClass: 'rounded-[2rem] h-full flex flex-col bg-white',
     chatHeight: 'h-[500px]',
-    description: 'Compact mobile view'
+    description: 'iPhone 14 Pro style'
   },
   android: {
     name: 'Android',
     icon: Smartphone,
     containerClass: 'max-w-sm',
-    phoneClass: 'rounded-[1.5rem] w-80',
-    screenClass: 'rounded-[1rem]',
+    phoneClass: 'rounded-[1.5rem] w-80 h-[700px] p-2',
+    screenClass: 'rounded-[1rem] h-full flex flex-col bg-white',
     chatHeight: 'h-[500px]',
     description: 'Android phone style'
   },
   tablet: {
     name: 'Tablet',
     icon: Tablet,
-    containerClass: 'max-w-md',
-    phoneClass: 'rounded-[2rem] w-96',
-    screenClass: 'rounded-[1.5rem]',
-    chatHeight: 'h-[700px]',
-    description: 'Larger tablet view - recommended'
+    containerClass: 'max-w-2xl',
+    phoneClass: 'rounded-[2rem] w-[600px] h-[800px] p-3',
+    screenClass: 'rounded-[1.5rem] h-full flex flex-col bg-white',
+    chatHeight: 'h-[650px]',
+    description: 'iPad Pro style'
   },
   desktop: {
     name: 'Desktop',
     icon: Monitor,
-    containerClass: 'max-w-lg',
-    phoneClass: 'rounded-[1rem] w-[500px]',
-    screenClass: 'rounded-[0.5rem]',
-    chatHeight: 'h-[600px]',
-    description: 'Full desktop experience'
+    containerClass: 'max-w-4xl',
+    phoneClass: 'rounded-[1rem] w-[800px] h-[600px] p-4',
+    screenClass: 'rounded-[0.5rem] h-full flex flex-col bg-white',
+    chatHeight: 'h-[500px]',
+    description: 'Desktop browser window'
   }
 };
 
@@ -584,55 +584,75 @@ export default function ChatSimulator({ storyId = 1 }: ChatSimulatorProps) {
         </div>
       </div>
 
-      <div 
-        className={`${currentDevice.containerClass} mx-auto device-container device-${deviceFormat}`}
-        style={{
-          maxWidth: deviceFormat === 'tablet' ? '1280px' : undefined,
-          minWidth: deviceFormat === 'tablet' ? '1280px' : undefined,
-          width: deviceFormat === 'tablet' ? '1280px' : undefined
-        }}
-      >
-        {/* Phone Frame */}
-        <div 
-          className={`phone-frame-responsive bg-black ${currentDevice.phoneClass} shadow-2xl device-phone`}
-          style={{
-            maxWidth: deviceFormat === 'tablet' ? '1200px' : undefined,
-            width: deviceFormat === 'tablet' ? '100%' : undefined
-          }}
-        >
-          <div className={`bg-gray-900 ${currentDevice.screenClass} overflow-hidden flex-1`}>
-            {/* Phone Status Bar */}
-            <div className="flex items-center justify-between px-6 py-3 bg-white text-black text-sm">
-              <div className="flex items-center space-x-1">
-                <div className="flex space-x-1">
-                  <div className="w-1 h-3 bg-black rounded-full"></div>
-                  <div className="w-1 h-3 bg-black rounded-full"></div>
-                  <div className="w-1 h-3 bg-black rounded-full"></div>
+      <div className={`${currentDevice.containerClass} mx-auto device-container device-${deviceFormat}`}>
+        {/* Device Frame */}
+        <div className={`phone-frame-responsive bg-black ${currentDevice.phoneClass} shadow-2xl device-phone`}>
+          <div className={currentDevice.screenClass}>
+            {/* Status Bar - Only for mobile devices */}
+            {(deviceFormat === 'iphone' || deviceFormat === 'android') && (
+              <div className="flex items-center justify-between px-6 py-3 bg-white text-black text-sm flex-shrink-0">
+                <div className="flex items-center space-x-1">
+                  <div className="flex space-x-1">
+                    <div className="w-1 h-3 bg-black rounded-full"></div>
+                    <div className="w-1 h-3 bg-black rounded-full"></div>
+                    <div className="w-1 h-3 bg-black rounded-full"></div>
+                  </div>
+                  <Wifi className="h-4 w-4 ml-2" />
                 </div>
-                <Wifi className="h-4 w-4 ml-2" />
+                <div className="font-semibold">14:15</div>
+                <div className="flex items-center space-x-1">
+                  <span className="text-sm font-semibold">100%</span>
+                  <Battery className="h-4 w-4" />
+                </div>
               </div>
-              <div className="font-semibold">14:15</div>
-              <div className="flex items-center space-x-1">
-                <span className="text-sm font-semibold">100%</span>
-                <Battery className="h-4 w-4" />
+            )}
+
+            {/* Desktop Browser Bar */}
+            {deviceFormat === 'desktop' && (
+              <div className="flex items-center justify-between px-4 py-2 bg-gray-100 border-b flex-shrink-0">
+                <div className="flex items-center space-x-2">
+                  <div className="flex space-x-1">
+                    <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                    <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                  </div>
+                </div>
+                <div className="flex-1 mx-4">
+                  <div className="bg-white rounded px-3 py-1 text-sm text-gray-600">
+                    🔒 web.whatsapp.com
+                  </div>
+                </div>
+                <div className="text-sm text-gray-500">⋯</div>
               </div>
-            </div>
+            )}
 
             {/* WhatsApp Header */}
-            <div className="bg-[#075e54] text-white px-4 py-3 flex items-center justify-between">
+            <div className={`bg-[#075e54] text-white flex items-center justify-between flex-shrink-0 ${
+              deviceFormat === 'desktop' ? 'px-6 py-4' : 'px-4 py-3'
+            }`}>
               <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-                  <span className="text-[#075e54] text-lg font-bold">B</span>
+                <div className={`bg-white rounded-full flex items-center justify-center ${
+                  deviceFormat === 'desktop' ? 'w-10 h-10' : 'w-8 h-8'
+                }`}>
+                  <span className={`text-[#075e54] font-bold ${
+                    deviceFormat === 'desktop' ? 'text-xl' : 'text-lg'
+                  }`}>B</span>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-white">Burbie</h3>
-                  <p className="text-xs text-green-200">Africa's AI Township Helper</p>
+                  <h3 className={`font-semibold text-white ${
+                    deviceFormat === 'desktop' ? 'text-lg' : 'text-base'
+                  }`}>Burbie</h3>
+                  <p className={`text-green-200 ${
+                    deviceFormat === 'desktop' ? 'text-sm' : 'text-xs'
+                  }`}>Africa's AI Township Helper</p>
                 </div>
               </div>
-              <div className="flex items-center space-x-4 text-white">
-                <div className="text-xl">📞</div>
-                <div className="text-xl">📹</div>
-                <div className="text-xl">⋮</div>
+              <div className={`flex items-center text-white ${
+                deviceFormat === 'desktop' ? 'space-x-6' : 'space-x-4'
+              }`}>
+                <div className={deviceFormat === 'desktop' ? 'text-2xl' : 'text-xl'}>📞</div>
+                <div className={deviceFormat === 'desktop' ? 'text-2xl' : 'text-xl'}>📹</div>
+                <div className={deviceFormat === 'desktop' ? 'text-2xl' : 'text-xl'}>⋮</div>
               </div>
             </div>
 
@@ -653,7 +673,11 @@ export default function ChatSimulator({ storyId = 1 }: ChatSimulatorProps) {
                     className={`flex ${message.isIncoming ? 'justify-start' : 'justify-end'}`}
                   >
                     <div
-                      className={`max-w-xs px-3 py-2 rounded-lg text-sm relative ${
+                      className={`${
+                        deviceFormat === 'desktop' ? 'max-w-md px-4 py-3 text-base' : 
+                        deviceFormat === 'tablet' ? 'max-w-sm px-4 py-2 text-sm' : 
+                        'max-w-xs px-3 py-2 text-sm'
+                      } rounded-lg relative ${
                         message.isIncoming
                           ? 'bg-white text-gray-800 shadow-sm'
                           : 'bg-[#dcf8c6] text-gray-800'
@@ -724,20 +748,28 @@ export default function ChatSimulator({ storyId = 1 }: ChatSimulatorProps) {
             </div>
 
             {/* Message Input Area */}
-            <div className="bg-[#f0f0f0] p-3 flex items-center space-x-3">
-              <div className="flex-1 bg-white rounded-full px-4 py-2 flex items-center space-x-3">
-                <span className="text-gray-500 text-lg">😊</span>
+            <div className={`bg-[#f0f0f0] flex items-center space-x-3 flex-shrink-0 ${
+              deviceFormat === 'desktop' ? 'p-4' : 'p-3'
+            }`}>
+              <div className={`flex-1 bg-white rounded-full flex items-center space-x-3 ${
+                deviceFormat === 'desktop' ? 'px-6 py-3' : 'px-4 py-2'
+              }`}>
+                <span className={`text-gray-500 ${deviceFormat === 'desktop' ? 'text-xl' : 'text-lg'}`}>😊</span>
                 <input 
                   type="text" 
                   placeholder="Type a message" 
-                  className="flex-1 bg-transparent outline-none text-gray-700"
+                  className={`flex-1 bg-transparent outline-none text-gray-700 ${
+                    deviceFormat === 'desktop' ? 'text-base' : 'text-sm'
+                  }`}
                   disabled
                 />
-                <span className="text-gray-500 text-lg">📎</span>
-                <span className="text-gray-500 text-lg">📷</span>
+                <span className={`text-gray-500 ${deviceFormat === 'desktop' ? 'text-xl' : 'text-lg'}`}>📎</span>
+                <span className={`text-gray-500 ${deviceFormat === 'desktop' ? 'text-xl' : 'text-lg'}`}>📷</span>
               </div>
-              <button className="bg-[#075e54] text-white rounded-full p-3">
-                <span className="text-lg">🎤</span>
+              <button className={`bg-[#075e54] text-white rounded-full ${
+                deviceFormat === 'desktop' ? 'p-4' : 'p-3'
+              }`}>
+                <span className={deviceFormat === 'desktop' ? 'text-xl' : 'text-lg'}>🎤</span>
               </button>
             </div>
 
