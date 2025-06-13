@@ -121,21 +121,25 @@ export default function SimpleChatSimulator({ storyId = 1 }: SimpleChatSimulator
   }
 
   return (
-    <div className="w-full max-w-lg mx-auto">
+    <div className="w-full max-w-sm mx-auto">
       {/* Phone Frame */}
-      <div className="bg-black rounded-[3rem] p-4 shadow-2xl w-full min-w-[450px]">
-        <div className="bg-white rounded-[2.5rem] overflow-hidden h-[800px] flex flex-col w-full">
+      <div className="bg-gray-900 rounded-[3rem] p-2 shadow-2xl w-full">
+        <div className="bg-white rounded-[2.5rem] overflow-hidden h-[700px] flex flex-col relative">
           
           {/* Status Bar */}
-          <div className="flex items-center justify-between px-4 py-2 bg-white text-black text-sm font-medium">
+          <div className="flex items-center justify-between px-6 py-3 bg-white text-black text-sm font-medium border-b border-gray-100">
             <div className="flex items-center space-x-1">
-              <Signal className="h-4 w-4" />
-              <Wifi className="h-4 w-4" />
+              <div className="flex space-x-1">
+                <div className="w-1 h-3 bg-black rounded-full"></div>
+                <div className="w-1 h-3 bg-black rounded-full"></div>
+                <div className="w-1 h-3 bg-black rounded-full"></div>
+              </div>
+              <Wifi className="h-4 w-4 ml-2" />
             </div>
-            <div>3:06</div>
+            <div className="font-semibold">9:41</div>
             <div className="flex items-center space-x-1">
+              <span className="text-sm font-semibold">{peepPower}%</span>
               <Battery className="h-4 w-4" />
-              <span className="text-sm">{peepPower}%</span>
             </div>
           </div>
 
