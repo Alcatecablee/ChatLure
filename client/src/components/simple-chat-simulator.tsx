@@ -127,7 +127,7 @@ export default function SimpleChatSimulator({ storyId = 1 }: SimpleChatSimulator
         <div className="bg-white rounded-[2.5rem] overflow-hidden h-[700px] flex flex-col relative">
           
           {/* Status Bar */}
-          <div className="flex items-center justify-between px-6 py-3 bg-white text-black text-sm font-medium border-b border-gray-100">
+          <div className="flex items-center justify-between px-6 py-3 bg-white text-black text-sm font-medium">
             <div className="flex items-center space-x-1">
               <div className="flex space-x-1">
                 <div className="w-1 h-3 bg-black rounded-full"></div>
@@ -136,43 +136,38 @@ export default function SimpleChatSimulator({ storyId = 1 }: SimpleChatSimulator
               </div>
               <Wifi className="h-4 w-4 ml-2" />
             </div>
-            <div className="font-semibold">9:41</div>
+            <div className="font-semibold">14:15</div>
             <div className="flex items-center space-x-1">
-              <span className="text-sm font-semibold">{peepPower}%</span>
+              <span className="text-sm font-semibold">100%</span>
               <Battery className="h-4 w-4" />
             </div>
           </div>
 
-          {/* PeepPower Bar */}
-          <div className="px-4 py-2 bg-gray-50 border-b">
-            <div className="flex items-center justify-between text-xs text-gray-600 mb-1">
-              <span>PeepPower™</span>
-              <span>{peepPower}%</span>
+          {/* WhatsApp Header */}
+          <div className="bg-[#075e54] text-white px-4 py-3 flex items-center justify-between">
+            <div className="flex items-center space-x-3">
+              <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                <span className="text-[#075e54] text-lg font-bold">B</span>
+              </div>
+              <div>
+                <h3 className="font-semibold text-white">Burbie</h3>
+                <p className="text-xs text-green-200">Africa's AI Township Helper</p>
+              </div>
             </div>
-            <div className="w-full bg-gray-200 rounded-full h-2">
-              <div 
-                className="bg-green-500 h-2 rounded-full transition-all duration-500"
-                style={{ width: `${peepPower}%` }}
-              ></div>
-            </div>
-          </div>
-
-          {/* Chat Header */}
-          <div className="bg-green-500 text-white px-4 py-3 flex items-center justify-between">
-            <div>
-              <h3 className="font-semibold text-lg">{story.title}</h3>
-              <p className="text-sm opacity-90">👆 Online</p>
-            </div>
-            <div className="text-right text-sm">
-              <div>📞 📹</div>
+            <div className="flex items-center space-x-4 text-white">
+              <div className="text-xl">📞</div>
+              <div className="text-xl">📹</div>
+              <div className="text-xl">⋮</div>
             </div>
           </div>
 
           {/* Chat Area */}
           <div 
             ref={chatRef}
-            className="flex-1 bg-gray-50 p-4 overflow-y-auto space-y-3"
-            style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%23f3f4f6" fill-opacity="0.1"%3E%3Cpath d="M0 0h20v20H0z"/%3E%3C/g%3E%3C/svg%3E")' }}
+            className="flex-1 bg-[#e5ddd5] p-4 overflow-y-auto space-y-3"
+            style={{ 
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d1c7b8' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")` 
+            }}
           >
             <AnimatePresence>
               {visibleMessages.map((message, index) => (
@@ -183,19 +178,22 @@ export default function SimpleChatSimulator({ storyId = 1 }: SimpleChatSimulator
                   className={`flex ${message.isIncoming ? 'justify-start' : 'justify-end'}`}
                 >
                   <div
-                    className={`max-w-xs px-4 py-2 rounded-2xl text-sm ${
+                    className={`max-w-xs px-3 py-2 rounded-lg text-sm relative ${
                       message.isIncoming
-                        ? 'bg-white text-gray-800 rounded-bl-sm shadow-sm'
-                        : 'bg-blue-500 text-white rounded-br-sm'
+                        ? 'bg-white text-gray-800 shadow-sm'
+                        : 'bg-[#dcf8c6] text-gray-800'
                     }`}
+                    style={{
+                      borderRadius: message.isIncoming ? '7.5px 7.5px 7.5px 0px' : '7.5px 7.5px 0px 7.5px'
+                    }}
                   >
-                    <p>{message.content}</p>
-                    <div className={`text-xs mt-1 ${
-                      message.isIncoming ? 'text-gray-500' : 'text-blue-100'
+                    <p className="leading-relaxed">{message.content}</p>
+                    <div className={`text-xs mt-1 flex items-center justify-end ${
+                      message.isIncoming ? 'text-gray-500' : 'text-gray-600'
                     }`}>
-                      {message.timestamp}
+                      <span>{message.timestamp}</span>
                       {!message.isIncoming && message.hasReadReceipt && (
-                        <span className="ml-2">✓✓</span>
+                        <span className="ml-2 text-blue-500">✓✓</span>
                       )}
                     </div>
                   </div>
@@ -209,11 +207,30 @@ export default function SimpleChatSimulator({ storyId = 1 }: SimpleChatSimulator
                 animate={{ opacity: 1, y: 0 }}
                 className="flex justify-start"
               >
-                <div className="bg-white rounded-2xl rounded-bl-sm px-4 py-3 shadow-sm">
+                <div className="bg-white rounded-lg px-4 py-3 shadow-sm"
+                     style={{ borderRadius: '7.5px 7.5px 7.5px 0px' }}>
                   <TypingIndicator isVisible={true} />
                 </div>
               </motion.div>
             )}
+          </div>
+
+          {/* Message Input Area */}
+          <div className="bg-[#f0f0f0] p-3 flex items-center space-x-3">
+            <div className="flex-1 bg-white rounded-full px-4 py-2 flex items-center space-x-3">
+              <span className="text-gray-500 text-lg">😊</span>
+              <input 
+                type="text" 
+                placeholder="Type a message" 
+                className="flex-1 bg-transparent outline-none text-gray-700"
+                disabled
+              />
+              <span className="text-gray-500 text-lg">📎</span>
+              <span className="text-gray-500 text-lg">📷</span>
+            </div>
+            <button className="bg-[#075e54] text-white rounded-full p-3">
+              <span className="text-lg">🎤</span>
+            </button>
           </div>
 
           {/* Controls */}
@@ -223,7 +240,7 @@ export default function SimpleChatSimulator({ storyId = 1 }: SimpleChatSimulator
               <Button
                 onClick={isPlaying ? pauseChat : startChat}
                 className={`rounded-full w-12 h-12 ${
-                  isPlaying ? 'bg-red-500 hover:bg-red-600' : 'bg-green-500 hover:bg-green-600'
+                  isPlaying ? 'bg-red-500 hover:bg-red-600' : 'bg-[#075e54] hover:bg-[#064e44]'
                 }`}
               >
                 {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
@@ -244,7 +261,7 @@ export default function SimpleChatSimulator({ storyId = 1 }: SimpleChatSimulator
                 onClick={handleLike}
                 variant="ghost"
                 size="sm"
-                className="flex items-center space-x-1 text-green-600"
+                className="flex items-center space-x-1 text-[#075e54]"
               >
                 <Heart className="w-4 h-4" />
                 <span>{story.likes}</span>
@@ -254,7 +271,7 @@ export default function SimpleChatSimulator({ storyId = 1 }: SimpleChatSimulator
                 onClick={handleShare}
                 variant="ghost" 
                 size="sm"
-                className="flex items-center space-x-1 text-blue-600"
+                className="flex items-center space-x-1 text-[#075e54]"
               >
                 <Share2 className="w-4 h-4" />
                 <span>{story.shares}</span>

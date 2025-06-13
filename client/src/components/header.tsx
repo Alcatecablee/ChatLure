@@ -1,5 +1,5 @@
 import { Bell, Settings, User, Menu, X, Crown, Zap, Bot, Home, DollarSign } from "lucide-react";
-import newLogo from "@assets/favico_1749769718941.png";
+import newLogo from "@assets/favico_1749773352977.png";
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
@@ -31,21 +31,20 @@ export default function Header() {
           <Link href="/">
             <div className="flex items-center space-x-4 cursor-pointer group">
               <div className="relative">
-                <div className="absolute -inset-2 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full blur-sm opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
                 <div className="relative bg-white rounded-full p-2 shadow-lg">
                   <img 
                     src={newLogo} 
-                    alt="ChatLure" 
+                    alt="Burbie" 
                     className="h-8 w-8 object-contain"
                   />
                 </div>
               </div>
               <div className="flex flex-col">
                 <span className="text-2xl font-black text-white tracking-tight">
-                  ChatLure
+                  Burbie
                 </span>
                 <span className="text-xs text-gray-400 font-medium -mt-1">
-                  Peek • Obsess • Repeat
+                  Garden Services
                 </span>
               </div>
             </div>
@@ -62,14 +61,14 @@ export default function Header() {
                     className={cn(
                       "flex items-center px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 relative",
                       active 
-                        ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg" 
+                        ? "bg-[#075e54] text-white shadow-lg" 
                         : "text-gray-300 hover:text-white hover:bg-gray-800"
                     )}
                   >
                     <Icon className="w-4 h-4 mr-2" />
                     {item.name}
                     {item.name === "Pricing" && (
-                      <Badge className="ml-2 bg-gradient-to-r from-orange-500 to-red-500 text-white text-xs px-2 py-0.5">
+                      <Badge className="ml-2 bg-orange-500 text-white text-xs px-2 py-0.5">
                         New
                       </Badge>
                     )}
@@ -85,7 +84,7 @@ export default function Header() {
             
             {/* Upgrade Button */}
             <Link href="/pricing">
-              <Button className="hidden sm:flex bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium px-4 py-2 rounded-lg shadow-lg transition-all duration-200">
+              <Button className="hidden sm:flex bg-[#075e54] hover:bg-[#064e44] text-white font-medium px-4 py-2 rounded-lg shadow-lg transition-all duration-200">
                 <Crown className="w-4 h-4 mr-2" />
                 Upgrade
               </Button>
