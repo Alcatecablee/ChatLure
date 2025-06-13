@@ -601,106 +601,94 @@ export default function ChatSimulator({ storyId = 1 }: ChatSimulatorProps) {
         >
           <div className={`bg-gray-900 ${currentDevice.screenClass} overflow-hidden flex-1`}>
             {/* Phone Status Bar */}
-            <div className="flex items-center justify-between px-6 py-3 bg-black text-white text-sm">
+            <div className="flex items-center justify-between px-6 py-3 bg-white text-black text-sm">
               <div className="flex items-center space-x-1">
-                <Signal className="h-4 w-4" />
-                <Wifi className="h-4 w-4" />
+                <div className="flex space-x-1">
+                  <div className="w-1 h-3 bg-black rounded-full"></div>
+                  <div className="w-1 h-3 bg-black rounded-full"></div>
+                  <div className="w-1 h-3 bg-black rounded-full"></div>
+                </div>
+                <Wifi className="h-4 w-4 ml-2" />
               </div>
-              <div className="font-medium">3:06</div>
+              <div className="font-semibold">14:15</div>
               <div className="flex items-center space-x-1">
-                {getBatteryIcon()}
-                <span className={`text-sm ${peepPower > 20 ? 'text-green-400' : 'text-red-400'}`}>
-                  {peepPower}%
-                </span>
+                <span className="text-sm font-semibold">100%</span>
+                <Battery className="h-4 w-4" />
               </div>
-            </div>
-
-            {/* PeepPower Bar */}
-            <div className="px-4 py-2 bg-gray-100 dark:bg-gray-800">
-              <div className="flex items-center justify-between mb-1">
-                <span className="text-sm font-semibold text-gray-600 dark:text-gray-300">PeepPower™</span>
-                <span className="text-sm text-gray-500">{peepPower}%</span>
-              </div>
-              <div className="w-full bg-gray-300 dark:bg-gray-600 rounded-full h-2">
-                <motion.div 
-                  className={`h-2 rounded-full ${getBatteryColor()}`}
-                  style={{ width: `${peepPower}%` }}
-                  animate={{ width: `${peepPower}%` }}
-                  transition={{ duration: 0.5 }}
-                />
-              </div>
-              {peepPower <= 20 && (
-                <p className="text-xs text-red-500 mt-1 animate-pulse">
-                  ⚠️ Low PeepPower - Recharge soon!
-                </p>
-              )}
             </div>
 
             {/* WhatsApp Header */}
-            <div className="flex items-center justify-between px-4 py-3 bg-[var(--whatsapp)] text-white">
+            <div className="bg-[#075e54] text-white px-4 py-3 flex items-center justify-between">
               <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
-                  <span className="text-white font-semibold text-sm">
-                    {story.title.charAt(0)}
-                  </span>
+                <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                  <span className="text-[#075e54] text-lg font-bold">B</span>
                 </div>
                 <div>
-                  <h3 className="font-semibold">{story.title}</h3>
-                  <p className="text-xs text-green-200 flex items-center">
-                    <span className="w-2 h-2 bg-green-300 rounded-full mr-2"></span>
-                    Online
-                  </p>
+                  <h3 className="font-semibold text-white">Burbie</h3>
+                  <p className="text-xs text-green-200">Africa's AI Township Helper</p>
                 </div>
               </div>
-              <div className="flex items-center space-x-2">
-                <Badge variant="secondary" className="text-xs bg-white bg-opacity-20 text-white">
-                  <Eye className="w-3 h-3 mr-1" />
-                  {story.views}
-                </Badge>
+              <div className="flex items-center space-x-4 text-white">
+                <div className="text-xl">📞</div>
+                <div className="text-xl">📹</div>
+                <div className="text-xl">⋮</div>
               </div>
             </div>
 
             {/* Chat Messages Area */}
-            <div className={`p-4 flex-1 overflow-y-auto bg-gray-50 dark:bg-gray-800`} ref={chatRef}>
-              <div className="space-y-3">
-                <AnimatePresence>
-                  {visibleMessages.map((message, index) => (
-                    <motion.div
-                      key={message.id}
-                      initial={{ opacity: 0, y: 20, scale: 0.8 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      transition={{ duration: 0.3, delay: index * 0.1 }}
-                      className={cn(
-                        "flex",
-                        message.isIncoming ? "justify-start" : "justify-end"
-                      )}
+            <div 
+              className="flex-1 bg-[#e5ddd5] p-4 overflow-y-auto space-y-3"
+              ref={chatRef}
+              style={{ 
+                backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d1c7b8' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")` 
+              }}
+            >
+              <AnimatePresence>
+                {visibleMessages.map((message, index) => (
+                  <motion.div
+                    key={message.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className={`flex ${message.isIncoming ? 'justify-start' : 'justify-end'}`}
+                  >
+                    <div
+                      className={`max-w-xs px-3 py-2 rounded-lg text-sm relative ${
+                        message.isIncoming
+                          ? 'bg-white text-gray-800 shadow-sm'
+                          : 'bg-[#dcf8c6] text-gray-800'
+                      }`}
+                      style={{
+                        borderRadius: message.isIncoming ? '7.5px 7.5px 7.5px 0px' : '7.5px 7.5px 0px 7.5px'
+                      }}
                     >
-                      <div
-                        className={cn(
-                          "max-w-xs px-4 py-2 rounded-2xl text-sm shadow-lg transform transition-all hover:scale-105",
-                          message.isIncoming
-                            ? "bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-bl-sm"
-                            : "bg-blue-500 text-white rounded-br-sm"
+                      <p className="leading-relaxed">{message.content}</p>
+                      <div className={`text-xs mt-1 flex items-center justify-end ${
+                        message.isIncoming ? 'text-gray-500' : 'text-gray-600'
+                      }`}>
+                        <span>{message.timestamp}</span>
+                        {!message.isIncoming && message.hasReadReceipt && (
+                          <span className="ml-2 text-blue-500">✓✓</span>
                         )}
-                      >
-                        <p className="break-words leading-relaxed">{message.content}</p>
-                        <div className="flex items-center justify-between mt-2">
-                          <span className="text-xs opacity-70">{message.timestamp}</span>
-                          {!message.isIncoming && (
-                            <span className="text-xs">
-                              {message.hasReadReceipt ? "✓✓" : "✓"}
-                            </span>
-                          )}
-                        </div>
                       </div>
-                    </motion.div>
-                  ))}
-                </AnimatePresence>
+                    </div>
+                  </motion.div>
+                ))}
+              </AnimatePresence>
 
-                <TypingIndicator isVisible={isTyping} />
+              {isTyping && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="flex justify-start"
+                >
+                  <div className="bg-white rounded-lg px-4 py-3 shadow-sm"
+                       style={{ borderRadius: '7.5px 7.5px 7.5px 0px' }}>
+                    <TypingIndicator isVisible={true} />
+                  </div>
+                </motion.div>
+              )}
                 
-                {showCliffhanger && (
+              {showCliffhanger && (
                   <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -724,7 +712,7 @@ export default function ChatSimulator({ storyId = 1 }: ChatSimulatorProps) {
                     </div>
                     <Button 
                       onClick={handleUnlock}
-                      className="bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600 text-white"
+                      className="bg-red-500 hover:bg-red-600 text-white"
                     >
                       <Unlock className="w-4 h-4 mr-2" />
                       Unlock Ending Now
@@ -732,6 +720,24 @@ export default function ChatSimulator({ storyId = 1 }: ChatSimulatorProps) {
                   </motion.div>
                 )}
               </div>
+            </div>
+
+            {/* Message Input Area */}
+            <div className="bg-[#f0f0f0] p-3 flex items-center space-x-3">
+              <div className="flex-1 bg-white rounded-full px-4 py-2 flex items-center space-x-3">
+                <span className="text-gray-500 text-lg">😊</span>
+                <input 
+                  type="text" 
+                  placeholder="Type a message" 
+                  className="flex-1 bg-transparent outline-none text-gray-700"
+                  disabled
+                />
+                <span className="text-gray-500 text-lg">📎</span>
+                <span className="text-gray-500 text-lg">📷</span>
+              </div>
+              <button className="bg-[#075e54] text-white rounded-full p-3">
+                <span className="text-lg">🎤</span>
+              </button>
             </div>
 
             {/* Chat Controls */}
