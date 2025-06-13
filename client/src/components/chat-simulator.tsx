@@ -514,6 +514,7 @@ export default function ChatSimulator({ storyId = 1 }: ChatSimulatorProps) {
   }
 
   return (
+    <>
     <div className="relative">
       {/* Navigation Arrows */}
       <div className="absolute left-4 top-1/2 transform -translate-y-1/2 z-50">
@@ -792,6 +793,6 @@ export default function ChatSimulator({ storyId = 1 }: ChatSimulatorProps) {
           setShowCliffhanger(false);
         }}
       />
-    </div>
+    </>
   );
 }
