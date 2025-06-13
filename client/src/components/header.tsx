@@ -114,7 +114,7 @@ export default function Header() {
                     className={cn(
                       "flex items-center px-4 py-3 text-sm font-medium rounded-lg transition-all duration-200",
                       active 
-                        ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white" 
+                        ? "bg-[#075e54] text-white" 
                         : "text-gray-300 hover:text-white hover:bg-gray-800"
                     )}
                     onClick={() => setIsMobileMenuOpen(false)}
@@ -122,7 +122,7 @@ export default function Header() {
                     <Icon className="w-4 h-4 mr-3" />
                     {item.name}
                     {item.name === "Pricing" && (
-                      <Badge className="ml-auto bg-gradient-to-r from-orange-500 to-red-500 text-white text-xs px-2 py-0.5">
+                      <Badge className="ml-auto bg-orange-500 text-white text-xs px-2 py-0.5">
                         New
                       </Badge>
                     )}
@@ -133,7 +133,7 @@ export default function Header() {
             
             {/* Mobile Upgrade Button */}
             <Link href="/pricing">
-              <Button className="w-full mt-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium py-3 rounded-lg shadow-lg">
+              <Button className="w-full mt-4 bg-[#075e54] hover:bg-[#064e44] text-white font-medium py-3 rounded-lg shadow-lg">
                 <Crown className="w-4 h-4 mr-2" />
                 Upgrade Now
               </Button>

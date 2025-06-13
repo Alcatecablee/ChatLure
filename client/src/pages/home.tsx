@@ -278,7 +278,7 @@ export default function Home() {
                   trigger={
                     <Button 
                       size="lg" 
-                      className="px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
+                      className="px-8 py-4 bg-[#075e54] hover:bg-[#064e44] text-white font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
                     >
                       <Smartphone className="mr-2 h-5 w-5" />
                       👀 Start Peeking
